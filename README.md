@@ -1,6 +1,8 @@
 # codebase-6
 
 Version 6.0.0
+Filesize: 31 kb
+Docs: https://codebase-frontend-library.github.io/codebase-6/
 
 Codebase 6 is a _non-backwards compatible_ update for the Codebase project.
 
