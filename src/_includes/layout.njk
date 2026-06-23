@@ -7,7 +7,7 @@
     {% if page.isHome %}{{ site.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}
   </title>
   <meta name="description" content="{{ page.description or site.description }}">
-  <link rel="stylesheet" href="/css/codebase-6.min.css?v={{ version }}">
+  <link rel="stylesheet" href="./css/codebase-6.min.css?v={{ version }}">
   <style>
     :root {
       --w-page: var(--w-xxl);
@@ -139,7 +139,7 @@
 
   </div>
 
-  <script src="/js/scripts.js?v={{ version }}" defer></script>
+  <script src="./js/scripts.js?v={{ version }}" defer></script>
 
 </body>
 </html>
