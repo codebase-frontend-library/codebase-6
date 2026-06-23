@@ -1,0 +1,130 @@
+.badge {
+  height: 1.5em;
+  min-width: 1.5em;
+  position: relative;
+  border-radius: 3em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  display: inline-block;
+  line-height: 1.25em;
+  padding: 0.1em 0.35em;
+}
+
+.badge,
+.label {
+  background: oklch(from var(--bgc, var(--bgc-ui)) var(--bgl, var(--l200)) c h);
+  white-space: nowrap;
+}
+
+[class*="primary"] {
+  background: oklch(from var(--primary) var(--l500) c h);
+  color: #fff;
+}
+
+a[class*="primary"]:hover,
+button[class*="primary"]:hover {
+  background: oklch(from var(--primary) var(--l600) c h);
+  color: #fff;
+}
+
+[class*="secondary"] {
+  background: oklch(from var(--secondary) var(--l500) c h);
+  color: #fff;
+}
+
+a[class*="secondary"]:hover,
+button[class*="secondary"]:hover {
+  background: oklch(from var(--secondary) var(--l600) c h);
+  color: #fff;
+}
+
+[class*="tertiary"] {
+  background: oklch(from var(--tertiary) var(--l500) c h);
+  color: #fff;
+}
+
+a[class*="tertiary"]:hover,
+button[class*="tertiary"]:hover {
+  background: oklch(from var(--tertiary) var(--l600) c h);
+  color: #fff;
+}
+
+[class*="info"] {
+  background: oklch(from var(--info) var(--l500) c h);
+  color: #fff;
+}
+
+a[class*="info"]:hover,
+button[class*="info"]:hover {
+  background: oklch(from var(--info) var(--l600) c h);
+  color: #fff;
+}
+
+input[class*="info"],
+select[class*="info"],
+textarea[class*="info"] {
+  background: oklch(from var(--info) var(--l100) c h);
+  border-color: oklch(from var(--info) var(--l600) c h);
+  color: #000;
+}
+
+[class*="success"] {
+  background: oklch(from var(--success) var(--l500) c h);
+  color: #fff;
+}
+
+a[class*="success"]:hover,
+button[class*="success"]:hover {
+  background: oklch(from var(--success) var(--l600) c h);
+  color: #fff;
+}
+
+input[class*="success"],
+select[class*="success"],
+textarea[class*="success"] {
+  background: oklch(from var(--success) var(--l100) c h);
+  border-color: oklch(from var(--success) var(--l600) c h);
+  color: #000;
+}
+
+[class*="warning"] {
+  background: oklch(from var(--warning) var(--l200) c h);
+  color: #000;
+}
+
+a[class*="warning"]:hover,
+button[class*="warning"]:hover {
+  background: oklch(from var(--warning) var(--l300) c h);
+  color: #000;
+}
+
+input[class*="warning"],
+select[class*="warning"],
+textarea[class*="warning"] {
+  background: oklch(from var(--warning) var(--l100) c h);
+  border-color: oklch(from var(--warning) var(--l600) c h);
+  color: #000;
+}
+
+[class*="danger"] {
+  background: oklch(from var(--danger) var(--l500) c h);
+  color: #fff;
+}
+
+a[class*="danger"]:hover,
+button[class*="danger"]:hover {
+  background: oklch(from var(--danger) var(--l600) c h);
+  color: #fff;
+}
+
+input[class*="danger"],
+select[class*="danger"],
+textarea[class*="danger"] {
+  background: oklch(from var(--danger) var(--l100) c h);
+  border-color: oklch(from var(--danger) var(--l600) c h);
+  color: #000;
+}

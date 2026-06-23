@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% if page.isHome %}{{ site.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}
+  </title>
+  <meta name="description" content="{{ page.description or site.description }}">
+  <link rel="stylesheet" href="/css/codebase-6.min.css?v={{ version }}">
+  <style>
+    :root {
+      --w-page: var(--w-xxl);
+      --w-sidebar: var(--w-xxs);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .body-wrap {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-container {
+      flex: 1;
+      width: min(100%, var(--w-page));
+      margin: 0 auto;
+    }
+    .main-pane {
+      padding: var(--s-2);
+    }
+
+    @media (min-width: 1024px) {
+      .page-container {
+        display: grid;
+        grid-template-columns: var(--w-sidebar) 1fr;
+      }
+      .left-sidebar {
+        grid-column: 1;
+        border-right: var(--b-thin);
+        width: var(--w-sidebar);
+      }
+      .main-frame {
+        grid-column: 2;
+      }
+
+    @media (min-width: 1280px) {
+      .main-frame {
+        display: grid;
+        grid-template-columns: 1fr var(--w-sidebar);
+      }
+      .main-pane {
+        grid-column: 1;
+        grid-row: 1;
+        padding: var(--s-4);
+      }
+      .right-sidebar {
+        grid-column: 2;
+        grid-row: 1;
+        & > div {
+          max-height: 100dvh;
+          overflow-y: auto;
+        }
+      }
+    }
+
+    @container (min-width: 1024px) {
+      #site-nav {
+        position: sticky;
+        top: 0;
+        width: var(--w-xxs);
+        height: 100dvh;
+      }
+
+      #site-title {
+        padding-top: var(--s-3);
+        flex-direction: column;
+        align-self: center;
+      }
+
+      #site-menu {
+        min-width: var(--w-xxs);
+      }
+
+      .ms-windows .left-sidebar > div,
+      .ms-windows .right-sidebar > div {
+        scrollbar-gutter: stable;
+        overflow-y: hidden;
+      }
+
+      .ms-windows .left-sidebar:hover > div,
+      .ms-windows .right-sidebar:hover > div {
+        overflow-y: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a id="nav-skipper" href="#site-header" class="inline-block m-1 sr-only" tabindex="1">Skip to main content</a>
+
+  <div class="body-wrap">
+
+  {% include "_includes/partials/header.njk" %}
+
+  <div class="page-container">
+    <div class="left-sidebar">
+      <div class="sticky top py-3 px-2">
+        {% include "_includes/partials/left-sidebar.njk" %}
+      </div>
+    </div>
+    <div class="main-frame">
+      <aside class="right-sidebar lg:hidden-below">
+        <div class="sticky top py-3 px-2">
+          <p class="t-uppercase t-loose">On this page</p>
+          <nav id="page-toc" class="toc links-underline-hover-only" role="navigation" aria-label="Table of contents">
+        </div>
+      </aside>
+      <div class="main-pane">
+        <div class="w-md mx-auto">
+          <header id="article-title">
+            <h1 class="my-4 t-balance t-center">{{ page.title }}</h1>
+          </header>
+          
+          <hr class="my-4">
+          
+          <main id="main-content">
+            {{ content | safe }}
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% include "_includes/partials/footer.njk" %}
+
+  </div>
+
+  <script src="/js/scripts.js?v={{ version }}" defer></script>
+
+</body>
+</html>

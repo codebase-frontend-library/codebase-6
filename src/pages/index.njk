@@ -1,0 +1,121 @@
+---
+title: "Getting Started with Codebase 6"
+#description: "Unless you uncomment this line, the default description will be used from source/data/metadescription.json"
+layout: "_includes/layout.njk"
+---
+
+
+<h2>Introduction</h2>
+
+<p>In {{ site.filesize }} (minified), the Codebase 6 stylesheet gives you all this and more:</p>
+
+<ul>
+  <li>A modern CSS reset</li>
+  <li>Minimalist styled classless typography and form elements</li>
+  <li>Reliable accessibility features for assistive technology users</li>
+  <li>A lightweight system of utility classes for controlling dimensions, positioning, spacing, borders, text, and images</li>
+  <li><code>@media</code> query responsive layout utilities using CSS grid and flexbox</li>
+  <li>Responsive typography, layout, and spacing using <code>clamp()</code> ramps</li>
+  <li>A compact color lightness system based on <code>oklch()</code> for text, borders, and backgrounds</li>
+  <li>Theming control using CSS variables</li>
+</ul>
+
+<h2>Modern CSS technologies</h2>
+
+<p>Codebase supports only up-to-date (2023 forward) <a href="https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility">baseline compatibility</a> web browsers (Safari, Firefox, Chrome, Edge, etc.). Such as:</p>
+
+<ul>
+  <li><a href="https://caniuse.com/css-grid">CSS Grid</a></li>
+  <li><a href="https://caniuse.com/?search=css%20math%20functions">Math functions (e.g. clamp)</a></li>
+  <li><a href="https://caniuse.com/css-variables">Custom properties (variables)</a></li>
+  <li><a href="https://caniuse.com/?search=oklch()">oklch() function</a></li>
+  <li><a href="https://caniuse.com/css-nesting">CSS class nesting</a></li>
+</ul>
+
+<h2>Codebase’s design philosophy</h2>
+
+<p>The design philosophy behind the Codebase CSS project is as follows:</p>
+
+<ul>
+  <li>Aim at being a good place to start for a web design project.</li>
+  <li>Do <em>most things most people want</em> out of the box.</li>
+  <li>With Codebase 6 being so small, there’s less you need to overwrite in order to style it your own way (and most things in Codebase can be restyled by CSS variables). So, there’s no need for a purge process to remove a heavy payload of unused styles.</li>
+  <li>No CSS preprocessing.</li>
+</ul>
+
+<h2>Built using PostCSS</h2>
+
+<p>Codebase is built using <a href="https://postcss.org">PostCSS</a> and some plugins. The plugins used by Codebase are:</p>
+
+<ul>
+  <li><a href="https://github.com/postcss/postcss-import">postcss-import</a> — so that Codebase could be built from separate CSS files</li>
+  <li><a href="https://cssnano.co">cssnano</a> — to remove comments and minify the output <code>codebase-6.min.css</code></li>
+</ul>
+
+<p><strong>Note:</strong> neither <a href="https://preset-env.cssdb.org">postcss-preset-env</a> nor <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> have been used in Codebase. And preprocessors such as Sass, Less, Stylus etc. are not required.</p>
+
+<h2>A modern CSS reset</h2>
+
+<p>The Codebase reset is a combination of <a href="https://www.joshwcomeau.com/css/custom-css-reset/">Josh W Comeau’s custom CSS reset</a>, <a href="https://andy-bell.co.uk/a-more-modern-css-reset/">Andy Bell’s (more) modern CSS reset”</a>, and <a href="https://vale.rocks/posts/css-reset">Vale (Declan Chidlow)’s Opinionated CSS Reset</a>.</p>
+
+<p>From that basis, Codebase then takes care of the basics by setting some minimalist, easy-to-read typography, and styles for buttons and forms.</p>
+
+<h2>Codebase’s built-in accessibility features</h2>
+
+<p>Codebase has two “must have” accessibility features built-in.</p>
+
+<h3>(1.) Focus states</h3>
+
+<p>Codebase uses the browser’s built-in focus ring styles, slightly improved by a thickening the  ring and moving it out a little to improve legibility of link text. In modern browsers the focus ring is clearly visible in a range of contexts, and in both light and dark themes. A z-index raise has been added to prevent the focus ring tucking under a neighbouring item, e.g. in input/button groups.</p>
+
+<p>See also <a href="/colors/#colors-and-accessibility">colors and accessibility</a>.</p>
+
+<p>Examples:</p>
+
+<form class="my-3">
+  <fieldset class="flex gap-tiny">
+    <legend>Example e-newsletter subscribe</legend>
+    <input class="w-100%" type="email" id="example-input-email" placeholder="Enter email">
+    <input type="submit" name="submit" value="Subscribe">
+  </fieldset>
+</form>
+
+<p>Keyboard-tab through these links and buttons to see the focus rings:</p>
+
+<div class="my-3 b-thin">
+  <div class="grid sm:equal-4-cols">
+    <div class="p-3 flex flex-column flex-center flex-middle bg-white flow">
+      <p><a href="/#">Link</a></p>
+      <p><button type="button">Button</button></p>
+    </div>
+    <div class="p-3 flex flex-column flex-center flex-middle bg-blue bg-700 flow">
+      <p><a class="t-blue t-200 hover:t-300" href="/#">Link</a></p>
+      <p><button type="button">Button</button></p>
+    </div>
+    <div class="p-3 flex flex-column flex-center flex-middle bg-red bg-500 flow">
+      <p><a class="t-blue t-200 hover:t-300" href="/#">Link</a></p>
+      <p><button type="button">Button</button></p>
+    </div>
+    <div class="p-3 flex flex-column flex-center flex-middle bg-black flow">
+      <p><a class="t-blue t-200 t-dark-invert hover:t-300" href="/#">Link</a></p>
+      <p><button type="button">Button</button></p>
+    </div>
+  </div>
+</div>
+
+<h3>(2.) The visually-hidden (screen-reader only) class</h3>
+
+<p>The <code>visually-hidden</code> is used to provide additional content for screen-readers, for improved accessibility. For example, it is best practice to have “skip link” above the top navigation bar on your website, but have it (visually) hidden for ably sighted users.</p>
+
+<pre><code>&lt;a href="#main-content"
+  tabindex="1"
+  class="block p-2 visually-hidden"
+&gt;
+  Skip to page content
+&lt;/a&gt;
+
+&lt;!-- Logo and site navigation menu here --&gt;
+
+&lt;div id="main-content"&gt;
+  ...
+&lt;/div&gt;</code></pre>

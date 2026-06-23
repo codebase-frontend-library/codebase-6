@@ -1,0 +1,28 @@
+{
+  "name": "codebase-6",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node dev.js",
+    "clean": "rm -rf docs && mkdir -p docs"
+  },
+  "author": "Simon Padbury",
+  "license": "MIT",
+  "keywords": [
+    "static-site-generator",
+    "nunjucks",
+    "postcss",
+    "cssnano",
+    "browser-sync"
+  ],
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "cssnano": "^7.1.2",
+    "gray-matter": "^4.0.3",
+    "fast-glob": "^3.3.3",
+    "nunjucks": "^3.2.4",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1"
+  }
+}

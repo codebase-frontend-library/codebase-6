@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+Codebase 6 Layouts: Grid | Codebase 6  </title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="/css/codebase-6.min.css?v=6.0.0">
+  <style>
+    :root {
+      --w-page: var(--w-xxl);
+      --w-sidebar: var(--w-xxs);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .body-wrap {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-container {
+      flex: 1;
+      width: min(100%, var(--w-page));
+      margin: 0 auto;
+    }
+    .main-pane {
+      padding: var(--s-2);
+    }
+
+    @media (min-width: 1024px) {
+      .page-container {
+        display: grid;
+        grid-template-columns: var(--w-sidebar) 1fr;
+      }
+      .left-sidebar {
+        grid-column: 1;
+        border-right: var(--b-thin);
+        width: var(--w-sidebar);
+      }
+      .main-frame {
+        grid-column: 2;
+      }
+
+    @media (min-width: 1280px) {
+      .main-frame {
+        display: grid;
+        grid-template-columns: 1fr var(--w-sidebar);
+      }
+      .main-pane {
+        grid-column: 1;
+        grid-row: 1;
+        padding: var(--s-4);
+      }
+      .right-sidebar {
+        grid-column: 2;
+        grid-row: 1;
+        & > div {
+          max-height: 100dvh;
+          overflow-y: auto;
+        }
+      }
+    }
+
+    @container (min-width: 1024px) {
+      #site-nav {
+        position: sticky;
+        top: 0;
+        width: var(--w-xxs);
+        height: 100dvh;
+      }
+
+      #site-title {
+        padding-top: var(--s-3);
+        flex-direction: column;
+        align-self: center;
+      }
+
+      #site-menu {
+        min-width: var(--w-xxs);
+      }
+
+      .ms-windows .left-sidebar > div,
+      .ms-windows .right-sidebar > div {
+        scrollbar-gutter: stable;
+        overflow-y: hidden;
+      }
+
+      .ms-windows .left-sidebar:hover > div,
+      .ms-windows .right-sidebar:hover > div {
+        overflow-y: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a id="nav-skipper" href="#site-header" class="inline-block m-1 sr-only" tabindex="1">Skip to main content</a>
+
+  <div class="body-wrap">
+
+<nav class="header-nav bb-thin" role="navigation" aria-label="Site navigation">
+  <div class="container-xxl flex flex-wrap flex-middle">
+    <div class="flex flex-middle flex-wrap gap-2">
+      <a id="site-title"  class="py-1 h3 t-bold flex flex-middle gap-tiny t-underline-hover-only" href="/">
+      <svg viewBox="0 0 340 180" height="28" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
+          <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
+        </svg>
+      Codebase 6
+      </a>
+      <span class="t-gray">version 6.0.0</span>
+    </div>
+    <div class="grow flex flex-end flex-wrap gap-2">
+      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
+    </div>
+</nav>
+  <div class="page-container">
+    <div class="left-sidebar">
+      <div class="sticky top py-3 px-2">
+<p class="t-uppercase t-loose">Docs</p>
+
+<ul class="pl-0 flex flex-column gap-tiny list-style-type-none links-underline-hover-only">
+  <li><a href="/" class="block bl-heavy p-1 bg-gray bg-100">Getting started</a></li>
+  <li><a href="/typography" class="block bl-heavy p-1 bg-gray bg-100">Typography</a></li>
+  <li><a href="/layouts" class="block bl-heavy p-1 bg-gray bg-100">Layouts</a></li>
+  <li><a href="/layouts-flex" class="block bl-heavy p-1 bg-gray bg-100">Layouts: Flexbox</a></li>
+  <li><a href="/layouts-grid" class="block bl-heavy p-1 bg-gray bg-100 b-blue t-bold">Layouts: Grid</a></li>
+  <li><a href="/decoration" class="block bl-heavy p-1 bg-gray bg-100">Decoration</a></li>
+  <li><a href="/forms" class="block bl-heavy p-1 bg-gray bg-100">Forms</a></li>
+  <li><a href="/colors" class="block bl-heavy p-1 bg-gray bg-100">Colors</a></li>
+  <li><a href="/components" class="block bl-heavy p-1 bg-gray bg-100">Components</a></li>
+</ul>      </div>
+    </div>
+    <div class="main-frame">
+      <aside class="right-sidebar lg:hidden-below">
+        <div class="sticky top py-3 px-2">
+          <p class="t-uppercase t-loose">On this page</p>
+          <nav id="page-toc" class="toc links-underline-hover-only" role="navigation" aria-label="Table of contents">
+        </div>
+      </aside>
+      <div class="main-pane">
+        <div class="w-md mx-auto">
+          <header id="article-title">
+            <h1 class="my-4 t-balance t-center">Codebase 6 Layouts: Grid</h1>
+          </header>
+          
+          <hr class="my-4">
+          
+          <main id="main-content">
+            
+<p>Normally in HTML, block elements span 100% of the available width and stack vertically, one under he other starting from the top of the viewport. <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS grid</a> styling enables blocks to be arranged and aligned according to a pre-defined grid.</p>
+
+<h2>The Codebase grid system</h2>
+
+<p>Let’s start with some basic concepts and terminology.</p>
+
+<p>A grid consists of vertical and horizontal lines with square or rectangular spaces in between. In web design, we call the lines <em>grid tracks</em> and the spaces <em>grid cells</em>. And the grid is not actually drawn on the browser screen – though it can be visualized in a browser’s <em>code inspector</em> (dev tools).</p>
+
+<p>Web designers place HTML elements (called <em>grid items</em> in this context) <em>on</em> the grid. The CSS Grid engine “snaps” the elements to the grid tracks, and you can design them to sit on one grid cell or to span multiple cells.</p>
+
+<p>Web browser screens can be any size from very small (phones) to very large (desktop or wall mounted displays). So, unlike with set grids paper-based poster or magazine page designs, and unlike with squared math or graph paper, CSS Grid can be <em>stretchy</em>, which is good for responsive layouts. Grid cells can have any width, dependant on the width of the browser screen, or dependant on the width of the Grid controlled area within a design. And grid cells can have any height, dependant on how much content (or, the height of the content) in an element that is places on the grid.</p>
+
+<p>Codebase 6’s <code>grid</code> system has utility classes for controlling up to four <em>column tracks</em> and four <em>row tracks</em>.</p>
+
+<p><em>Grid items</em> are immediate child elements of an element that has the <code>grid</code> CSS class. By default, grid items occupy one <em>grid cell</em> (the smallest rectangle). The Codebase grid system has CSS classes for:</p>
+
+<ul>
+  <li><strong>Controling tracks at <em>grid wrapper</em> level:</strong>
+    <ul>
+      <li><code>grid</code> initializes the CSS grid.</li>
+      <li><code>gap</code> (optional) adds vertical <em>and</em> horizontal whitespace along internal grid tracks.</li>
+    </ul>
+  <li><strong>Column control:</strong>
+    <ul>
+      <li><code>equal-*-cols</code> (optional) – specifies how many columns your layout has (up to six), where each column width is equalized. So, if you have two columns each will have width 50%; if you have 3 columns each will be 33.3...%; and so on. (If you have a <code>gap</code>, these column widths are automatically recalculated by the CSS Grid engine.)</li>
+      <li>Alternatively, simply spesifying which columns you want your content items to go into will set (up to 4) columns whose width will merely depend on how much content you have within each item.</li>
+    </ul>
+  </li>
+  <li><strong>Controling positioning and spanning at <em>per-grid-item</em> level:</strong>
+    <ul>
+      <li><a href="#controlling-grid-item-positioning-on-a-per-item-basis">Positioning</a>: <code>col-*</code> and <code>row-*</code> – for positioning each grid item over the grid cells.</li>
+      <li><a href="#spanning-multiple-columns-and%2For-rows">Spanning</a>: <code>cols-*-{y}</code> and <code>rows-*-{y}</code> – for handling column and/or row spanning.</li>
+    </ul>
+  </li>
+  <li><strong>Grid layouts at different media query breakpoints</strong>:
+    <ul>
+      <li>The Codebase grid system has five tiers of media query breakpoints, for creating <a href="#grid-layouts-at-different-media-query-breakpoints">different grid layouts for different sized devices</a>: (all), <code>xs</code>, <code>sm</code>, <code>md</code>, and <code>lg</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The <em>singular named</em> <code>col-</code> and <code>row-</code> classes are used to instruct the grid which grid cell you want your grid item to be placed on (up to 4 columns and/or 4 rows). The <em>plural named</em> <code>cols-</code> and <code>rows-</code> classes can be used to make grid items to span up to 4 columns and/or 4 rows.</p>
+
+<h2>The Codebase grid in practice</h2>
+
+<p>The <code>grid</code> class does not specify or predict where you will position or how you will span your grid items. It just supplies the style Grid to initialize your grid area. So far, your layout will still only be in rows. So, this is a grid, defaulting to one column wide and how ever many rows it requires to accommodate the grid items:</p>
+
+<div class="my-3 grid">
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+</div>
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Responsive grid</h3>
+
+<p>You can use the <code>xs:</code>, <code>sm:</code>, <code>md:</code>, and <code>lg:</code> prefixes to cause the grid to take effect at different media query width breakpoint widths. So, with the base <code>grid</code> class, there are 5 grid system tiers.</p>
+<div class="overflow-* mb-2">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Grid system wrapper</th>
+        <th>Effect</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>grid</code></td>
+        <td>Grid for all viewport widths</td>
+      </tr>
+      <tr>
+        <td><code>xs:grid</code></td>
+        <td>Grid from 512px width up</td>
+      </tr>
+      <tr>
+        <td><code>sm:grid</code></td>
+        <td>Grid from 768px width up</td>
+      </tr>
+      <tr>
+        <td><code>md:grid</code></td>
+        <td>Grid from 1024px width up</td>
+      </tr>
+      <tr>
+        <td><code>lg:grid</code></td>
+        <td>Grid from 1280px width up</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Below these breakpoints, the CSS grid layout will not take effect.</p>
+
+<h3>Grid item wrapping</h3>
+
+<p>Grid items will <em>automatically wrap</em> onto a new row if your layout requires it. (This is unlike with flexbox, where you need to actually command a flexbox to wrap using a style rule.)</p>
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div class="col-1"&gt;&lt;/div&gt;
+  &lt;div class="col-2"&gt;&lt;/div&gt;
+  &lt;div class="col-3"&gt;&lt;/div&gt;
+  &lt;div class="col-1"&gt;&lt;/div&gt;
+  &lt;div class="col-2"&gt;&lt;/div&gt;
+  &lt;div class="col-3"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="my-3 grid">
+  <div class="col-1 b-thin p-1 bg-green bg-200">col-1</div>
+  <div class="col-2 b-thin p-1 bg-green bg-200">col-2</div>
+  <div class="col-3 b-thin p-1 bg-green bg-200">col-3</div>
+  <div class="col-1 b-thin p-1 bg-green bg-200">col-1</div>
+  <div class="col-2 b-thin p-1 bg-green bg-200">col-2</div>
+  <div class="col-3 b-thin p-1 bg-green bg-200">col-3</div>
+</div>
+
+<p>When you have wrapping rows like this, you actually don’t need to add <code>col-</code> classes to grid items that drop to the next row (and third row, etc.). The CSS Grid engine will figure out what you want. After you have completed your required number of columns on your first row, CSS grid will automatically position the subsequent row’s grid items consecutively in the same columns as you specified in your first row.</p>
+
+<p>The <code>col-</code> classes on subsequent rows are redundant but harmless – but you can include them if it helps you remember what you are doing, and to explain your intention to other designers in your collaboration.</p>
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div class="col-1"&gt;&lt;/div&gt;
+  &lt;div class="col-2"&gt;&lt;/div&gt;
+  &lt;div class="col-3"&gt;&lt;/div&gt;
+  &lt;div class="col-4"&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="my-3 grid">
+  <div class="col-1 b-thin p-1 bg-green bg-200">col-1</div>
+  <div class="col-2 b-thin p-1 bg-green bg-200">col-2</div>
+  <div class="col-3 b-thin p-1 bg-green bg-200">col-3</div>
+  <div class="col-4 b-thin p-1 bg-green bg-200">col-4</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+</div>
+
+<h3>Equal-width or auto-width columns</h3>
+
+<p><code>grid equal-*-cols</code> specify how many columns your grid will have <em>and</em>. So, do you want equal-width columns, or not?</p>
+
+<ul>
+  <li>Use <code>grid equal-*-cols</code> if you are setting up a traditional “constrained columnar width” layout or a gallery of images or videos.</li>
+  <li>Alternatively, simply specify which of the up to 4 column you want your grid items to be placed in. This will generate the columns without giving them equal widths. And then the widths will depend on the amount of content that you’ve got in each grid item.</li>
+</ul>
+
+<p>Example <code>grid equal-3-cols</code>:</p>
+
+<pre><code>&lt;div class="grid equal-3-cols"&gt;
+  &lt;div&gt;Lorem&lt;/div&gt;
+  &lt;div&gt;ipsum dolor sit&lt;/div&gt;
+  &lt;div&gt;amet consectetur adipisicing elit.&lt;/div&gt;
+  &lt;div&gt;Explicabo enim velit veniam reiciendis&lt;/div&gt;
+  &lt;div&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim velit veniam reiciendis, vel inventore sequi quasi fugit sunt aliquam! Incidunt eum alias illo ea laudantium animi possimus amet sunt?&lt;/div&gt;
+  &lt;div&gt;Lorem ipsum&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="my-3 grid equal-3-cols">
+  <div class="b-thin p-1 bg-green bg-200">Lorem</div>
+  <div class="b-thin p-1 bg-green bg-200">ipsum dolor sit</div>
+  <div class="b-thin p-1 bg-green bg-200">amet consectetur adipisicing elit.</div>
+  <div class="b-thin p-1 bg-green bg-200">Explicabo enim velit veniam reiciendis</div>
+  <div class="b-thin p-1 bg-green bg-200">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim velit veniam reiciendis, vel inventore sequi quasi fugit sunt aliquam! Incidunt eum alias illo ea laudantium animi possimus amet sunt?</div>
+  <div class="b-thin p-1 bg-green bg-200">fugit sunt aliquam!</div>
+</div>
+
+<p>A similar example but without <code>equal-3-cols</code>. This time the number of columns is specified by putting <code>col-* </code> on the first three columns:
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div class="col-1"&gt;Lorem&lt;/div&gt;
+  &lt;div class="col-2"&gt;ipsum dolor sit&lt;/div&gt;
+  &lt;div class="col-3"&gt;amet consectetur adipisicing elit.&lt;/div&gt;
+  &lt;div&gt;Explicabo enim velit veniam reiciendis&lt;/div&gt;
+  &lt;div&gt;Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim velit veniam reiciendis, vel inventore sequi quasi fugit sunt aliquam! Incidunt eum alias illo ea laudantium animi possimus amet sunt?&lt;/div&gt;
+  &lt;div&gt;Lorem ipsum&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="my-3 grid">
+  <div class="b-thin p-1 col-1 bg-green bg-200">Lorem</div>
+  <div class="b-thin p-1 col-2 bg-green bg-200">ipsum dolor sit</div>
+  <div class="b-thin p-1 col-3 bg-green bg-200">amet consectetur adipisicing elit.</div>
+  <div class="b-thin p-1 bg-green bg-200">Explicabo enim velit veniam reiciendis</div>
+  <div class="b-thin p-1 bg-green bg-200">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo enim velit veniam reiciendis, vel inventore sequi quasi fugit sunt aliquam! Incidunt eum alias illo ea laudantium animi possimus amet sunt?</div>
+  <div class="b-thin p-1 bg-green bg-200">Lorem ipsum</div>
+</div>
+
+<h2>Adding gaps</h2>
+
+<p><code>gap-*</code> — adds a <em>horizontal and vertical</em> gap (same as for <a href="/layouts-flex">flexbox layouts</a>):</p>
+
+<ul>
+  <li><code>gap-tiny</code> — using <code>--s-tiny</code></li>
+  <li><code>gap-1</code> — using <code>--s-1</code></li>
+  <li><code>gap-2</code> — using <code>--s-2</code></li>
+  <li><code>gap-3</code> — using <code>--s-3</code></li>
+  <li><code>gap-4</code> — using <code>--s-4</code></li>
+</ul>
+
+<p>Gap examples:</p>
+
+<p><code>grid equal-3-cols gap-tiny</code>:</p>
+
+<div class="my-3 grid equal-3-cols gap-tiny">
+  <div class="rows-1-2 b-thin p-1 bg-green bg-200">rows-1-2</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+</div>
+
+<p><code>grid equal-3-cols gap-2</code>:</p>
+
+<div class="my-3 grid equal-3-cols gap-2">
+  <div class="rows-1-2 b-thin p-1 bg-green bg-200">rows-1-2</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+</div>
+
+<h2>Positioning and spanning of grid items</h2>
+
+<ul>
+<li><strong>Positioning</strong> of grid items will be either the default (depends on you specifying the number of columns using <code>equal-*-cols</code>), or using the <em>singular</em> <code>col-*</code> or <code>row-*</code> classes. <code>x</code> is either 1, 2, 3, or 4.</li>
+<li><strong>Spanning</strong> grid items is done by <em>plural</em> <code>cols-*-{y}</code> or <code>rows-*-{y}</code> classes. The <code>x</code> specifies which column the grid item <strong>starts from</strong>, and the <code>y</code> specifies how how far the grid item <strong>spans to</strong>.</li>
+<li><strong>Dense packing</strong> of grid items may sometimes be required, where you are specifying grid item positioing and spanning, and you don't want to leave empty cells.</li>
+</ul>
+
+<p>Not exemplified below: you can even overlap grid items by specifying that they occupy the <em>same</em> grid cell (whether entirely or in part). So, it’s a three dimensional grid system!</p>
+
+<h3>Grid item positioning</h3>
+
+<p>The following unlikely example will show you how positioning works.</p>
+
+<p>You can use <code>col-</code> and or <code>row-</code> classes to display grid items in different positions, and even overlap them. However, with this added complexity, you will need to control both columns <em>and</em> rows (be pedantic), so that CSS grid layout can figure out what you wanting to do.</p>
+
+<p>Here, grid items are rearranged into different columns. But I want still want them to be all in one row, therefore I must specify <code>row-1</code> on each item, so that the CSS Grid engine gets it right.</p>
+
+<div class="my-3 grid">
+  <div class="col-2 row-1 b-thin p-1 bg-green bg-200">First item</div>
+  <div class="col-4 row-1 b-thin p-1 bg-green bg-200">Second item</div>
+  <div class="col-3 row-1 b-thin p-1 bg-green bg-200">Third item</div>
+  <div class="col-1 row-1 b-thin p-1 bg-green bg-200">Fourth item</div>
+</div>
+
+<pre><code>&lt;div class="grid"&gt;
+  &lt;div class="col-2 row-1"&gt;First item&lt;/div&gt;
+  &lt;div class="col-4 row-1"&gt;Second item&lt;/div&gt;
+  &lt;div class="col-3 row-1"&gt;Third item&lt;/div&gt;
+  &lt;div class="col-1 row-1"&gt;Fourth item&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Grid item spanning</h3>
+
+<p>By default, one grid item sits on one grid cell – the grid item spans one column track wide and one row track high. But you can make grid items span up to 6 columns and/or up to 6 rows using the <em>plural named</em> classes <code>cols-*-{y}</code> and/or <code>rows-*-{y}</code>.</p>
+<p><strong>Note:</strong> grid items can occupy grid cells to form any square or recangular shape, but cannot form e.g. irregular “L” shape.</p>
+<p>Thinking about one row: the first grid item can span up to six columns (columns 1 to 6). The second grid item can span up to five columns (columns 2 to 6). And so on. And it’s similar for spanning rows.</p>
+<p>Example: the second column spans three grid cells, from 2 through 4.</p>
+<pre><code>&lt;div class="grid equal-4-cols"&gt;
+  &lt;div class="col-1"&gt; ... &lt;/div&gt;
+  &lt;div class="cols-2-4"&gt; ... &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="my-3 grid equal-4-cols">
+  <div class="col-1 b-thin p-1 bg-green bg-200">col-1</div>
+  <div class="cols-2-4 b-thin p-1 bg-green bg-200">cols-2-4</div>
+</div>
+
+<p>Spanning multiple rows works the same way.</p>
+
+<pre><code>&lt;div class="grid equal-3-cols"&gt;
+  &lt;div class="col-1 rows-1-3"&gt; ... &lt;/div&gt;
+  &lt;div class="col-2"&gt; ... &lt;/div&gt;
+  &lt;div class="col-3"&gt; ... &lt;/div&gt;
+  &lt;div class=""&gt; ... &lt;/div&gt;
+  &lt;div class=""&gt; ... &lt;/div&gt;
+  &lt;div class=""&gt; ... &lt;/div&gt;
+  &lt;div class=""&gt; ... &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="my-3 grid equal-3-cols">
+  <div class="col-1 rows-1-3 b-thin p-1 bg-green bg-200">col-1 rows-1-3</div>
+  <div class="col-2 b-thin p-1 bg-green bg-200">col-2</div>
+  <div class="col-3 b-thin p-1 bg-green bg-200">col-3</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+  <div class="b-thin p-1 bg-green bg-200">&nbsp;</div>
+</div>
+
+<h3>Grid item dense packing</h3>
+
+<p>The <code>grid-dense</code> utility class has been added, to provide an easy way to pack grid cells by moving later items to fill up any empty cells that have been created earlier in the grid layout. <code>grid-dense</code> reorders the <em>appearance</em> of grid items. using <code>grid-auto-flow: dense;</code>.</p>
+
+<p>Notes on <code>grid-dense</code>:</p>
+
+<ol>
+  <li>If you use <code>grid-dense</code>, do not also try to control grid rows.</li>
+  <li>Do not use <code>grid-dense</code> where the order of grid items is essential — i.e. use it only where it does not cause a problem for accessibility.</li>
+</ol>
+
+<p>Example grid with empty cells:</p>
+
+<div class="my-3 grid sm:equal-4-cols">
+  <div><div class="b-thin p-1 bg-green bg-200">Item 1</div></div>
+  <div class="sm:cols-1-2"><div class="b-thin p-1 bg-green bg-200">Item 2</div></div>
+  <div class="sm:cols-2-4"><div class="b-thin p-1 bg-green bg-200">Item 3</div></div>
+  <div class="sm:col-4"><div class="b-thin p-1 bg-green bg-200">Item 4</div></div>
+  <div class="sm:col-3"><div class="b-thin p-1 bg-green bg-200">Item 5</div></div>
+</div>
+
+<p>The same example grid with <code>grid-dense</code> added to the grid wrapper:</p>
+
+<div class="my-3 grid grid-dense sm:equal-4-cols">
+  <div><div class="b-thin p-1 bg-green bg-200">Item 1</div></div>
+  <div class="sm:cols-1-2"><div class="b-thin p-1 bg-green bg-200">Item 2</div></div>
+  <div class="sm:cols-2-4"><div class="b-thin p-1 bg-green bg-200">Item 3</div></div>
+  <div class="sm:col-4"><div class="b-thin p-1 bg-green bg-200">Item 4</div></div>
+  <div class="sm:col-3"><div class="b-thin p-1 bg-green bg-200">Item 5</div></div>
+</div>
+
+<p>Same again, with a gap:</p>
+
+<div class="my-3 grid grid-dense equal-4-cols gap-2">
+  <div><div class="b-thin p-1 bg-green bg-200">Item 1</div></div>
+  <div class="cols-1-2"><div class="b-thin p-1 bg-green bg-200">Item 2</div></div>
+  <div class="cols-2-4"><div class="b-thin p-1 bg-green bg-200">Item 3</div></div>
+  <div class="col-4"><div class="b-thin p-1 bg-green bg-200">Item 4</div></div>
+  <div class="col-3"><div class="b-thin p-1 bg-green bg-200">Item 5</div></div>
+</div>
+
+<pre><code>&lt;div class="grid grid-dense equal-4-cols gap-2"&gt;
+  &lt;div&gt;Item 1&lt;/div&gt;
+  &lt;div class="cols-1-2"&gt;Item 2&lt;/div&gt;
+  &lt;div class="cols-2-4"&gt;Item 3&lt;/div&gt;
+  &lt;div class="col-4"&gt;Item 4&lt;/div&gt;
+  &lt;div class="col-3"&gt;Item 5&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h2>Grid layouts at different media query breakpoints</h2>
+<p>The <code>grid</code> class merely sets <code>display: grid</code>, without defining columns or rows or anything. Everything is controlled by <code>gap</code>, <code>equal-</code>, <code>col-</code>, <code>cols-</code>, <code>row-</code> and <code>rows-</code> classes.</p>
+
+<p>Besides the exemplified classes above, each of these grid control classes has four more media query breakpoint tiers in Codebase (<code>xs:</code>, <code>sm:</code>, <code>md:</code>, and <code>lg:</code>).</p>
+
+<p>There's alot you can do simply by multiple tiers of <em>grid columns</em> control. Here’s a simple example: a “gallery” layout with 6 items, displaying as a single column on phones, 2 columns on tablets in portait orientation, and 3 columns on tablets in landscape orientation, and up:</p>
+
+<div class="my-3 grid sm:row-gap md:col-gap equal-3-cols">
+  <div class="b-thin p-1 bg-green bg-200"> ... </div>
+  <div class="b-thin p-1 bg-green bg-200"> ... </div>
+  <div class="b-thin p-1 bg-green bg-200"> ... </div>
+  <div class="b-thin p-1 bg-green bg-200"> ... </div>
+  <div class="b-thin p-1 bg-green bg-200"> ... </div>
+  <div class="b-thin p-1 bg-green bg-200"> ... </div>
+</div>
+
+<pre><code>&lt;div class="grid sm:row-gap md:col-gap equal-3-cols"&gt;
+  &lt;div&gt; ... &lt;/div&gt;
+  &lt;div&gt; ... &lt;/div&gt;
+  &lt;div&gt; ... &lt;/div&gt;
+  &lt;div&gt; ... &lt;/div&gt;
+  &lt;div&gt; ... &lt;/div&gt;
+  &lt;div&gt; ... &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>With control of up to 4 columns and control of up to 4 rows over 4 media breakpoints tiers (plus the base tier), <em>this gives you a lot of layout versatility</em>.</p>
+
+<div class="mt-1 mb-2 grid sm:equal-4-cols gap-2">
+  <div class="b-thin p-1 bg-green bg-200"> ... </div>
+  <div class="sm:cols-2-3 b-thin p-1 bg-green bg-200">sm:cols-2-3</div>
+  <div class="sm:cols-1-3 b-thin p-1 bg-green bg-200">sm:cols-1-3</div>
+  <div class="sm:col-4 sm:row-1 sm:rows-1-2 b-thin p-1 bg-green bg-200">sm:col-4 sm:row-1 sm:rows-1-2</div>
+</div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<footer id="site-footer" class="bt-thin">
+  <div class="my-3 container-sm t-center">
+    <div class="mb-1">
+      <a class="flex flex-column flex-middle gap-1 h3 t-bold t-underline-hover-only" href="/">
+        <svg viewBox="0 0 340 180" height="48" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
+          <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
+        </svg>
+        <span>Codebase 6</span>
+      </a>
+    </div>
+    Codebase 6 &copy; 
+    <script type="text/javascript">
+      let currentYear = new Date().getFullYear();
+      document.write(currentYear);
+    </script> 
+    by <a href="https://github.com/SimonPadbury">Simon Padbury</a>. All rights reserved.<br>
+    <small>Codebase 6 and these docs are built on <a href="https://github.com/SimonPadbury/minjucks" target="_blank">Minjucks</a> static site generator.</small>
+  </div>
+</footer>
+  </div>
+
+  <script src="/js/scripts.js?v=6.0.0" defer></script>
+
+</body>
+</html>

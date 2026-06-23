@@ -1,0 +1,86 @@
+/* CSS reset and base styles */
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  block-size: 100%;
+  scrollbar-gutter: stable;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--bgc-body);
+  color: var(--tc-base);
+  font-family: var(--t-sans);
+  font-size: var(--t-base-fs);
+  font-variant-numeric: lining-nums;
+  line-height: var(--t-lh);
+  min-height: 100dvh;
+  min-width: 100vw;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+canvas,
+img,
+picture,
+video {
+  block-size: auto;
+  display: block;
+  max-inline-size: 100%;
+}
+
+svg {
+  max-inline-size: 100%;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset,
+iframe {
+  border: 0;
+}
+
+summary {
+  cursor: pointer;
+}
+
+abbr[title] {
+  cursor: help;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}

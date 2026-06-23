@@ -1,0 +1,101 @@
+:root {
+  /* Typography */
+  --t-sans: ui-sans-serif, sans-serif;
+  --t-serif: ui-serif, serif;
+  --t-mono: ui-monospace, monospace;
+  --t-mb: 1rem;
+  --t-lh: 1.5;
+  --t-base-fs: 100%;
+  --t-sm: 0.875em;
+  --t-md: var(--t-base-fs);
+  --t-lg: 1.375em;
+  --t-long-read: clamp(1em, 0.75em + 0.7813vw, 1.25em);
+  --t-comfort: clamp(1em, 0.5833rem + 1.3021vw, 1.625em);
+  --t-display: clamp(1em, 0.3333em + 2.0833vw, 2em);
+  --t-thin: 200;
+  --t-normal: 400;
+  --t-semibold: 600;
+  --t-bold: 700;
+  --t-heavy: 900;
+  --t-loose: 0.05ch;
+  --t-tight: -0.05ch;
+  --t-btn: 400;
+  --t-column-width: 17.5rem;
+  --h1: 2.5em;
+  --h2: 1.875em;
+  --h3: 1.5em;
+  --h4: 1.25em;
+  --h5: 1.125em;
+  --h6: 1em;
+  --hd-ff: var(--t-sans);
+  --hd-fw: var(--t-semibold);
+  --hd-lh: calc(1em + 0.5rem);
+  --hd-m-block: 2rem 1rem;
+
+  /* Forms */
+  --y-form-sm: 1.75rem;
+  --y-form: 2.5rem;
+  --y-form-lg: 3.25rem;
+
+  /* Dimensions and spacing */
+  --w-xxs: 256px;
+  --w-xs: 512px;
+  --w-sm: 768px;
+  --w-md: 1024px;
+  --w-lg: 1280px;
+  --w-xl: 1536px;
+  --w-xxl: 1792px;
+  --s-container-x: 32px;
+  --s-tiny: 0.25rem;
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: clamp(1.5rem, 0.5rem + 1.25vw, 2rem);
+  --s-4: clamp(2rem, 1rem + 2.5vw, 3rem);
+  --p-cell: 0.5rem 1rem;
+  --b-thin: 1px solid var(--bc-detail);
+  --b-thick: 4px solid var(--bc-detail);
+  --b-heavy: 8px solid var(--bc-detail);
+  --icon: 1.25rem;
+  --square-sm: 2rem;
+  --square: 3rem;
+  --square-lg: 4.25rem;
+  --square-featured: clamp(4.25rem, 1.25rem + 9.375vw, 7.25rem);
+
+  /* Colors */
+  --blue: #6290fc;
+  --green: #86b522;
+  --amber: #ffd105;
+  --red: #ff614c;
+  --purple: #9400d3;
+  --teal: #0080a2;
+  --gray: #9a9fb1;
+  --info: var(--blue);
+  --success: var(--green);
+  --warning: var(--amber);
+  --danger: var(--red);
+  --primary: var(--purple);
+  --secondary: var(--teal);
+  --tertiary: var(--gray);
+  --l100: 98%;
+  --l200: 86%;
+  --l300: 74%;
+  --l400: 62%;
+  --l500: 50%;
+  --l600: 42%;
+  --l700: 34%;
+  --l800: 26%;
+  --l900: 18%;
+  --l1000: 10%;
+
+  /* Theme */
+  --bgc-body: #fff;
+  --tc-base: oklch(from var(--gray) var(--l900) c h);
+  --tc-link: oklch(from var(--blue) var(--l500) c h);
+  --tc-link-hover: oklch(from var(--blue) var(--l700) c h);
+  --bgc-ui: var(--gray);
+  --tc-form: var(--tc-base);
+  --bgc-form: var(--bgc-body);
+  --bgc-code: oklch(from var(--blue) var(--l100) c h);
+  --bc-detail: oklch(from var(--gray) l c h / 0.35);
+  --bg-glass-blur: blur(4px);
+}

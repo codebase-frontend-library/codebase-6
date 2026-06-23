@@ -1,0 +1,303 @@
+---
+title: "Codebase 6 Layouts: Flexbox"
+layout: "_includes/layout.njk"
+---
+
+<p>Normally in HTML, block elements span 100% of the available width and stack vertically, one under he other starting from the top of the browser window (known as the <em>viewport</em>). <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS flexbox</a> styling enables blocks to be arranged and aligned horizontally or vertically, with each block width being controlled or made to shrink according to the content inside it.
+
+<p>Codebase’s <code>flex</code> layout system uses flexbox, enabling you to organize wrapped groups of elements in a row (e.g. for a menubar, or a media object) or in a column (e.g. for a card).</p>
+
+<h2>Notes on <code>flex</code></h2>
+
+<ol>
+  <li>Besides <code>flex</code> (takes effect at all screen widths), there are also responsive prefix flex wrappers: <code>xs:flex</code>, <code>sm:flex</code>, <code>md:flex</code> and <code>lg:flex</code>. The flexbox effect for these responsive wrappers will take effect at extra-small, small, medium or large viewport widths.
+    <div class="overflow-x my-1">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Flex system wrapper</th>
+          <th>Effect</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>flex</code></td>
+          <td>Flexbox for all viewport widths</td>
+        </tr>
+        <tr>
+          <td><code>xs:flex</code></td>
+          <td>Flexbox from 568px up</td>
+        </tr>
+        <tr>
+          <td><code>sm:flex</code></td>
+          <td>Flexbox from 768px up</td>
+        </tr>
+        <tr>
+          <td><code>md:flex</code></td>
+          <td>Flexbox from 1024px up</td>
+        </tr>
+        <tr>
+          <td><code>lg:flex</code></td>
+          <td>Flexbox from 1280px up</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    Below these breakpoints the child block element layout will be displayed the default way: all stacked in a single column with 100% width.</li>
+  <li>The flexbox modifier classes documented below (<code>gap-3</code>, <code>flex-wrap</code>, etc.) will all just work as expected with these responsive prefixed flex wrappers – they will only take effect above the specified (lowest) breakpoint.</li>
+  <li>All flexbox system wrappers affect their <em>immediate child elements</em> (i.e. flex-items).</li>
+  <li><code>flex</code> is not used for a pseudo grid system. Instead, Codebase has a <a href="/layouts-grid">layout grid</a> system</em>.</li>
+  <li>By default, flex sytems do not <em>wrap</em> their content onto a new row if there is not enough space available. So, if you require wrapping, use <code>flex flex-wrap</code>.</li>
+  <li>If required in your design, you can override a flexbox at a wider breakpoint the element so that it is back to being a full-width block, using a responsive <a href="/codebase-5/docs/3-layout-utilities/blocks">block</a> utility.</li>
+  <li>In addition to the <code>flex</code> setup class, you can also override eah of the flex modifier classes at the <code>xs</code>, <code>sm</code>, <code>md</code>, and <code>lg</code> breakpoint widths — see <a href="#responsive-flex-modifier-tiers">responsive flex modifier tiers</a>.</li>
+</ol>
+
+<h2>Setting up a <code>flex</code></h2>
+
+<p>All you need is <code>flex</code> on a wrapper. Now you have a starting point for a toolbar or menubar.</p>
+
+<div class="my-3 flex">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+  <div class="b-thin p-1 bg-green bg-200">Four</div>
+</div>
+
+<pre><code>&lt;div class="flex"&gt;
+  &lt;div&gt;One&lt;/div&gt;
+  &lt;div&gt;Two&lt;/div&gt;
+  &lt;div&gt;Three&lt;/div&gt;
+  &lt;div&gt;Four&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Columnar flexbox</h3>
+
+<p>You can also turn the flexbox mechanism thorugh 90° using <code>flex flex-column</code>. Flex columns are useful for setting up cards and hero sections.</p>
+
+<h2>Stretching flex items</h2>
+
+<p>There are 3 ways that you can expand flex items horizontally to “fill” a row.</p>
+
+<h3>(1.) Growing equally</h3>
+
+<p>If you want your flex items to all stretch equally, add <code>flex-grow-equal</code> to the <code>flex</code> wrapper:</p>
+
+<div class="my-3 flex flex-grow-equal">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+  <div class="b-thin p-1 bg-green bg-200">Four</div>
+</div>
+
+<pre><code>&lt;div class="flex flex-grow-equal"&gt;
+  &lt;div&gt;One&lt;/div&gt;
+  &lt;div&gt;Two&lt;/div&gt;
+  &lt;div&gt;Three&lt;/div&gt;
+  &lt;div&gt;Four&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p><code>flex-grow-equal</code> may be all you need if you require a number of equal width columns (e.g. for a “two up” or “three up”). You can easily use a breakpoint width prefix on the wrapper (e.g. use<code>md:flex</code> instead of <code>flex</code>), so that your flexbox takes effect only above that viewport width.</p>
+
+<h3>(2.) Growing unequally</h3>
+
+<p>If you want to make the flex items stretch unequally, according to their content, then add <code>flex-grow-auto</code> to the <code>flex</code> wrapper:</p>
+
+<p><code>flex flex-grow-auto </code>:</p>
+
+<div class="my-3 flex flex-grow-auto">
+  <div class="b-thin p-1 bg-green bg-200">First flex-item</div>
+  <div class="b-thin p-1 bg-green bg-200">Another flex-item</div>
+  <div class="b-thin p-1 bg-green bg-200">And a third</div>
+  <div class="b-thin p-1 bg-green bg-200">Last flex-item in this flexbox set</div>
+</div>
+
+<h3>(3.) Growing individual flex items</h3>
+
+<p>Adding the flexbox <code>grow</code> utility to a flex item will expand it to occupy the available space. <code>grow</code> only take effect inside of a <code>flex</code> wrapper (and only then if above your specified breakpoint width, whether <code>-xs</code>, <code>-sm</code>, <code>-md</code> or <code>-lg</code>).</p>
+
+<p>Examples of <code>grow</code>:</p>
+
+<div class="my-3 flex">
+  <div class="grow b-thin p-1 bg-green bg-200">grow</div>
+  <div class="b-thin p-1 bg-green bg-200 pr-6">x</div>
+</div>
+<div class="my-3 flex">
+  <div class="b-thin p-1 bg-green bg-200 pr-6">x</div>
+  <div class="grow b-thin p-1 bg-green bg-200">grow</div>
+  <div class="b-thin p-1 bg-green bg-200 pr-6">x</div>
+  <div class="b-thin p-1 bg-green bg-200 pr-6">x</div>
+</div>
+
+<pre><code>&lt;div class="flex"&gt;
+  &lt;div class="grow"&gt;grow&lt;/div&gt;
+  &lt;div&gt;x&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="flex"&gt;
+  &lt;div&gt;x&lt;/div&gt;
+  &lt;div&gt;x&lt;/div&gt;
+  &lt;div class="grow"&gt;grow&lt;/div&gt;
+  &lt;div&gt;x&lt;/div&gt;
+  &lt;div&gt;x&lt;/div&gt;
+  &lt;div&gt;x&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>With <code>flex flex-column</code>:</p>
+
+<div class="my-3 flex flex-column" style="height: 250px">
+  <div class="b-thin p-1 bg-green bg-200">x</div>
+  <div class="grow b-thin p-1 bg-green bg-200">grow</div>
+</div>
+
+<pre><code>&lt;div class="flex flex-column" style="height: 250px"&gt;
+  &lt;div&gt;x&lt;/div&gt;
+  &lt;div class="grow&gt;grow&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h2>Wrapping flex items</h2>
+
+<p>By default, <code>flex</code> does not cause flex items to wrap. If you require wrapping, add <code>flex-wrap</code> to the flexbox wrapper.</p>
+
+<p>To see the effect <code>flex-wrap</code>, make your viewport narrower intil the last item on the example below wraps to a new row. Compage this with the previous example to see the difference.</p>
+
+<div class="my-3 flex flex-grow-auto flex-wrap">
+  <div class="b-thin p-1 bg-green bg-200">First flex-item</div>
+  <div class="b-thin p-1 bg-green bg-200">Another flex-item</div>
+  <div class="b-thin p-1 bg-green bg-200">And a third</div>
+  <div class="b-thin p-1 bg-green bg-200">Fourth flex-item in this flexbox set</div>
+  <div class="b-thin p-1 bg-green bg-200">Here’s another item</div>
+  <div class="b-thin p-1 bg-green bg-200">We’re not finished yet</div>
+  <div class="b-thin p-1 bg-green bg-200">There’s more to come</div>
+  <div class="b-thin p-1 bg-green bg-200">Still not finished</div>
+  <div class="b-thin p-1 bg-green bg-200">What, you want more?</div>
+  <div class="b-thin p-1 bg-green bg-200">Really?</div>
+  <div class="b-thin p-1 bg-green bg-200">Finally, the last flex-item</div>
+</div>
+
+<h2>Adding gaps between flex items</h2>
+
+<p>There are two ways to add gaps in <code>flex</code> sets.</p>
+
+<h3>(1.) Flexbox gaps using <code>gap-*</code></h3>
+
+<p><code>gap-*</code> — adds a horizontal gap btween flex items in a row, and the same gap between rows if there’s wrapping.</p>
+
+<ul>
+  <li><code>gap-tiny</code> — using <code>--s-tiny</code></li>
+  <li><code>gap-1</code> — using <code>--s-1</code></li>
+  <li><code>gap-2</code> — using <code>--s-2</code></li>
+  <li><code>gap-3</code> — using <code>--s-3</code></li>
+  <li><code>gap-4</code> — using <code>--s-4</code></li>
+</ul>
+
+<p>E.g. <code>flex gap-2</code>:</p>
+
+<div class="my-3 flex gap-2">
+  <div class="b-thin p-cell bg-green bg-200">One</div>
+  <div class="b-thin p-cell bg-green bg-200">Two</div>
+  <div class="b-thin p-cell bg-green bg-200">Three</div>
+  <div class="b-thin p-cell bg-green bg-200">Four</div>
+</div>
+
+<pre><code>&lt;div class="flex gap-2"&gt;
+  &lt;div&gt;One&lt;/div&gt;
+  &lt;div&gt;Two&lt;/div&gt;
+  &lt;div&gt;Three&lt;/div&gt;
+  &lt;div&gt;Four&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p>Notes on <code>gap-*</code>:</p>
+
+<ol>
+  <li><code>gap-*</code> is also used in <a href="/layouts-grid">grid layouts</a>.</li>
+  <li><code>flex</code> and <code>grid</code> gaps have the same spacing CSS variables as <a href="/decoration">decoration</a> margins and paddings.</li>
+</ol>
+
+<h3>(2.) Flexbox spacing</h3>
+
+<p><code>flex flex-space-between</code>:</p>
+
+<div class="my-3 flex flex-space-between b-thin">
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+</div>
+
+<p><code>flex flex-space-around</code>:</p>
+
+<div class="my-3 flex flex-space-around b-thin">
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+  <div class="b-thin p-1 bg-green bg-200">Item</div>
+</div>
+
+<h2>Alignment of flex items</h2>
+
+<h3>Horizontal alignment</h3>
+
+<p><code>flex flex-start</code> / <code>flex flex-center</code> / <code>flex flex-end</code>:</p>
+
+<div class="my-3 flex flex-start b-thin">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+</div>
+
+<div class="my-3 flex flex-center b-thin">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+</div>
+
+<div class="my-3 flex flex-end b-thin">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+</div>
+
+<h3>Vertical alignment</h3>
+
+<p><code>flex flex-top</code> / <code>flex flex-middle</code> / <code>flex flex-bottom</code>:</p>
+
+<div class="my-3 flex flex-top b-thin" style="height: 150px">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+</div>
+
+<div class="my-3 flex flex-middle b-thin" style="height: 150px">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+</div>
+
+<div class="my-3 flex flex-bottom b-thin" style="height: 150px">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+</div>
+
+<p><code>flex flex-center flex-middle</code>:</p>
+
+<div class="my-3 flex flex-center flex-middle b-thin" style="height: 150px">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+</div>
+
+
+<p>Same as above but with <code>flex-column</code>:</p>
+
+<p><code>flex flex-column flex-center flex-middle</code>:</p>
+
+<div class="my-3 flex flex-column flex-center flex-middle b-thin" style="height: 150px">
+  <div class="b-thin p-1 bg-green bg-200">One</div>
+  <div class="b-thin p-1 bg-green bg-200">Two</div>
+  <div class="b-thin p-1 bg-green bg-200">Three</div>
+</div>
+
+<p>Alternatively, use <code>place-center</code> — see <a href="/layouts/#positions">layout positioning</a>.

@@ -1,0 +1,17 @@
+:focus-visible {
+  box-shadow: 0 0 0 0.125rem #fff;
+  outline: 0.125rem solid -webkit-focus-ring-color;
+  outline-offset: 0.125rem;
+  z-index: 1;
+}
+
+.sr-only:not(:focus):not(:active),
+.visually-hidden:not(:focus):not(:active) {
+  height: 1px;
+  position: absolute;
+  width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}

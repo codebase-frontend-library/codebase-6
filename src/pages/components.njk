@@ -1,0 +1,87 @@
+---
+title: "Codebase 6 Components"
+layout: "_includes/layout.njk"
+---
+
+<p>
+  There are only a few things in Codebase that can be categoriased as components. Most other things can be styles using Codebase utility classes. 
+</p>
+
+<h2>Badges</h2>
+
+<p>
+  Badges in Codebase are circular indicators that can be used to display a number or status. They are often used in conjunction with buttons or links to indicate notifications or counts.
+</p>
+
+<p>Use the <code>badge</code> class on a SPAN <span class="badge">1</span> or a SUPERSCRIPT<sup class="badge">2</sup></p>
+
+<h2>Labels</h2>
+
+<p>Labels in Codebase are used to highlight or categorize content. They can be used to indicate status, categories, or other important information.</p>
+
+<p>Use the <code>label</code> class on a SPAN or LABEL <span class="label">Label</span></p>
+
+<h2>Buttons</h2>
+
+<p>
+  Buttons in Codebase are styled using utility classes. You can create buttons with different sizes, colors, and states by applying the appropriate classes.
+</p>
+
+<p>Use the <code>btn</code> class on an ANCHOR <a href="#" class="btn">Button</a>, and it will be styled as a button. Buttons have a hover state that has a darker background.</p>
+
+<h3>Button Sizes</h3>
+
+<p>Buttons can be sized using the <code>btn-sm</code> and <code>btn-lg</code> classes. The default button size is medium.</p>
+
+<p><a href="#" class="btn btn-sm">Small Button</a>
+<a href="#" class="btn">Medium Button</a>
+<a href="#" class="btn btn-lg">Large Button</a>
+
+<p>If you want the text to be bigger to, there are corresponding text size utilities.</p>
+
+<p><a href="#" class="btn btn-sm t-sm">Small Button</a>
+<a href="#" class="btn">Medium Button</a>
+<a href="#" class="btn btn-lg t-lg">Large Button</a>
+
+<pre><code>&lt;a href="#" class="btn btn-sm t-sm"&gt;Small Button&lt;/a&gt;
+&lt;a href="#" class="btn"&gt;Medium Button&lt;/a&gt;
+&lt;a href="#" class="btn btn-lg t-lg"&gt;Large Button&lt;/a&gt;</code></pre>
+
+<h3>Buttons with Icons</h3>
+
+<p>
+  Buttons can also include icons <a href="#" class="btn"><span class="icon">★</span> Button with Icon</a>. You can add the <code>icon</code> class to make the button square and if only an icon is needed in the button <a href="#" class="btn icon">★</a>.
+</p>
+
+<p>
+  For alignment within button groups, use Codebase layout <code>flex</code> and optional <code>gap-1</code> classes.
+
+<h2>User Interface Colors</h2>
+
+<p>The following colors are used in Codebase for user interface elements. They are designed to provide a consistent look and feel across the application. You can use these colors for buttons, badges, labels, and other UI components. The colors are defined in the CSS variables and can be customized as needed. These UI color names affect the background color of elements, and the text color will automatically adjust to ensure readability.</p>
+
+<div class="p-cell primary"><code>primary</code> is purple with white text</div>
+<div class="p-cell secondary"><code>secondary</code> is blue with white text</div>
+<div class="p-cell tertiary"><code>tertiary</code> is gray with white text</div>
+<div class="p-cell info"><code>info</code> is blue with white text</div>
+<div class="p-cell success"><code>success</code> is green with white text</div>
+<div class="p-cell warning"><code>warning</code> is amber with black text</div>
+<div class="mb-2 p-cell danger"><code>danger</code> is red with white text</div>
+
+<p>So, to UI-colorize components, simply add the UI keyword classes as above.</p>
+
+<p>When applied to buttons (and link pseudo-buttons), these UI color classes also apply a hover background color that is slightly darker.</p>
+
+<p>
+  <button>Default button</button> — with no UI color class added
+<p>
+  <button class="primary">Primary button</button>
+  <button class="secondary">Secondary button</button>
+  <button class="tertiary">Tertiary button</button>
+  <button class="success">Success button</button>
+  <button class="info">Info button</button>
+  <button class="warning">Warning button</button>
+  <button class="danger">Danger button</button>
+</p>
+
+<p>For more on colors see <a href="/colors">colors</a>.</p>
