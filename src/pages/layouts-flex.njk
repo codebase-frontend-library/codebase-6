@@ -46,9 +46,9 @@ layout: "_includes/layout.njk"
     Below these breakpoints the child block element layout will be displayed the default way: all stacked in a single column with 100% width.</li>
   <li>The flexbox modifier classes documented below (<code>gap-3</code>, <code>flex-wrap</code>, etc.) will all just work as expected with these responsive prefixed flex wrappers – they will only take effect above the specified (lowest) breakpoint.</li>
   <li>All flexbox system wrappers affect their <em>immediate child elements</em> (i.e. flex-items).</li>
-  <li><code>flex</code> is not used for a pseudo grid system. Instead, Codebase has a <a href="/layouts-grid">layout grid</a> system</em>.</li>
+  <li><code>flex</code> is not used for a pseudo grid system. Instead, Codebase has a <a href="{{ baseUrl }}layouts-grid/">layout grid</a> system</em>.</li>
   <li>By default, flex sytems do not <em>wrap</em> their content onto a new row if there is not enough space available. So, if you require wrapping, use <code>flex flex-wrap</code>.</li>
-  <li>If required in your design, you can override a flexbox at a wider breakpoint the element so that it is back to being a full-width block, using a responsive <a href="/codebase-5/docs/3-layout-utilities/blocks">block</a> utility.</li>
+  <li>If required in your design, you can override a flexbox at a wider breakpoint the element so that it is back to being a full-width block, using a responsive <code>block</code> utility.</li>
   <li>In addition to the <code>flex</code> setup class, you can also override eah of the flex modifier classes at the <code>xs</code>, <code>sm</code>, <code>md</code>, and <code>lg</code> breakpoint widths — see <a href="#responsive-flex-modifier-tiers">responsive flex modifier tiers</a>.</li>
 </ol>
 
@@ -209,8 +209,8 @@ layout: "_includes/layout.njk"
 <p>Notes on <code>gap-*</code>:</p>
 
 <ol>
-  <li><code>gap-*</code> is also used in <a href="/layouts-grid">grid layouts</a>.</li>
-  <li><code>flex</code> and <code>grid</code> gaps have the same spacing CSS variables as <a href="/decoration">decoration</a> margins and paddings.</li>
+  <li><code>gap-*</code> is also used in <a {{ baseUrl }}/layouts-grid/">grid layouts</a>.</li>
+  <li><code>flex</code> and <code>grid</code> gaps have the same spacing CSS variables as <a href="{{ baseUrl }}decoration/">decoration</a> margins and paddings.</li>
 </ol>
 
 <h3>(2.) Flexbox spacing</h3>
@@ -300,4 +300,4 @@ layout: "_includes/layout.njk"
   <div class="b-thin p-1 bg-green bg-200">Three</div>
 </div>
 
-<p>Alternatively, use <code>place-center</code> — see <a href="/layouts/#positions">layout positioning</a>.
+<p>Alternatively, use <code>place-center</code> — see <a href="{{ baseUrl }}layouts/#positions">layout positioning</a>.

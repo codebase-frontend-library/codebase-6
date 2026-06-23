@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "node build.js",
+    "build:gh": "BASE_URL=/codebase-6/ node build.js",
     "dev": "node dev.js",
     "clean": "rm -rf docs && mkdir -p docs"
   },

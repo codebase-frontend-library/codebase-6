@@ -24,7 +24,7 @@ function getUrl(relPath) {
 
 // Load global data (metadata.json)
 let globalData = {
-  site: { title: 'Untitled Site', description: '' },
+  site: { title: 'Untitled Site', description: '', baseUrl: '/' },
   version: '0.0.0'
 };
 
@@ -33,11 +33,22 @@ async function loadGlobalData() {
     const metadataPath = path.join(SRC, 'data/metadata.json');
     const raw = await fs.readFile(metadataPath, 'utf-8');
     const data = JSON.parse(raw);
+
     globalData = {
       ...globalData,
       ...data,
       site: { ...globalData.site, ...data?.site }
     };
+
+    // Override baseUrl from environment variable (for GitHub Pages builds)
+    const envBaseUrl = process.env.BASE_URL;
+    if (envBaseUrl) {
+      globalData.site.baseUrl = envBaseUrl.endsWith('/') ? envBaseUrl : envBaseUrl + '/';
+      console.log(`✅ Using BASE_URL override: ${globalData.site.baseUrl}`);
+    } else {
+      console.log(`Using default baseUrl: ${globalData.site.baseUrl}`);
+    }
+
     console.log(`Global data loaded: ${globalData.site.title} v${globalData.version}`);
   } catch (err) {
     console.warn('Warning: Could not load metadata.json — using defaults');
@@ -121,10 +132,11 @@ async function build() {
 
       const context = {
         ...globalData,
+        baseUrl: globalData.site.baseUrl,
         page: {
           title: frontMatter.title || globalData.site?.title || 'Untitled Page',
           description: frontMatter.description || globalData.site?.description || '',
-          url: getUrl(relPath),           // ← now uses trailing slash
+          url: getUrl(relPath),
           isHome: relPath === 'pages/index.njk' || relPath.endsWith('/index.njk'),
           ...frontMatter,
         },
