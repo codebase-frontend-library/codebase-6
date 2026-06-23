@@ -4,7 +4,7 @@ Version 6.0.0
 
 Codebase 6 is a _non-backwards compatible_ update for the Codebase project.
 
-* Based on side-project [Baselayer 3](https://github.com/SimonPadbury/baselayer-3), but without dark theme capability.
+* Based on side-project [Baselayer 3](https://github.com/SimonPadbury/baselayer-3), but without dark theme capability, using media queries not container queries, and reverting to some “traditional” styles.
 * CSS variables are more similar to [Codebase 5](https://github.com/codebase-frontend-library/codebase-5).
 * Stylesheet is much smaller than Codebase 5, less than one third size.
 * No Sass pre-processor required. Just modern CSS, partials combined by PostCSS, and minified by CSSNANO.
