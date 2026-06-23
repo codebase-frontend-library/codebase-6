@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+Codebase 6 Buttons | Codebase 6  </title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="./css/codebase-6.min.css?v=6.0.0">
+  <style>
+    :root {
+      --w-page: var(--w-xxl);
+      --w-sidebar: var(--w-xxs);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .body-wrap {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-container {
+      flex: 1;
+      width: min(100%, var(--w-page));
+      margin: 0 auto;
+    }
+    .main-pane {
+      padding: var(--s-2);
+    }
+
+    @media (min-width: 1024px) {
+      .page-container {
+        display: grid;
+        grid-template-columns: var(--w-sidebar) 1fr;
+      }
+      .left-sidebar {
+        grid-column: 1;
+        border-right: var(--b-thin);
+        width: var(--w-sidebar);
+      }
+      .main-frame {
+        grid-column: 2;
+      }
+
+    @media (min-width: 1280px) {
+      .main-frame {
+        display: grid;
+        grid-template-columns: 1fr var(--w-sidebar);
+      }
+      .main-pane {
+        grid-column: 1;
+        grid-row: 1;
+        padding: var(--s-4);
+      }
+      .right-sidebar {
+        grid-column: 2;
+        grid-row: 1;
+        & > div {
+          max-height: 100dvh;
+          overflow-y: auto;
+        }
+      }
+    }
+
+    @container (min-width: 1024px) {
+      #site-nav {
+        position: sticky;
+        top: 0;
+        width: var(--w-xxs);
+        height: 100dvh;
+      }
+
+      #site-title {
+        padding-top: var(--s-3);
+        flex-direction: column;
+        align-self: center;
+      }
+
+      #site-menu {
+        min-width: var(--w-xxs);
+      }
+
+      .ms-windows .left-sidebar > div,
+      .ms-windows .right-sidebar > div {
+        scrollbar-gutter: stable;
+        overflow-y: hidden;
+      }
+
+      .ms-windows .left-sidebar:hover > div,
+      .ms-windows .right-sidebar:hover > div {
+        overflow-y: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a id="nav-skipper" href="#site-header" class="inline-block m-1 sr-only" tabindex="1">Skip to main content</a>
+
+  <div class="body-wrap">
+
+<nav class="header-nav bb-thin" role="navigation" aria-label="Site navigation">
+  <div class="container-xxl flex flex-wrap flex-middle">
+    <div class="flex flex-middle flex-wrap gap-2">
+      <a id="site-title"  class="py-1 h3 t-bold flex flex-middle gap-tiny t-underline-hover-only" href="/">
+        <svg viewBox="0 0 340 180" height="28" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
+            <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
+          </svg>
+        Codebase 6
+      </a>
+      <span class="t-gray">version 6.0.0</span>
+    </div>
+    <div class="grow flex flex-end flex-wrap gap-2">
+      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
+    </div>
+</nav>
+  <div class="page-container">
+    <div class="left-sidebar">
+      <div class="sticky top py-3 px-2">
+<p class="t-uppercase t-loose">Docs</p>
+
+<ul class="pl-0 flex flex-column gap-tiny list-style-type-none links-underline-hover-only">
+  <li><a href="/" class="block bl-heavy p-1 bg-gray bg-100">Getting started</a></li>
+  <li><a href="/typography" class="block bl-heavy p-1 bg-gray bg-100">Typography</a></li>
+  <li><a href="/layouts" class="block bl-heavy p-1 bg-gray bg-100">Layouts</a></li>
+  <li><a href="/layouts-flex" class="block bl-heavy p-1 bg-gray bg-100">Layouts: Flexbox</a></li>
+  <li><a href="/layouts-grid" class="block bl-heavy p-1 bg-gray bg-100">Layouts: Grid</a></li>
+  <li><a href="/decoration" class="block bl-heavy p-1 bg-gray bg-100">Decoration</a></li>
+  <li><a href="/forms" class="block bl-heavy p-1 bg-gray bg-100">Forms</a></li>
+  <li><a href="/colors" class="block bl-heavy p-1 bg-gray bg-100">Colors</a></li>
+  <li><a href="/components" class="block bl-heavy p-1 bg-gray bg-100">Components</a></li>
+</ul>      </div>
+    </div>
+    <div class="main-frame">
+      <aside class="right-sidebar lg:hidden-below">
+        <div class="sticky top py-3 px-2">
+          <p class="t-uppercase t-loose">On this page</p>
+          <nav id="page-toc" class="toc links-underline-hover-only" role="navigation" aria-label="Table of contents">
+        </div>
+      </aside>
+      <div class="main-pane">
+        <div class="w-md mx-auto">
+          <header id="article-title">
+            <h1 class="my-4 t-balance t-center">Codebase 6 Buttons</h1>
+          </header>
+          
+          <hr class="my-4">
+          
+          <main id="main-content">
+            
+To follow.
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<footer id="site-footer" class="bt-thin">
+  <div class="my-3 container-sm t-center">
+    <div class="mb-1">
+      <a class="flex flex-column flex-middle gap-1 h3 t-bold t-underline-hover-only" href="/">
+        <svg viewBox="0 0 340 180" height="48" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
+          <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
+        </svg>
+        <span>Codebase 6</span>
+      </a>
+    </div>
+    Codebase 6 &copy; 
+    <script type="text/javascript">
+      let currentYear = new Date().getFullYear();
+      document.write(currentYear);
+    </script> 
+    by <a href="https://github.com/SimonPadbury">Simon Padbury</a>. All rights reserved.<br>
+    <small>Codebase 6 and these docs are built on <a href="https://github.com/SimonPadbury/minjucks" target="_blank">Minjucks</a> static site generator.</small>
+  </div>
+</footer>
+  </div>
+
+  <script src="./js/scripts.js?v=6.0.0" defer></script>
+
+</body>
+</html>
