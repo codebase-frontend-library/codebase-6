@@ -1,41 +1,4 @@
 @media (min-width: 512px) {
-  .xs\:relative {
-    position: relative;
-  }
-
-  .xs\:absolute {
-    position: absolute;
-  }
-
-  .xs\:fixed {
-    position: fixed;
-  }
-
-  .xs\:static {
-    position: static;
-  }
-
-  .xs\:sticky {
-    position: sticky;
-    top: 0;
-  }
-
-  .xs\:top {
-    top: 0;
-  }
-
-  .xs\:right {
-    right: 0;
-  }
-
-  .xs\:bottom {
-    bottom: 0;
-  }
-
-  .xs\:left {
-    left: 0;
-  }
-
   .xs\:block {
     display: block;
   }
