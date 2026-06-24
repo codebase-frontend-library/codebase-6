@@ -163,6 +163,7 @@
 .icon > svg {
   inset: 0;
   position: absolute;
+  place-self: center;
 }
 
 .square-sm {
