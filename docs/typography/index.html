@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+Codebase 6 Typography | Codebase 6  </title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="/codebase-6/css/codebase-6.min.css?v=6.0.0">
+  <style>
+    :root {
+      --w-page: var(--w-xxl);
+      --w-sidebar: var(--w-xxs);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .body-wrap {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-container {
+      flex: 1;
+      width: min(100%, var(--w-page));
+      margin: 0 auto;
+    }
+    .main-pane {
+      padding: var(--s-2);
+    }
+
+    @media (min-width: 1024px) {
+      .page-container {
+        display: grid;
+        grid-template-columns: var(--w-sidebar) 1fr;
+      }
+      .left-sidebar {
+        grid-column: 1;
+        border-right: var(--b-thin);
+        width: var(--w-sidebar);
+      }
+      .main-frame {
+        grid-column: 2;
+      }
+
+    @media (min-width: 1280px) {
+      .main-frame {
+        display: grid;
+        grid-template-columns: 1fr var(--w-sidebar);
+      }
+      .main-pane {
+        grid-column: 1;
+        grid-row: 1;
+        padding: var(--s-4);
+      }
+      .right-sidebar {
+        grid-column: 2;
+        grid-row: 1;
+        & > div {
+          max-height: 100dvh;
+          overflow-y: auto;
+        }
+      }
+    }
+
+    @container (min-width: 1024px) {
+      #site-nav {
+        position: sticky;
+        top: 0;
+        width: var(--w-xxs);
+        height: 100dvh;
+      }
+
+      #site-title {
+        padding-top: var(--s-3);
+        flex-direction: column;
+        align-self: center;
+      }
+
+      #site-menu {
+        min-width: var(--w-xxs);
+      }
+
+      .ms-windows .left-sidebar > div,
+      .ms-windows .right-sidebar > div {
+        scrollbar-gutter: stable;
+        overflow-y: hidden;
+      }
+
+      .ms-windows .left-sidebar:hover > div,
+      .ms-windows .right-sidebar:hover > div {
+        overflow-y: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a id="nav-skipper" href="#site-header" class="inline-block m-1 sr-only" tabindex="1">Skip to main content</a>
+
+  <div class="body-wrap">
+
+<nav class="header-nav bb-thin" role="navigation" aria-label="Site navigation">
+  <div class="container-xxl flex flex-wrap flex-middle">
+    <div class="flex flex-middle flex-wrap gap-2">
+      <a id="site-title"  class="py-1 h3 t-bold flex flex-middle gap-tiny t-underline-hover-only" href="/codebase-6/">
+        <svg viewBox="0 0 340 180" height="28" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
+            <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
+          </svg>
+        Codebase 6
+      </a>
+      <span class="t-gray">version 6.0.0</span>
+    </div>
+    <div class="grow flex flex-end flex-wrap gap-2">
+      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
+    </div>
+</nav>
+  <div class="page-container">
+    <div class="left-sidebar">
+      <div class="sticky top py-3 px-2">
+<p class="t-uppercase t-loose">Docs</p>
+
+<ul class="pl-0 flex flex-column gap-tiny list-style-type-none links-underline-hover-only">
+  <li><a href="/codebase-6/" class="block bl-heavy p-1 bg-gray bg-100">Getting started</a></li>
+  <li><a href="/codebase-6/typography/" class="block bl-heavy p-1 bg-gray bg-100 b-blue t-bold">Typography</a></li>
+  <li><a href="/codebase-6/layouts/" class="block bl-heavy p-1 bg-gray bg-100">Layouts</a></li>
+  <li><a href="/codebase-6/layouts-flex/" class="block bl-heavy p-1 bg-gray bg-100">Layouts: Flexbox</a></li>
+  <li><a href="/codebase-6/layouts-grid/" class="block bl-heavy p-1 bg-gray bg-100">Layouts: Grid</a></li>
+  <li><a href="/codebase-6/decoration/" class="block bl-heavy p-1 bg-gray bg-100">Decoration</a></li>
+  <li><a href="/codebase-6/forms/" class="block bl-heavy p-1 bg-gray bg-100">Forms</a></li>
+  <li><a href="/codebase-6/colors/" class="block bl-heavy p-1 bg-gray bg-100">Colors</a></li>
+  <li><a href="/codebase-6/components/" class="block bl-heavy p-1 bg-gray bg-100">Components</a></li>
+</ul>      </div>
+    </div>
+    <div class="main-frame">
+      <aside class="right-sidebar lg:hidden-below">
+        <div class="sticky top py-3 px-2">
+          <p class="t-uppercase t-loose">On this page</p>
+          <nav id="page-toc" class="toc links-underline-hover-only" role="navigation" aria-label="Table of contents">
+        </div>
+      </aside>
+      <div class="main-pane">
+        <div class="w-md mx-auto">
+          <header id="article-title">
+            <h1 class="my-4 t-balance t-center">Codebase 6 Typography</h1>
+          </header>
+          
+          <hr class="my-4">
+          
+          <main id="main-content">
+            
+<h2>Font stacks</h2>
+
+<p>A few native font stacks are set in the <code>root-vars.css</code> file.</p>
+
+<pre><code>:root {
+  --t-sans: ui-sans-serif, sans-serif;
+  --t-serif: ui-serif, serif;
+  --t-mono: ui-monospace, monospace;
+  --t-base-fs: var(--t-sans);
+  --t-prose: var(--t-serif);
+}
+</code></pre>
+
+<p>Everything here is an example, a place to start. Your own <code>--base</code> and <code>--prose</code> don’t need to be both sans-serif and serif.</p>
+
+<p>Font stack usage in Codebase:</p>
+
+<ul>
+  <li>The base font stack <code>--t-base-fs</code> is set in the <code>&lt;body&gt;</code> tag and via the <code>t-base</code> utility class. It is also set on form inputs and on heading tags (using <code>--h-ff: inherit;</code> so that you can override and set a different heading typeface).</li>
+  <li>The prose is only available via the <code>t-prose</code> utility class. Employ it on your <code>&lt;article&gt;</code> tag, or wherever you need.</li>
+  <li>The monotype is available via the <code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, and <code>&lt;samp&gt;</code> HTML tags, and in the <code>t-mono</code> utility class.</li>
+</ul>
+<h2>Base font size</h2>
+<p>The default font size in Codebase is 100% for small viewports. This sets the value of 1rem—that is 16px on most browsers (in 2025).</p>
+<pre><code>:root {
+  --t-base: 100%;
+}
+</code></pre>
+<h2 id="typographic-block-elements" tabindex="-1">Typographic block elements</h2>
+<p>All typographic block elements have zero top margin, and a bottom margin of <code>var(--t-mb) </code> (which is 1rem by default). This includes paragraphs, headings, blockquotes, lists, and definition lists.</p>
+<h3 id="headings" tabindex="-1">Headings</h3>
+<p>Heading sizes are set using a <em>major third</em> typographic scale root variable. The font size for <code>h6</code> and utility class <code>.h6</code> is not increased by this scale (remains with the base font size, 100%). After that, each heading size is 1.25× greater.</p>
+<p>Example headings:</p>
+<p class="h1 t-semibold">Heading h1</p>
+<p class="h2 t-semibold">Heading h2</p>
+<p class="h3 t-semibold">Heading h3</p>
+<p class="h4 t-semibold">Heading h4</p>
+<p class="h5 t-semibold">Heading h5</p>
+<p class="h6 t-semibold">Heading h6</p>
+<pre><code>:root {
+  --h1: 2.5em;
+  --h2: 1.875em;
+  --h3: 1.5em;
+  --h4: 1.25em;
+  --h5: 1.125em;
+  --h6: 1em;
+}
+</code></pre>
+<p>All headings <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> and matching utility classes <code>h1</code> to <code>h6</code> have:</p>
+<ul>
+<li>Headings font sizes set in the variables file (see above).</li>
+<li>Heading-size utility classes <code>h1</code> to <code>h6</code> are available for use on any element, e.g. <code>&lt;div class="h1"&gt;</code>. These utilities only affect font-size. They do not include margin or font-weight styling.</li>
+<li>Headings font family set using <code>--h-ff: inherit</code>. This has been done so that you can use the variable to override it — your headings don’t need to be the same typeface as your paragraphs.</li>
+<li>Headings font weight is set using <code>--h-fw: var(--t-semibold)</code> — which you can also override.</li>
+<li>Headings line heights set using the formula <code>1em + 0.5rem</code>.</li>
+<li>Headings have their bottom margin set the same as for paragraphs, <code>var(t--mb)</code>.</li>
+</ul>
+<pre><code>:root {
+  --h-ff: inherit; /* headings font-family */
+  --h-fw: var(--t-semibold);
+  --h-lh: calc(1em + 0.5rem);
+  --h-mb: var(--t-mb);
+}
+</code></pre>
+<p><strong>Tip:</strong> In some contexts (e.g. in card components) you may not want any built-in spacing for typographic block elements. Then, you can remove margins by using the <code>mb-0</code> utility class.</p>
+<h3>Block quotes</h3>
+<p>Codebase styles <code>&lt;blockquote&gt;</code> tags with some inline (x-axis) padding, to give the effect of indentation. This inline padding is set using the responsive spacing variable <code>--s-4</code> so that it increases if there is more available width.</p>
+<p>Otherwise, blockquotes have the same as paragraph styling.</p>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, adipiscing honestatis ius ut, nisl consulatu pro in. Imperdiet evertitur no usu, his te suavitate salutatus. Nullam ridens deterruisset an duo. Cum harum insolens ei, cum probo placerat praesent et.</p>
+</blockquote>
+<h3>Lists</h3>
+<p>In Codebase ordered <code>&lt;ol&gt;</code> and unordered <code>&lt;ul&gt;</code> have a small amount of left padding. But Codebase separates list items <code>&lt;li&gt;</code> to make them more obvious by setting a small top margin <em>between</em> list items (smaller than the top margin between paragraphs), and the same amount <em>above</em> nested <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code>. This makes ordered and unordered lists have an even spacing like this:</p>
+<ol>
+<li>Ordered item one</li>
+<li>Ordered item two
+<ol>
+<li>Ordered item two child one</li>
+<li>Ordered item two child two</li>
+</ol>
+</li>
+<li>Ordered item three</li>
+</ol>
+<pre><code>&lt;ol&gt;
+  &lt;li&gt;Ordered item one&lt;/li&gt;
+  &lt;li&gt;Ordered item two
+    &lt;ol&gt;
+      &lt;li&gt;Ordered item two child one&lt;/li&gt;
+      &lt;li&gt;Ordered item two child two&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Ordered item three&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<ul>
+<li>Unordered item</li>
+<li>Unordered item
+<ul>
+<li>Unordered item child</li>
+<li>Unordered item child</li>
+</ul>
+</li>
+<li>Unordered item</li>
+</ul>
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;Unordered item&lt;/li&gt;
+  &lt;li&gt;Unordered item
+    &lt;ul&gt;
+      &lt;li&gt;Unordered item child&lt;/li&gt;
+      &lt;li&gt;Unordered item child&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Unordered item&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>For definition lists, the title is bold and the definition data item is indented with the same left padding as for the lists (see above).</p>
+<dl>
+  <dt>Definition list title</dt>
+  <dd>Definition list data</dd>
+  <dt>Definition list title</dt>
+  <dd>Definition list data</dd>
+</dl>
+<pre><code>&lt;dl&gt;
+  &lt;dt&gt;Definition list title&lt;/dt&gt;
+  &lt;dd&gt;Definition list data&lt;/dd&gt;
+  &lt;dt&gt;Definition list title&lt;/dt&gt;
+  &lt;dd&gt;Definition list data&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<h2>Links and menus</h2>
+<p>In Codebase, links are styled with a color and an underline. The underline is set using the <code>text-decoration</code> property, and the color is set using the <code>color</code> property. The color of links is set to the <code>--tc-link</code> variable, which is defined in the <code>root-vars.css</code> file. On <code>:hover</code>, the link text color changes to the <code>--tc-link-hover</code> variable, which is set darker than <code>--tc-link</code>.</p>
+<p>Example:</p>
+<ul>
+<li><a href="">This is a link to nowhere</a></li>
+</ul>
+<h3>Link utilities</h3>
+<p>Then there are the following two classes that apply to links, that may be handy in some situations:</p>
+<ul>
+<li><a class="t-underline-none" href="">This link has no underline</a> — <code>t-underline-none</code></li>
+<li><a class="t-underline-hover-only" href="">This link has no underline unless hovered</a> — <code>t-underline-hover-only</code></li>
+</ul>
+<p>The browser default, and the best practice for accessability, is to have links indicated by an underline (and the browser default color of links is blue). But in the context of menus it is permissible to deviate from the best practice, provided there are other visual and non-visual indicators. This is the reason why we should use <a href="https://www.codecademy.com/resources/blog/semantic-html/">semantic HTML</a> tags on menus, and and why we should place navigation menus in their expected locations (in sitewide menu-bars, sidebars, and footers).</p>
+<h3>Panel links</h3>
+<p>There may be situations where you have a link that contains some accompanying text that you don’t want to receive the <code>&lt;a href=""&gt;</code> (link) underline. Examples where this may be used: media object, card or hero component, where you want the whole thing to behave like a “big button”. for these, you need the <code>panel-link</code> and <code>panel-link-title</code> combo classes.</p>
+<p>You will also want to style the outer <code>&lt;a href=""&gt;</code> e.g. with the <code>block</code> utility (for <code>display:block</code>), and add more styles to this inner element text, so that it is not the same color as the link label.</p>
+<p>Y0u will also want to style the other element(s) text that’s not the <code>panel-link-title</code> with a different color, e.g. <code>t-gray t-900</code>.</p>
+<a class="block my-3 p-3 bg-gray bg-100 panel-link" href="#/">
+    <p class="panel-link-title">Link label (title)</p>
+    <p class="mb-0 t-gray t-900">Lorem ipsum dolor sit amet ...</p>
+</a>
+<pre><code>&lt;a class="panel-link" href=""&gt;
+    &lt;p class="panel-link-title"&gt;Link label (title)&lt;/p&gt;
+    &lt;p class="mb-0 t-gray t-900"&gt;Lorem ipsum dolor sit amet ...&lt;/p&gt;
+&lt;/a&gt;
+</code></pre>
+<p>Another example: here <code>t-underline-hover-only</code> has also been added to the <code>&lt;a href=""&gt;</code>:</p>
+<a class="block my-3 p-3 panel-link t-underline-hover-only bg-gray bg-100" href="#/">
+    <p class="panel-link-title">Link label (title)</p>
+    <p class="mb-0 t-gray t-900">Lorem ipsum dolor sit amet ...</p>
+</a>
+<pre><code>&lt;a class="panel-link t-underline-hover-only" href=""&gt;
+    &lt;p class="panel-link-title"&gt;Link label (title)&lt;/p&gt;
+    &lt;p class="mb-0 t-gray t-900"&gt;Lorem ipsum dolor sit amet ...&lt;/p&gt;
+&lt;/a&gt;
+</code></pre>
+<h3>Menus</h3>
+<ul>
+<li><code>nav</code> / <code>&lt;menu&gt;</code> / <code>&lt;menuitem&gt;</code></li>
+</ul>
+<p>The semantic <code>&lt;nav&gt;</code> tag has no styling of its own, other than its being a block element (similar to a <code>div</code>). Use it to organize your major navigation blocks of links (whether to other pages in your website, or “on this page”).</p>
+<p>Semantic <code>&lt;menu&gt;</code> tags are treated by the browser as no different to an <code>&lt;ul&gt;</code>, but they are announced as a menu by <a href="https://web.dev/articles/semantics-and-screen-readers">screen readers</a>. Codebase gives <code>&lt;menu&gt;</code>, <code>&lt;ul&gt;</code>, and <code>&lt;ol&gt;</code> the same styling: some left padding and bottom margin (and you can remove these you don't require them, using spacing utility classes: margins and/or paddings).</p>
+<p>Using an <code>&lt;li&gt;</code> within a <code>&lt;menu&gt;</code> will give you bulletpoint block items. This will be OK for sidebars and dropdown menus, for example, but there’s also the <code>&lt;menuitem&gt;</code> tag. This is an inline tag (like a <code>&lt;span&gt;</code> but semantic for menu items), and it doesn’t come with a bulletpoint.</p>
+<p>This is what you get if you add no styling, other than the Codebase defaults (but of course you will want to add more styling):</p>
+<nav class="my-3">
+  <menu>
+    <menuitem><a href="">Menu item 1</a></menuitem>
+    <menuitem><a href="">Menu item 2</a></menuitem>
+    <menuitem><a href="">Menu item 3</a></menuitem>
+  </menu>
+</nav>
+<pre><code>&lt;nav&gt;
+  &lt;menu&gt;
+    &lt;menuitem&gt;&lt;a href=""&gt;Menu item 1&lt;/a&gt;&lt;/menuitem&gt;
+    &lt;menuitem&gt;&lt;a href=""&gt;Menu item 2&lt;/a&gt;&lt;/menuitem&gt;
+    &lt;menuitem&gt;&lt;a href=""&gt;Menu item 3&lt;/a&gt;&lt;/menuitem&gt;
+  &lt;/menu&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>Notes:</p>
+<ol>
+<li>Use <code>&lt;nav&gt;</code> to encapsulate your main navigation and “on this page” navigation. Navs can contain more than one menu, e.g. in dropdowns. The website or brand logo (with a link to the homepage) can be situated within the top <code>&lt;nav&gt;</code> but outside of the menu.</li>
+<li>The <code>&lt;menu&gt;</code> tag can be used in other contexts, e.g. for a list of related links to other websites, or for a set of user interface controls in a web application.</li>
+<li>Inside a <code>&lt;menuitem&gt;</code> can be a link, a button, or other interactive element.</li>
+</ol>
+<p>If you want a group of links (in a menu) to not have underlines, or to have underlines only when hovered, the following wrapper classes are available in Codebase:</p>
+<ul>
+<li><code>links-underline-none</code></li>
+<li><code>links-underline-hover-only</code></li>
+</ul>
+<p>And now, with a few other Codebase utilities, you have a menubar:</p>
+<nav class="my-3">
+  <menu class="p-cell flex flex-wrap gap-3 bg-gray bg-100 links-underline-hover-only">
+    <menuitem><a class="t-semibold t-gray t-700" href="">Menu item 1</a></menuitem>
+    <menuitem><a class="t-semibold t-gray t-700" href="">Menu item 2</a></menuitem>
+    <menuitem><a class="t-semibold t-gray t-700" href="">Menu item 3</a></menuitem>
+  </menu>
+</nav>
+<pre><code>&lt;nav&gt;
+  &lt;menu class="p-cell flex flex-wrap gap-3 bg-gray bg-100 links-underline-hover-only"&gt;
+    &lt;menuitem&gt;&lt;a class="t-semibold t-gray t-700" href=""&gt;Menu item 1&lt;/a&gt;&lt;/menuitem&gt;
+    &lt;menuitem&gt;&lt;a class="t-semibold t-gray t-700" href=""&gt;Menu item 2&lt;/a&gt;&lt;/menuitem&gt;
+    &lt;menuitem&gt;&lt;a class="t-semibold t-gray t-700" href=""&gt;Menu item 3&lt;/a&gt;&lt;/menuitem&gt;
+  &lt;/menu&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>Or a menu for a sidebar or footer buffet:</p>
+<nav class="my-3">
+  <menu class="pl-0 flex flex-column gap-2 links-underline-hover-only">
+    <menuitem><a href="">Menu item 1</a></menuitem>
+    <menuitem><a href="">Menu item 2</a></menuitem>
+    <menuitem><a href="">Menu item 3</a></menuitem>
+  </menu>
+</nav>
+<pre><code>&lt;nav&gt;
+  &lt;menu class="pl-0 flex flex-column gap-2 links-underline-hover-only"&gt;
+    &lt;menuitem&gt;&lt;a href=""&gt;Menu item 1&lt;/a&gt;&lt;/menuitem&gt;
+    &lt;menuitem&gt;&lt;a href=""&gt;Menu item 2&lt;/a&gt;&lt;/menuitem&gt;
+    &lt;menuitem&gt;&lt;a href=""&gt;Menu item 3&lt;/a&gt;&lt;/menuitem&gt;
+  &lt;/menu&gt;
+&lt;/nav&gt;
+</code></pre>
+<h2 id="text-alignment" tabindex="-1">Text alignment</h2>
+<ul>
+<li><code>t-right</code>, <code>t-center</code>, and <code>t-left</code></li>
+</ul>
+<p>In addition to the three simple text alignment classes above, Codebase also has several container-query responsive variants, for <code>xs:</code>, <code>sm:</code>, <code>md:</code> and <code>lg:</code> container breakpoints widths.</p>
+<p>Example: The hearing in the card below is left aligned by default, but becomes center aligned when its <em>container</em> is <code>xs</code> (320px) wide and above, using <code>xs:t-center</code>:</p>
+<div class="mb-2 p-2 bg-amber bg-100">
+<p class="h3 t-semibold xs:t-center">A title</p>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rem animi quaerat accusantium illum architecto, nemo, ex harum voluptatum adipisci eum blanditiis dolorum. Natus debitis quisquam, expedita accusantium quos cumque?</p>
+</div>
+<h2>Tables</h2>
+<p>Codebase tables are set using the <code>.table</code> class.</p>
+<ul>
+<li>Table headers <code>&lt;th&gt;</code> are bold.</li>
+<li>Table cells <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> have a border set by <code>var(--b-1)</code> – the same detail as <code>&lt;hr&gt;</code> and border utility classes.</li>
+<li>Table cell paddings are set by <code>--p-cell</code></li>
+<li>All cell content is left-aligned. You can change that on the whole <code>&lt;table&gt;</code> or on a per-cell basis using the <a href="#text-alignment">text alignment</a> classes.</li>
+<li>Codebase tables ordinarily are grid-lined, with cell content left-aligned, and cell widths dependant on the amoint of content in cells. Optional modifiers:
+  <ul>
+    <li><code>table-fixed</code> will force cells to have the same (fixed) width.</li>
+    <li><code>table-borderless</code> removes border lines (but keeps padding).</li>
+    <li><code>table-lines</code> removes vertical lines but keeps horizontal lines.</li>
+    <li><code>table-compact</code> reduced padding, good for large tables.</li>
+    <li><code>table-striped</code> alternate rows have backgrounds semi-transparent white and pale gray</li>
+  </ul>
+<li>Cell or whole table alignments can be handled by <code>t-center</code> etc. and <code>vertical-align-middle</code> etc.</li>
+</ul>
+<div class="mt-3 mb-4">
+<table class="table">
+  <caption>This is a Table Caption</caption>
+  <thead>
+    <tr>
+      <th>Table Header 1</th>
+      <th>Table Header 2</th>
+      <th>Table Header 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table content 1.1</td>
+      <td>Table content 2.1</td>
+      <td>Table content 3.1</td>
+    </tr>
+    <tr>
+      <td>Table content 1.2</td>
+      <td>Table content 2.2</td>
+      <td>Table content 3.2</td>
+    </tr>
+    <tr>
+      <td>Table content 1.3</td>
+      <td>Table content 2.3</td>
+      <td>Table content 3.3</td>
+    </tr>
+    <tr>
+      <td>Table content 1.4</td>
+      <td>Table content 2.4</td>
+      <td>Table content 3.4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<pre><code>&lt;table class="table"&gt;
+  &lt;caption&gt;This is a Table Caption&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Table Header 1&lt;/th&gt;
+      &lt;th&gt;Table Header 2&lt;/th&gt;
+      &lt;th&gt;Table Header 3&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table content 1.1&lt;/td&gt;
+      &lt;td&gt;Table content 2.1&lt;/td&gt;
+      &lt;td&gt;Table content 3.1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Table content 1.2&lt;/td&gt;
+      &lt;td&gt;Table content 2.2&lt;/td&gt;
+      &lt;td&gt;Table content 3.2&lt;/td&gt;
+    &lt;/tr&gt;
+    ...
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<p>With <code>table table-lined table-striped</code>:</p>
+<table class="mt-3 mb-4 table table-lined table-striped">
+  <thead>
+    <tr>
+      <th>Table Header 1</th>
+      <th>Table Header 2</th>
+      <th>Table Header 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table content 1.1</td>
+      <td>Table content 2.1</td>
+      <td>Table content 3.1</td>
+    </tr>
+    <tr>
+      <td>Table content 1.2</td>
+      <td>Table content 2.2</td>
+      <td>Table content 3.2</td>
+    </tr>
+    <tr>
+      <td>Table content 1.3</td>
+      <td>Table content 2.3</td>
+      <td>Table content 3.3</td>
+    </tr>
+    <tr>
+      <td>Table content 1.4</td>
+      <td>Table content 2.4</td>
+      <td>Table content 3.4</td>
+    </tr>
+  </tbody>
+</table>
+<h3>Making wide tables responsive</h3>
+<p>If you have a lot of content in your table, it will probably break your page layout on small viewports (e.g. phones). The simplest way to make a table “responsive” is to wrap your table in a DIV with the <code>overflow-x</code> class to make it horizontally scrollable.</p>
+<div class="mt-3 mb-4 overflow-x">
+  <table class="table table-grid">
+    <thead>
+      <tr><th>Column title</th>
+      <th>Column title</th>
+      <th>Column title</th>
+      <th>Column title</th>
+      <th>Column title</th>
+      <th>Column title</th>
+      <th>Column title</th>
+      <th>Column title</th>
+      <th>Column title</th>
+      <th>Column title</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td>Tabel cell content</td>
+        <td>Tabel cell content</td>
+        <td>Tabel cell content</td>
+        <td>Tabel cell content</td>
+        <td>Tabel cell content</td>
+        <td>Tabel cell content</td>
+        <td>Tabel cell content</td>
+        <td>Tabel cell content</td>
+        <td>Tabel cell content</td>
+        <td>Tabel cell content</td>
+      </tr>
+    </tbody><tbody>
+  </tbody></table>
+</div>
+<pre><code>&lt;div class="overflow-x"&gt;
+  &lt;table class="table"&gt;
+    ...
+  &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+<h2>Making text bigger</h2>
+<p>The base font size is 100% (16px default). Additionally:</p>
+<ol>
+<li>There’s a <code>t-lg</code> class that can be used to make text 1.325em — good for a lead paragraph, large button, or important messaging.</li>
+<li>Classes <code>.h1</code> through <code>.h6</code> will resize text the same amount as for their respective heading tag sizes — use these when you want to make text bigger (or large text smaller) without adversely affecting accessibility/ SEO heading hierarchy.</li>
+<li>The <code>t-long-read</code> wrapping class uses a <code>clamp()</code> to ramp text from starting size 1em up to 1.25em (20px default) depending on container size. E.g. used for responsively increasing text size in <em>article prose components</em>. <code>&lt;h1&gt;</code> inside a <code>t-long-read</code> will have maximum font size 61px.</li>
+<li>The <code>t-comfort</code> wrapping class uses a <code>clamp()</code> to raise text from starting size 1em up to 1.625em (26px default) depending on container size. E.g. used for responsively increasing text size in <em>comfortable reading components</em>. <code>&lt;h1&gt;</code> inside a <code>t-display</code> will have maximum font size 79px.</li>
+<li>The <code>t-display</code> wrapping class uses a <code>clamp()</code> to raise text from starting size 1em up to 2em (32px default) depending on container size. E.g. used for responsively increasing text size in <em>hero components</em>. <code>&lt;h1&gt;</code> inside a <code>t-display</code> will have maximum font size 97px.</li>
+</ol>
+<h2>Code</h2>
+<p><code>&lt;code&gt;</code> tags have monospaced text (set by <code>--t-mono</code>), with a thin border and a little padding to improve readability.</p>
+<p>If the <code>&lt;code&gt;</code> tag is wrapped in a <code>&lt;pre&gt;</code> tag, then it becomes a block level element with more padding, a max-width of 100%, and y-axis overflow scrolling.</p>
+<h2>Other typographic utility classes</h2>
+<p>Besides those already introduced, Codebase also has utility classes for:</p>
+<ul>
+<li><code>t-lg</code> — increase font size by 1.5em. Use it directly on a <code>&lt;p&gt;</code> to enlarge the font (e.g. for a lead paragraph).</li>
+<li><code>t-sm</code> (or use the <code>&lt;small&gt;</code> HTML tag) — decrease font-size to 0.8em</li>
+<li><code>t-highlight</code> (or use the <code>&lt;mark&gt;</code> HTML tag) — text highlighter</li>
+<li><code>t-thin</code>, <code>t-normal</code>, <code>t-semibold</code>, <code>t-bold</code>, <code>t-heavy</code> — font weights</li>
+<li><code>t-italic</code> — font style italic</li>
+<li><code>t-balance</code> — balances word-wrap, so that e.g. long headings don't have orphans</li>
+<li><code>t-uppercase</code> — text transform to capitals</li>
+<li><code>t-nowrap</code> — prevents text wrapping (spaces behave as non-breaking spaces)</li>
+</ul>
+<p><strong>Note:</strong> links can also be styled as though they are buttons using the <code>btn</code> utility class.</p>
+
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<footer id="site-footer" class="bt-thin">
+  <div class="my-3 container-sm t-center">
+    <div class="mb-1">
+      <a class="inline-flex flex-column flex-middle gap-1 h3 t-bold t-underline-hover-only" href="/codebase-6/">
+        <svg viewBox="0 0 340 180" height="48" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
+          <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
+        </svg>
+        <span>Codebase 6</span>
+      </a>
+    </div>
+    Codebase 6 &copy; 
+    <script type="text/javascript">
+      let currentYear = new Date().getFullYear();
+      document.write(currentYear);
+    </script> 
+    by <a href="https://github.com/SimonPadbury">Simon Padbury</a>. All rights reserved.<br>
+    <small>Codebase 6 and these docs are built on the <a href="https://github.com/SimonPadbury/minjucks" target="_blank">Minjucks</a> static site generator.</small>
+  </div>
+</footer>
+  </div>
+
+  <script src="/codebase-6/js/scripts.js?v=6.0.0" defer></script>
+
+</body>
+</html>
