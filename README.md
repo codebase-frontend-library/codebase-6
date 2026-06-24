@@ -1,7 +1,11 @@
 # codebase-6
 
 Version 6.0.0
+
 Filesize: 28 kb
+
+Download CSS: https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css
+
 Docs: https://codebase-frontend-library.github.io/codebase-6/
 
 Codebase 6 is a _non-backwards compatible_ update for the Codebase project.
