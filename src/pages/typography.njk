@@ -11,8 +11,10 @@ layout: "_includes/layout.njk"
   --t-sans: ui-sans-serif, sans-serif;
   --t-serif: ui-serif, serif;
   --t-mono: ui-monospace, monospace;
-  --t-base-fs: var(--t-sans);
-  --t-prose: var(--t-serif);
+
+  --t-base-ff: var(--t-sans);
+  --hd-ff: inherit; /* headings */
+  --t-form-ff: inherit;
 }
 </code></pre>
 
@@ -21,27 +23,34 @@ layout: "_includes/layout.njk"
 <p>Font stack usage in Codebase:</p>
 
 <ul>
-  <li>The base font stack <code>--t-base-fs</code> is set in the <code>&lt;body&gt;</code> tag and via the <code>t-base</code> utility class. It is also set on form inputs and on heading tags (using <code>--h-ff: inherit;</code> so that you can override and set a different heading typeface).</li>
-  <li>The prose is only available via the <code>t-prose</code> utility class. Employ it on your <code>&lt;article&gt;</code> tag, or wherever you need.</li>
-  <li>The monotype is available via the <code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, and <code>&lt;samp&gt;</code> HTML tags, and in the <code>t-mono</code> utility class.</li>
+  <li>The <code>--t-sans</code> font stack is set in the <code>&lt;body&gt;</code> tag (via <code>--t-base-ff</code>) and is inherited on forms (via <code>--t-form-ff</code>) and headings (via <code>--hd-ff</code>), so that you can override and set a different typefaces if you prefer.</li>
+  <li>The <code>--t-serif</code> font stack is only available via the <code>t-prose</code> utility class. But you can employ it directly on your <code>&lt;article&gt;</code> tag, or wherever you need.</li>
+  <li>The <code>--t-mono</code> font stack is available via the <code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, and <code>&lt;samp&gt;</code> HTML tags, and in the <code>t-mono</code> utility class.</li>
 </ul>
 <h2>Base font size</h2>
 <p>The default font size in Codebase is 100% for small viewports. This sets the value of 1rem—that is 16px on most browsers (in 2025).</p>
 <pre><code>:root {
-  --t-base: 100%;
+  --t-base-fs: 100%;
 }
 </code></pre>
-<h2 id="typographic-block-elements" tabindex="-1">Typographic block elements</h2>
+
+<h2>Typographic block elements</h2>
+
 <p>All typographic block elements have zero top margin, and a bottom margin of <code>var(--t-mb) </code> (which is 1rem by default). This includes paragraphs, headings, blockquotes, lists, and definition lists.</p>
-<h3 id="headings" tabindex="-1">Headings</h3>
-<p>Heading sizes are set using a <em>major third</em> typographic scale root variable. The font size for <code>h6</code> and utility class <code>.h6</code> is not increased by this scale (remains with the base font size, 100%). After that, each heading size is 1.25× greater.</p>
-<p>Example headings:</p>
+
+<h3>Headings</h3>
+
+<p>Heading sizes are set using the <a class="https://spencermortensen.com/articles/typographic-scale/">classic typographic scale</a> (but set in <strong>em</strong>, not <strong>pt</strong> or <strong>px</strong>). The font size for <code>h6</code> and utility class <code>.h6</code> is not increased by this scale (remains the same as the base font size).</p>
+
+<p>Example headings (using heading-size utility classes):</p>
+
 <p class="h1 t-semibold">Heading h1</p>
 <p class="h2 t-semibold">Heading h2</p>
 <p class="h3 t-semibold">Heading h3</p>
 <p class="h4 t-semibold">Heading h4</p>
 <p class="h5 t-semibold">Heading h5</p>
 <p class="h6 t-semibold">Heading h6</p>
+
 <pre><code>:root {
   --h1: 2.5em;
   --h2: 1.875em;
@@ -51,15 +60,18 @@ layout: "_includes/layout.njk"
   --h6: 1em;
 }
 </code></pre>
-<p>All headings <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> and matching utility classes <code>h1</code> to <code>h6</code> have:</p>
+
+<p>All headings <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> and matching heading size utility classes <code>h1</code> to <code>h6</code> have:</p>
+
 <ul>
-<li>Headings font sizes set in the variables file (see above).</li>
-<li>Heading-size utility classes <code>h1</code> to <code>h6</code> are available for use on any element, e.g. <code>&lt;div class="h1"&gt;</code>. These utilities only affect font-size. They do not include margin or font-weight styling.</li>
-<li>Headings font family set using <code>--h-ff: inherit</code>. This has been done so that you can use the variable to override it — your headings don’t need to be the same typeface as your paragraphs.</li>
-<li>Headings font weight is set using <code>--h-fw: var(--t-semibold)</code> — which you can also override.</li>
-<li>Headings line heights set using the formula <code>1em + 0.5rem</code>.</li>
-<li>Headings have their bottom margin set the same as for paragraphs, <code>var(t--mb)</code>.</li>
+  <li>Headings font sizes set in the variables file (see above).</li>
+  <li>Heading-size utility classes <code>h1</code> to <code>h6</code> are available for use on any element, e.g. <code>&lt;div class="h1"&gt;</code>. These utilities only affect font-size. They do not include margin or font-weight styling.</li>
+  <li>Headings font family set using <code>--h-ff: inherit</code>. This has been done so that you can use the variable to override it — your headings don’t need to be the same typeface as your paragraphs.</li>
+  <li>Headings font weight is set using <code>--h-fw: var(--t-semibold)</code> — which you can also override.</li>
+  <li>Headings line heights set using the formula <code>1em + 0.5rem</code>.</li>
+  <li>Headings have their bottom margin set the same as for paragraphs, <code>var(t--mb)</code>.</li>
 </ul>
+
 <pre><code>:root {
   --h-ff: inherit; /* headings font-family */
   --h-fw: var(--t-semibold);
@@ -168,13 +180,13 @@ layout: "_includes/layout.njk"
     &lt;p class="mb-0 t-gray t-900"&gt;Lorem ipsum dolor sit amet ...&lt;/p&gt;
 &lt;/a&gt;
 </code></pre>
-<h3>Menus</h3>
+<h3>Semantic menu tags</h3>
 <ul>
 <li><code>nav</code> / <code>&lt;menu&gt;</code> / <code>&lt;menuitem&gt;</code></li>
 </ul>
 <p>The semantic <code>&lt;nav&gt;</code> tag has no styling of its own, other than its being a block element (similar to a <code>div</code>). Use it to organize your major navigation blocks of links (whether to other pages in your website, or “on this page”).</p>
-<p>Semantic <code>&lt;menu&gt;</code> tags are treated by the browser as no different to an <code>&lt;ul&gt;</code>, but they are announced as a menu by <a href="https://web.dev/articles/semantics-and-screen-readers">screen readers</a>. Codebase gives <code>&lt;menu&gt;</code>, <code>&lt;ul&gt;</code>, and <code>&lt;ol&gt;</code> the same styling: some left padding and bottom margin (and you can remove these you don't require them, using spacing utility classes: margins and/or paddings).</p>
-<p>Using an <code>&lt;li&gt;</code> within a <code>&lt;menu&gt;</code> will give you bulletpoint block items. This will be OK for sidebars and dropdown menus, for example, but there’s also the <code>&lt;menuitem&gt;</code> tag. This is an inline tag (like a <code>&lt;span&gt;</code> but semantic for menu items), and it doesn’t come with a bulletpoint.</p>
+<p>Semantic <code>&lt;menu&gt;</code> tags are treated by the browser as no different to an <code>&lt;ul&gt;</code>, but they are <em>announced</em> as a menu by <a href="https://web.dev/articles/semantics-and-screen-readers">screen readers</a>. Codebase gives <code>&lt;menu&gt;</code>, <code>&lt;ul&gt;</code>, and <code>&lt;ol&gt;</code> the same styling: some left padding and bottom margin (and you can remove these you don't require them, using spacing utility classes: margins and/or paddings).</p>
+<p>Using an <code>&lt;li&gt;</code> within a <code>&lt;menu&gt;</code> will give you bulletpoint block items. This will be OK for sidebars and dropdown menus, for example, but there’s also the semantic <code>&lt;menuitem&gt;</code> tag. This is an inline tag (like a <code>&lt;span&gt;</code>), and it doesn’t come with a bulletpoint.</p>
 <p>This is what you get if you add no styling, other than the Codebase defaults (but of course you will want to add more styling):</p>
 <nav class="my-3">
   <menu>
@@ -244,25 +256,28 @@ layout: "_includes/layout.njk"
 <p class="h3 t-semibold xs:t-center">A title</p>
 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rem animi quaerat accusantium illum architecto, nemo, ex harum voluptatum adipisci eum blanditiis dolorum. Natus debitis quisquam, expedita accusantium quos cumque?</p>
 </div>
+
 <h2>Tables</h2>
+
 <p>Codebase tables are set using the <code>.table</code> class.</p>
+
 <ul>
-<li>Table headers <code>&lt;th&gt;</code> are bold.</li>
-<li>Table cells <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> have a border set by <code>var(--b-1)</code> – the same detail as <code>&lt;hr&gt;</code> and border utility classes.</li>
-<li>Table cell paddings are set by <code>--p-cell</code></li>
-<li>All cell content is left-aligned. You can change that on the whole <code>&lt;table&gt;</code> or on a per-cell basis using the <a href="#text-alignment">text alignment</a> classes.</li>
-<li>Codebase tables ordinarily are grid-lined, with cell content left-aligned, and cell widths dependant on the amoint of content in cells. Optional modifiers:
-  <ul>
-    <li><code>table-fixed</code> will force cells to have the same (fixed) width.</li>
-    <li><code>table-borderless</code> removes border lines (but keeps padding).</li>
-    <li><code>table-lines</code> removes vertical lines but keeps horizontal lines.</li>
-    <li><code>table-compact</code> reduced padding, good for large tables.</li>
-    <li><code>table-striped</code> alternate rows have backgrounds semi-transparent white and pale gray</li>
-  </ul>
-<li>Cell or whole table alignments can be handled by <code>t-center</code> etc. and <code>vertical-align-middle</code> etc.</li>
+  <li>Table headers <code>&lt;th&gt;</code> are bold.</li>
+  <li>Table cells <code>&lt;th&gt;</code> and <code>&lt;td&gt;</code> have a border set by <code>var(--b-1)</code> – the same detail as <code>&lt;hr&gt;</code> and border utility classes.</li>
+  <li>Table cell paddings are set by <code>--p-cell</code></li>
+  <li>All cell content is left-aligned. You can change that on the whole <code>&lt;table&gt;</code> or on a per-cell basis using the <a href="#text-alignment">text alignment</a> classes.</li>
+  <li>Codebase tables ordinarily are grid-lined, with cell content left-aligned, and cell widths dependant on the amoint of content in cells. Optional modifiers:
+    <ul>
+      <li><code>table-fixed</code> will force cells to have the same (fixed) width.</li>
+      <li><code>table-borderless</code> removes border lines (but keeps padding).</li>
+      <li><code>table-lines</code> removes vertical lines but keeps horizontal lines.</li>
+      <li><code>table-compact</code> reduced padding, good for large tables.</li>
+      <li><code>table-striped</code> alternate rows have backgrounds semi-transparent white and pale gray</li>
+    </ul>
+  <li>Cell or whole table alignments can be handled by <code>t-center</code> etc. and <code>vertical-align-middle</code> etc.</li>
 </ul>
-<div class="mt-3 mb-4">
-<table class="table">
+
+<table class="my-4 table">
   <caption>This is a Table Caption</caption>
   <thead>
     <tr>
@@ -294,7 +309,7 @@ layout: "_includes/layout.njk"
     </tr>
   </tbody>
 </table>
-</div>
+
 <pre><code>&lt;table class="table"&gt;
   &lt;caption&gt;This is a Table Caption&lt;/caption&gt;
   &lt;thead&gt;
@@ -319,8 +334,10 @@ layout: "_includes/layout.njk"
   &lt;/tbody&gt;
 &lt;/table&gt;
 </code></pre>
-<p>With <code>table table-lined table-striped</code>:</p>
-<table class="mt-3 mb-4 table table-lined table-striped">
+
+<p>Example with <code>table table-lined table-striped</code>:</p>
+
+<table class="my-4 table table-lined table-striped">
   <thead>
     <tr>
       <th>Table Header 1</th>
@@ -351,22 +368,27 @@ layout: "_includes/layout.njk"
     </tr>
   </tbody>
 </table>
+
 <h3>Making wide tables responsive</h3>
+
 <p>If you have a lot of content in your table, it will probably break your page layout on small viewports (e.g. phones). The simplest way to make a table “responsive” is to wrap your table in a DIV with the <code>overflow-x</code> class to make it horizontally scrollable.</p>
-<div class="mt-3 mb-4 overflow-x">
+
+<div class="my-4 overflow-x">
   <table class="table table-grid">
     <thead>
-      <tr><th>Column title</th>
-      <th>Column title</th>
-      <th>Column title</th>
-      <th>Column title</th>
-      <th>Column title</th>
-      <th>Column title</th>
-      <th>Column title</th>
-      <th>Column title</th>
-      <th>Column title</th>
-      <th>Column title</th>
-    </tr></thead>
+      <tr>
+        <th>Column title</th>
+        <th>Column title</th>
+        <th>Column title</th>
+        <th>Column title</th>
+        <th>Column title</th>
+        <th>Column title</th>
+        <th>Column title</th>
+        <th>Column title</th>
+        <th>Column title</th>
+        <th>Column title</th>
+      </tr>
+    </thead>
     <tbody>
       <tr>
         <td>Tabel cell content</td>
@@ -383,22 +405,68 @@ layout: "_includes/layout.njk"
     </tbody><tbody>
   </tbody></table>
 </div>
+
 <pre><code>&lt;div class="overflow-x"&gt;
   &lt;table class="table"&gt;
     ...
   &lt;/table&gt;
 &lt;/div&gt;
 </code></pre>
+
 <h2>Making text bigger</h2>
+
 <p>The base font size is 100% (16px default). Additionally:</p>
+
 <ol>
-<li>There’s a <code>t-lg</code> class that can be used to make text 1.325em — good for a lead paragraph, large button, or important messaging.</li>
-<li>Classes <code>.h1</code> through <code>.h6</code> will resize text the same amount as for their respective heading tag sizes — use these when you want to make text bigger (or large text smaller) without adversely affecting accessibility/ SEO heading hierarchy.</li>
-<li>The <code>t-long-read</code> wrapping class uses a <code>clamp()</code> to ramp text from starting size 1em up to 1.25em (20px default) depending on container size. E.g. used for responsively increasing text size in <em>article prose components</em>. <code>&lt;h1&gt;</code> inside a <code>t-long-read</code> will have maximum font size 61px.</li>
-<li>The <code>t-comfort</code> wrapping class uses a <code>clamp()</code> to raise text from starting size 1em up to 1.625em (26px default) depending on container size. E.g. used for responsively increasing text size in <em>comfortable reading components</em>. <code>&lt;h1&gt;</code> inside a <code>t-display</code> will have maximum font size 79px.</li>
-<li>The <code>t-display</code> wrapping class uses a <code>clamp()</code> to raise text from starting size 1em up to 2em (32px default) depending on container size. E.g. used for responsively increasing text size in <em>hero components</em>. <code>&lt;h1&gt;</code> inside a <code>t-display</code> will have maximum font size 97px.</li>
+  <li>There’s a <code>t-lg</code> class that can be used to make text 1.325em — good for a lead paragraph, large button, or important messaging.</li>
+  <li>Classes <code>.h1</code> through <code>.h6</code> will resize text the same amount as for their respective heading tag sizes — use these when you want to make text bigger (or large text smaller) without adversely affecting accessibility/ SEO heading hierarchy.</li>
+  <li>The <code>t-long-read</code> wrapping class uses a <code>clamp()</code> to ramp text from starting size 1em up to 1.25em (20px default) depending on container size. E.g. used for responsively increasing text size in <em>article prose components</em>. <code>&lt;h1&gt;</code> inside a <code>t-long-read</code> will have maximum font size 61px.</li>
+  <li>The <code>t-comfort</code> wrapping class uses a <code>clamp()</code> to raise text from starting size 1em up to 1.625em (26px default) depending on container size. E.g. used for responsively increasing text size in <em>comfortable reading components</em>. <code>&lt;h1&gt;</code> inside a <code>t-display</code> will have maximum font size 79px.</li>
+  <li>The <code>t-display</code> wrapping class uses a <code>clamp()</code> to raise text from starting size 1em up to 2em (32px default) depending on container size. E.g. used for responsively increasing text size in <em>hero components</em>. <code>&lt;h1&gt;</code> inside a <code>t-display</code> will have maximum font size 97px.</li>
 </ol>
+
+<table class="table overflow-x">
+  <thead>
+    <th><code>t-long-read</code> wrapper</th>
+    <th><code>t-comfort</code> wrapper</th>
+    <th><code>t-display</code> wrapper</th>
+  </tr></thead><thead>
+  </thead><tbody>
+    <tr>
+      <td class="t-long-read">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Paragraph. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rem animi quaerat accusantium illum architecto, nemo, ex harum voluptatum adipisci eum blanditiis dolorum. Natus debitis quisquam, expedita accusantium quos cumque?</p>
+      </td>
+      <td class="t-comfort">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Paragraph. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rem animi quaerat accusantium illum architecto, nemo, ex harum voluptatum adipisci eum blanditiis dolorum. Natus debitis quisquam, expedita accusantium quos cumque?</p>
+      </td>
+      <td class="t-display">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p>Paragraph. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rem animi quaerat accusantium illum architecto, nemo, ex harum voluptatum adipisci eum blanditiis dolorum. Natus debitis quisquam, expedita accusantium quos cumque?</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 <h2>Code</h2>
+
 <p><code>&lt;code&gt;</code> tags have monospaced text (set by <code>--t-mono</code>), with a thin border and a little padding to improve readability.</p>
 <p>If the <code>&lt;code&gt;</code> tag is wrapped in a <code>&lt;pre&gt;</code> tag, then it becomes a block level element with more padding, a max-width of 100%, and y-axis overflow scrolling.</p>
 <h2>Other typographic utility classes</h2>
@@ -413,4 +481,4 @@ layout: "_includes/layout.njk"
 <li><code>t-uppercase</code> — text transform to capitals</li>
 <li><code>t-nowrap</code> — prevents text wrapping (spaces behave as non-breaking spaces)</li>
 </ul>
-<p><strong>Note:</strong> links can also be styled as though they are buttons using the <code>btn</code> utility class.</p>
+<p><strong>Note:</strong> links can also be styled as though they are buttons using the <code>btn</code> utility class. See <a href="{{baseUrl}}components/#buttons">components: buttons</a>.</p>

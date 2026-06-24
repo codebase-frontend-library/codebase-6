@@ -3,6 +3,7 @@
   --t-sans: ui-sans-serif, sans-serif;
   --t-serif: ui-serif, serif;
   --t-mono: ui-monospace, monospace;
+  --t-base-ff: var(--t-sans);
   --t-mb: 1rem;
   --t-lh: 1.5;
   --t-base-fs: 100%;
@@ -27,12 +28,13 @@
   --h4: 1.25em;
   --h5: 1.125em;
   --h6: 1em;
-  --hd-ff: var(--t-sans);
+  --hd-ff: inherit;
   --hd-fw: var(--t-semibold);
   --hd-lh: calc(1em + 0.5rem);
   --hd-m-block: 2rem 1rem;
 
   /* Forms */
+  --t-form-ff: inherit;
   --y-form-sm: 1.75rem;
   --y-form: 2.5rem;
   --y-form-lg: 3.25rem;

@@ -139,7 +139,7 @@ Codebase 6  </title>
   <li>Reliable accessibility features for assistive technology users</li>
   <li>A lightweight system of utility classes for controlling dimensions, positioning, spacing, borders, text, and images</li>
   <li><code>@media</code> query responsive layout utilities using CSS grid and flexbox</li>
-  <li>Responsive typography, layout, and spacing using <code>clamp()</code> ramps</li>
+  <li>Responsive typography and spacing using <code>clamp()</code> ramps</li>
   <li>A compact color lightness system based on <code>oklch()</code> for text, borders, and backgrounds</li>
   <li>Theming control using CSS variables</li>
 </ul>
@@ -163,20 +163,20 @@ Codebase 6  </title>
 <ul>
   <li>Aim at being a good place to start for a web design project.</li>
   <li>Do <em>most things most people want</em> out of the box.</li>
-  <li>With Codebase 6 being so small, there’s less you need to overwrite in order to style it your own way (and most things in Codebase can be restyled by CSS variables). So, there’s no need for a purge process to remove a heavy payload of unused styles.</li>
+  <li>With Codebase 6 being so small, there’s less you need to overwrite in order to style it your own way (and most things in Codebase can be restyled by CSS variables). There’s no need for a purge process to remove a heavy payload of unused styles.</li>
   <li>No CSS preprocessing.</li>
 </ul>
 
 <h2>Built using PostCSS</h2>
 
-<p>Codebase is built using <a href="https://postcss.org">PostCSS</a> and some plugins. The plugins used by Codebase are:</p>
+<p>Codebase is built using <a href="https://postcss.org">PostCSS</a> and some plugins:</p>
 
 <ul>
   <li><a href="https://github.com/postcss/postcss-import">postcss-import</a> — so that Codebase could be built from separate CSS files</li>
   <li><a href="https://cssnano.co">cssnano</a> — to remove comments and minify the output <code>codebase-6.min.css</code></li>
 </ul>
 
-<p><strong>Note:</strong> neither <a href="https://preset-env.cssdb.org">postcss-preset-env</a> nor <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> have been used in Codebase. And preprocessors such as Sass, Less, Stylus etc. are not required.</p>
+<p><strong>Note:</strong> neither <a href="https://preset-env.cssdb.org">postcss-preset-env</a> nor <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> have been used in Codebase. Preprocessors such as Sass, Less, Stylus etc. are not required.</p>
 
 <h2>A modern CSS reset</h2>
 
@@ -190,7 +190,7 @@ Codebase 6  </title>
 
 <h3>(1.) Focus states</h3>
 
-<p>Codebase uses the browser’s built-in focus ring styles, slightly improved by a thickening the  ring and moving it out a little to improve legibility of link text. In modern browsers the focus ring is clearly visible in a range of contexts, and in both light and dark themes. A z-index raise has been added to prevent the focus ring tucking under a neighbouring item, e.g. in input/button groups.</p>
+<p>Codebase uses the browser’s built-in focus ring styles, slightly improved by a thickening the ring and moving it out a little to improve legibility of link text. In most modern browsers the focus ring is clearly visible in a range of contexts, and in both light and dark themes. However, some accessability rings are nearly invisible over a dark bakground; therefore a white drop-shadow has been added. Ans a z-index raise has been added to prevent the focus ring tucking under a neighbouring item, e.g. in input/button groups.</p>
 
 <p>See also <a href="/codebase-6/colors/#colors-and-accessibility">colors and accessibility</a>.</p>
 
@@ -229,7 +229,7 @@ Codebase 6  </title>
 
 <h3>(2.) The visually-hidden (screen-reader only) class</h3>
 
-<p>The <code>visually-hidden</code> is used to provide additional content for screen-readers, for improved accessibility. For example, it is best practice to have “skip link” above the top navigation bar on your website, but have it (visually) hidden for ably sighted users.</p>
+<p>The <code>visually-hidden</code> (alias <code>sr-only</code> class can be used to provide additional content for screen-readers, for improved accessibility. For example, it is best practice to have “skip link” above the top navigation bar on your website, but have it (visually) hidden for ably sighted users.</p>
 
 <pre><code>&lt;a href="#main-content"
   tabindex="1"

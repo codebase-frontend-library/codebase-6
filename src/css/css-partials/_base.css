@@ -23,7 +23,7 @@ html {
 body {
   background: var(--bgc-body);
   color: var(--tc-base);
-  font-family: var(--t-sans);
+  font-family: var(--t-base-ff);
   font-size: var(--t-base-fs);
   font-variant-numeric: lining-nums;
   line-height: var(--t-lh);

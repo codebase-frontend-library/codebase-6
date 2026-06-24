@@ -22,7 +22,7 @@ textarea {
   border: var(--b-thin);
   border-radius: var(--s-tiny);
   color: var(--tc-form);
-  font-family: var(--t-base);
+  font-family: var(--t-form-ff);
   font-size: inherit;
   max-width: 100%;
   min-height: var(--y-form);
