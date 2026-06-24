@@ -147,7 +147,7 @@
   max-height: 100dvh;
 }
 
-[class*="icon"]:not(.btn-icon),
+[class*="icon"],
 [class*="square"] {
   aspect-ratio: 1/1;
   height: min(var(--square), var(--square));
