@@ -11,9 +11,7 @@ Codebase 6 Layouts: Flexbox | Codebase 6  </title>
     :root {
       --w-page: var(--w-xxl);
       --w-sidebar: var(--w-xxs);
-    }
-
-    html {
+      scrollbar-gutter: stable;
       scroll-behavior: smooth;
     }
 
@@ -41,6 +39,11 @@ Codebase 6 Layouts: Flexbox | Codebase 6  </title>
         grid-column: 1;
         border-right: var(--b-thin);
         width: var(--w-sidebar);
+        & > div {
+          max-height: 100dvh;
+          overflow-y: auto;
+          scrollbar-width: thin;
+        }
       }
       .main-frame {
         grid-column: 2;
@@ -62,37 +65,8 @@ Codebase 6 Layouts: Flexbox | Codebase 6  </title>
         & > div {
           max-height: 100dvh;
           overflow-y: auto;
+          scrollbar-width: thin;
         }
-      }
-    }
-
-    @container (min-width: 1024px) {
-      #site-nav {
-        position: sticky;
-        top: 0;
-        width: var(--w-xxs);
-        height: 100dvh;
-      }
-
-      #site-title {
-        padding-top: var(--s-3);
-        flex-direction: column;
-        align-self: center;
-      }
-
-      #site-menu {
-        min-width: var(--w-xxs);
-      }
-
-      .ms-windows .left-sidebar > div,
-      .ms-windows .right-sidebar > div {
-        scrollbar-gutter: stable;
-        overflow-y: hidden;
-      }
-
-      .ms-windows .left-sidebar:hover > div,
-      .ms-windows .right-sidebar:hover > div {
-        overflow-y: auto;
       }
     }
   </style>
