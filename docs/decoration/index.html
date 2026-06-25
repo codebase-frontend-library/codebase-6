@@ -88,10 +88,10 @@ Codebase 6 Decoration | Codebase 6  </title>
       <span class="t-gray">version 6.0.0</span>
     </div>
     <div class="grow flex flex-end flex-wrap gap-2">
-      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
     </div>
 </nav>
   <div class="page-container">
@@ -140,6 +140,8 @@ Codebase 6 Decoration | Codebase 6  </title>
   --s-4: clamp(2rem, 1rem + 2.5vw, 3rem);
 }
 </code></pre>
+
+<p>Spacing level <code>--s-tiny</code> can be used where you want to add, e.g. a small amount of spacing between an icon and text within a button, or between two adjacent form fields.</p>
 
 <p>Spacing levels <code>--s-3</code> and <code>--s-4</code> increase responsively depending how how much width is available, using <code>clamp()</code> functions. This makes the negative space (“whitespace”) for spacing levels 3 and 4 larger where there is a larger viewport width available.</p>
 
@@ -206,8 +208,6 @@ Codebase 6 Decoration | Codebase 6  </title>
   <div class="b-thin p-4"><code>p-4</code></div>
 </div>
 
-<p>Plus, there are zero <code>*-0</code> options (top, right, bottom, left) are for removing (resetting) unwanted margin and padding (and <code>unrounded</code> for removing border radius (see <a href="#rounded-corners">rounded corners</a>)).</p>
-
 <p>Both margin and padding spacers are controlled on the 4 sides of blocks, as follows:</p>
 
 <ul>
@@ -225,6 +225,7 @@ Codebase 6 Decoration | Codebase 6  </title>
 <p>In addition, there are the following specials:</p>
 
 <ul>
+  <li><code>*-0</code> margin and padding (options all, top, right, bottom, left) are for <em>overriding</em> (resetting) unwanted margin and padding</li>
   <li><code>p-cell</code> — adds padding <code>0.5rem 1rem</code> for creating menu items. Same as the padding for table cells and buttons</li>
   <li><code>mx-auto</code> — for x-axis margin auto-centering</li>
 </ul>
@@ -311,7 +312,7 @@ Codebase 6 Decoration | Codebase 6  </title>
 
 <ul>
 <li><code>rounded-tiny</code> — <code>--s-tiny</code></li>
-<li><code>rounded</code> — <code>--s-1</code>  (or <code>rounded-1</code>)</li>
+<li><code>rounded</code> — <code>--s-1</code>  (alias <code>rounded-1</code>)</li>
 <li><code>rounded-2</code> — <code>--s-2</code></li>
 <li><code>rounded-3</code> — <code>--s-3</code></li>
 <li><code>rounded-4</code> — <code>--s-4</code></li>
@@ -334,13 +335,13 @@ Codebase 6 Decoration | Codebase 6  </title>
 <div class="b-thin aspect-ratio-1x1 rounded-pill p-3 flex flex-center flex-middle"><code>rounded-pill</code></div>
 </div>
 
-<h2>The <code>img-contain</code> and <code>img-cover</code> classes</h2>
+<h2>Codebase <code>img-contain</code> and <code>img-cover</code> classes</h2>
 
 <p><code>img-contain</code> and <code>img-cover</code> are designed for use on an <code>&lt;img src=""&gt;</code> tag.</p>
 
-<p>The <code>img-contain</code> class can be used to make an image expand or contract so that it is fully sen within a wrapper, without distorting the image. If the image aspect ratio is taller than the wrapper, then some empty space will appear right and left of the image. And if the image aspect ratio is wider than the wrapper, then some empty space will appear to the top and bottom of the image.</p>
+<p>The <code>img-contain</code> class can be used to make an image expand or contract so that it is fully seen within a wrapper, without distorting the image. If the image aspect ratio is taller than the wrapper, then some empty space will appear right and left of the image. And if the image aspect ratio is wider than the wrapper, then some empty space will appear to the top and bottom of the image.</p>
 
-<p>The <code>img-cover</code> class can be used to make an image expand or contract to fully cover a wrapper block rectangle. If the image aspect ratio is taller than the wrapper, then its top and bottom will seem to be cropped. Ans if the image aspect ratio is wider than the wrapper, then its right and left sides will seem to be cropped.</p>
+<p>The <code>img-cover</code> class can be used to make an image expand or contract to fully cover a wrapper block rectangle. If the image aspect ratio is taller than the wrapper, then its top and bottom will seem to be cropped. And if the image aspect ratio is wider than the wrapper, then its right and left sides will seem to be cropped.</p>
 
 <p>There are also some image alignment modifiers that can be paired with <code>img-cover</code>.</p>
 
@@ -350,21 +351,6 @@ Codebase 6 Decoration | Codebase 6  </title>
   <li><code>img-cover img-cover-bottom</code> — ensures the bottom part of the image is in view</li>
   <li><code>img-cover img-cover-left</code> — ensures the left part of the image is in view</li>
 </ul>
-
-<h2 id="opacity" tabindex="-1">Opacity</h2>
-<p>Opacities of any HTML element, and whatever is contained within it (with hover states):</p>
-<ul>
-<li><code>opacity-25%</code> / <code>hover:opacity-25%</code></li>
-<li><code>opacity-50%</code> / <code>hover:opacity-50%</code></li>
-<li><code>opacity-75%</code> / <code>hover:opacity-75%</code></li>
-<li><code>hover:opacity-100%</code> — a reset that removes opacity on hover, so that it is fully opaque</li>
-</ul>
-
-<p>The hover states are provided in case you want an image inside a link to change opacity on hover.</p>
-
-<p>If you use these on an image over a colored background, then you get a color-tinted image.</p>
-
-<p>If you have text over an image (e.g. in a hero component), then you can use opacity over a black (or dark color) background to make white text more readable — and <em>vice versa</em>.</p>
           </main>
         </div>
       </div>

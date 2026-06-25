@@ -4,26 +4,26 @@ layout: "_includes/layout.njk"
 ---
 
 <p>Codebase 6 form elements have simple background and focus styling.</p>
+
 <p>
   <strong>Notes:</strong>
 </p>
+
 <ol>
   <li>
-    In Codebase 6, form elements do not have set width. You can control widths by one of two ways:
+    Form elements do not have set width. You can control widths by one of two ways:
     <ul>
       <li>By adding the <code>w-100%</code> utility class to the form element, or</li>
       <li>By involving the form elements as immediate children in flexbox or grid layouts.</li>
     </ul>
   </li>
   <li>
-    Form inputs, textareas, buttons, and the <code>btn</code> class, have <code>font-size: inherit</code>. This means their font sizes can be modified by any font-size class in Codebase 6.
-  </li>
-  <li>The font-family of form elements, buttons, and <code>btn</code> is controlled by 
-      <code>var(--t-base-fs)</code>
-        (default is sans-serif).
-  </li>
+    Form inputs, textareas, buttons, and the <code>btn</code> class, have <code>font-size: inherit</code>. This means their font sizes can be modified by any font-size class.</li>
+  <li>The font-family of form elements, buttons, and <code>btn</code> is controlled by <code>var(--t-base-fs)</code> (default is sans-serif).</li>
 </ol>
-<h2 id="textual-form-input-fields" tabindex="-1">Textual form input fields</h2>
+
+<h2>Textual form input fields</h2>
+
 <form action="">
   <p>
       <label for="example-input-text">Text</label>
@@ -37,7 +37,7 @@ layout: "_includes/layout.njk"
       <label for="example-input-email">Email address</label>
       <input type="email" id="example-input-email" name="example" placeholder="Enter email">
       <br>
-      Expects an email address — on touch screens, this will invoke a keypad for entering emails.
+      Expects an email address. On touch screens, this will invoke a keypad for entering emails.
         
   </p>
   <p>
@@ -48,12 +48,15 @@ layout: "_includes/layout.njk"
       <label for="example-input-url">Url</label>
       <input type="url" id="example-input-url" name="example" placeholder="Enter a url">
       <br>
-      Expects a web address — on touch screens, this will invoke a keypad for entering URLs.
+      Expects a web address. On touch screens, this will invoke a keypad for entering URLs.
         
   </p>
 </form>
-<h2 id="number-inputs" tabindex="-1">Number inputs</h2>
+
+<h2>Number inputs</h2>
+
 <p>On touch screens, these inputs invoke the numeric keyboard instead of the text keyboard.</p>
+
 <form action="">
   <p>
       <label for="example-input-tel">Telephone number</label>
@@ -64,8 +67,11 @@ layout: "_includes/layout.njk"
       <input type="number" id="example-input-number" name="example" min="0" inputmode="numeric" pattern="\d*">
   </p>
 </form>
+
 <h2 id="date-and-time-inputs" tabindex="-1">Date and time inputs</h2>
+
 <p>On some devices (e.g. iOS Safari), these inputs get modified by date pickers, etc. The shape of the input fields gets changed.</p>
+
 <form action="">
   <p>
       <label for="example-input-date">Date</label>
@@ -80,31 +86,33 @@ layout: "_includes/layout.njk"
       <input type="time" id="example-input-time" name="example">
   </p>
 </form>
-<h2 id="color-picker" tabindex="-1">Color picker</h2>
+
+<h2>Color picker</h2>
+
 <p>Invokes the device’s color picker.</p>
+
 <form action="">
   <p>
       <label for="example-input-color">Color</label>
       <input type="color" id="example-input-color" placeholder="#fff">
   </p>
 </form>
-<h2 id="file-upload" tabindex="-1">File upload</h2>
+
+<h2>File upload</h2>
+
 <form action="">
   <p>
       <label for="example-input-file">File input</label>
       <input class="w100%" type="file" id="example-input-file" accept="image/png, image/jpeg">
   </p>
 </form>
-<p>
-  <strong>Note:</strong>
-    File upload inputs 
-  <code>&lt;input type="file"&gt;</code>
-    can break your page layout on the smallest phones in portrait orientation. But if you add 
-  <code>class="w100%"</code>
-    that problem goes away.
-</p>
-<h2 id="select-and-multi-select" tabindex="-1">Select and multi-select</h2>
+
+<p><strong>Note:</strong> File upload inputs <code>&lt;input type="file"&gt;</code> can break your page layout on the smallest phones in portrait orientation. But if you add <code>class="w100%"</code> that problem goes away.</p>
+
+<h2>Select and multi-select</h2>
+
 <p>On some devices (e.g. iOS Safari), these inputs get modified by number pickers (dropdowns).</p>
+
 <form action="">
   <p>
       <label for="example-select1">Example select</label>
@@ -127,11 +135,14 @@ layout: "_includes/layout.njk"
       </select>
   </p>
 </form>
-<h2 id="list-and-datalist" tabindex="-1">List and datalist</h2>
+
+<h2>List and datalist</h2>
+
 <p>
   <label for="input-list1">Favourite dog breed:</label>
   <input list="dog-breeds" id="input-list1" name="dog-breeds">
 </p>
+
 <datalist id="dog-breeds">
   <option value="Springer spaniel"></option>
   <option value="Dachshund"></option>
@@ -139,13 +150,17 @@ layout: "_includes/layout.njk"
   <option value="Beagle"></option>
   <option value="German Shepherd"></option>
 </datalist>
-<h2 id="text-area-(multiline)" tabindex="-1">Text area (multiline)</h2>
+
+<h2>Text area (multiline)</h2>
+
 <form action="">
   <label for="example-textarea">Example textarea</label>
   <br>
   <textarea id="example-textarea"></textarea>
 </form>
-<h2 id="radio-boxes-and-checkboxes" tabindex="-1">Radio boxes and checkboxes</h2>
+
+<h2>Radio boxes and checkboxes</h2>
+
 <form action="" class="mt-2 mb-3">
   <p class="my-2">Radio boxes:</p>
   <input type="radio" id="example-radio-1" name="example-radio" value="banana">
@@ -169,14 +184,11 @@ layout: "_includes/layout.njk"
   <br>
   <input type="submit" value="Submit">
 </form>
-<h2 id="fieldsets-and-legends" tabindex="-1">Fieldsets and legends</h2>
-<p>
-  Groups of form elements can be wrapped in 
-  <code>&lt;fieldset&gt;</code>
-    tags. Add a 
-  <code>&lt;legend&gt;</code>
-    to provide a special title for the entire fieldset.
-</p>
+
+<h2>Fieldsets and legends</h2>
+
+<p>Groups of form elements can be wrapped in <code>&lt;fieldset&gt;</code> tags. Add a <code>&lt;legend&gt;</code> to provide a special title for the entire fieldset.</p>
+
 <form action="">
   <fieldset class="flex gap-tiny">
       <legend>Example e-newsletter subscribe</legend>
@@ -184,34 +196,35 @@ layout: "_includes/layout.njk"
       <input type="submit" name="submit" value="Subscribe">
   </fieldset>
 </form>
-<pre>
-  <code>&lt;form action=""&gt;
+
+<pre><code>&lt;form action=""&gt;
   &lt;fieldset class="flex gap-tiny"&gt;
     &lt;legend&gt;Example e-newsletter subscribe&lt;/legend&gt;
     &lt;input class="w100%" type="email" id="example-input-email" placeholder="Enter email"&gt;
     &lt;input type="submit" name="submit" value="Subscribe"&gt;
   &lt;/fieldset&gt;
-&lt;/form&gt;</code>
-</pre>
-<p>
-  <strong>Note:</strong> In the example above, the Codebase <code>flex</code> class has been used to align these form elements side-by-side, and then <code>grow</code> has been used to expand the email input field. A <code>&lt;legend&gt;</code> is also included — but since its text incorporates with the 
-  <code>&lt;fieldset&gt;</code> wrapping border line, it will not be controlled by the flexbox rule.
-</p>
-<h2 id="adding-colors-to-form-elements" tabindex="-1">Adding colors to form elements</h2>
+&lt;/form&gt;</code></pre>
+
+<p><strong>Note:</strong> In the example above, the Codebase <code>flex</code> class has been used to align these form elements side-by-side, and then <code>grow</code> has been used to expand the email input field. A <code>&lt;legend&gt;</code> is also included — but since its text incorporates with the <code>&lt;fieldset&gt;</code> wrapping border line, it will not be controlled by the flexbox rule.</p>
+
+<h2>Adding colors to form elements</h2>
+
 <p>Border, background, and text color utilities can be used.</p>
+
 <form class="mt-2 mb-3">
   <label for="example-input-text">Label</label>
   <input class="b-thick b-red" type="text" id="example-input-text" placeholder="Enter some text here">
   <input class="b-thick b-green" type="text" id="example-input-text" placeholder="Enter some text here">
 </form>
-<pre>
-  <code>&lt;label for="example-input-text"&gt;Label&lt;/label&gt;
+
+<pre><code>&lt;label for="example-input-text"&gt;Label&lt;/label&gt;
 
 &lt;input class="b-thick b-red" type="text" id="example-input-text" placeholder="Enter some text here"&gt;
 
-&lt;input class="b-thick b-green" type="text" id="example-input-text" placeholder="Enter some text here"&gt;</code>
-</pre>
-<h2 id="form-buttons" tabindex="-1">Form buttons</h2>
+&lt;input class="b-thick b-green" type="text" id="example-input-text" placeholder="Enter some text here"&gt;</code></pre>
+
+<h2>Form buttons</h2>
+
 <form action="">
   <p>
       <button type="button" name="button">Button</button>
@@ -220,17 +233,17 @@ layout: "_includes/layout.njk"
       <input type="reset" name="reset" value="Reset Button">
   </p>
 </form>
-<pre>
-  <code>&lt;form action=""&gt;
+
+<pre><code>&lt;form action=""&gt;
   &lt;p&gt;
     &lt;button type="button" name="button"&gt;Button&lt;/button&gt;
     &lt;input type="button" name="input" value="Input Button"&gt;
     &lt;input type="submit" name="submit" value="Submit Button"&gt;
     &lt;input type="reset" name="reset" value="Reset Button"&gt;
   &lt;/p&gt;
-&lt;/form&gt;</code>
-</pre>
+&lt;/form&gt;</code></pre>
+
 <p>
-  The <code>&lt;.btn&gt;</code> class is used to style links as buttons. See 
+  The <code>btn</code> class is used to style links as buttons. See 
   <a href="{{ baseUrl }}components/#buttons">components: buttons</a> for more information.
 </p>

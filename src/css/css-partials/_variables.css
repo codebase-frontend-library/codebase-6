@@ -64,12 +64,12 @@
   --square-featured: clamp(4.25rem, 1.25rem + 9.375vw, 7.25rem);
 
   /* Colors */
-  --blue: #6290fc;
-  --green: #86b522;
-  --amber: #ffd105;
-  --red: #ff614c;
-  --purple: #9400d3;
-  --teal: #0080a2;
+  --blue: #0074d9;
+  --green: #2ecc40;
+  --amber: #ffdc00;
+  --red: #ff4136;
+  --purple: #b10dc9;
+  --teal: #39cccc;
   --gray: #9a9fb1;
   --info: var(--blue);
   --success: var(--green);
@@ -78,26 +78,25 @@
   --primary: var(--purple);
   --secondary: var(--teal);
   --tertiary: var(--gray);
-  --l100: 98%;
-  --l200: 86%;
-  --l300: 74%;
-  --l400: 62%;
-  --l500: 50%;
-  --l600: 42%;
-  --l700: 34%;
-  --l800: 26%;
-  --l900: 18%;
-  --l1000: 10%;
+  --l100: 96%;
+  --l200: 88%;
+  --l300: 80%;
+  --l400: 72%;
+  --l500: 64%;
+  --l600: 56%;
+  --l700: 48%;
+  --l800: 40%;
+  --l900: 36%;
 
   /* Theme */
   --bgc-body: #fff;
   --tc-base: oklch(from var(--gray) var(--l900) c h);
-  --tc-link: oklch(from var(--blue) var(--l500) c h);
-  --tc-link-hover: oklch(from var(--blue) var(--l700) c h);
+  --tc-link: oklch(from var(--blue) var(--l600) c h);
+  --tc-link-hover: oklch(from var(--blue) var(--l800) c h);
   --bgc-ui: var(--gray);
   --tc-form: var(--tc-base);
   --bgc-form: var(--bgc-body);
-  --bgc-code: oklch(from var(--blue) var(--l100) c h);
+  --bgc-code: oklch(from var(--gray) var(--l100) c h);
   --bc-detail: oklch(from var(--gray) l c h / 0.35);
   --bg-glass-blur: blur(4px);
 }

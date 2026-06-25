@@ -88,10 +88,10 @@ Codebase 6 Layouts: Flexbox | Codebase 6  </title>
       <span class="t-gray">version 6.0.0</span>
     </div>
     <div class="grow flex flex-end flex-wrap gap-2">
-      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
     </div>
 </nav>
   <div class="page-container">
@@ -128,14 +128,14 @@ Codebase 6 Layouts: Flexbox | Codebase 6  </title>
           
           <main id="main-content">
             
-<p>Normally in HTML, block elements span 100% of the available width and stack vertically, one under he other starting from the top of the browser window (known as the <em>viewport</em>). <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS flexbox</a> styling enables blocks to be arranged and aligned horizontally or vertically, with each block width being controlled or made to shrink according to the content inside it.
+<p>Normally in HTML, block elements span 100% of the available width and they stack vertically, one under he other starting from the top of the browser window (known as the <em>viewport</em>). <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS flexbox</a> styling enables blocks to be arranged and aligned horizontally or vertically, with each block width being controlled or made to shrink according to the content inside it.
 
 <p>Codebase’s <code>flex</code> layout system uses flexbox, enabling you to organize wrapped groups of elements in a row (e.g. for a menubar, or a media object) or in a column (e.g. for a card).</p>
 
 <h2>Notes on <code>flex</code></h2>
 
 <ol>
-  <li>Besides <code>flex</code> (takes effect at all screen widths), there are also responsive prefix flex wrappers: <code>xs:flex</code>, <code>sm:flex</code>, <code>md:flex</code> and <code>lg:flex</code>. The flexbox effect for these responsive wrappers will take effect at extra-small, small, medium or large viewport widths.
+  <li>Besides the <code>flex</code> wrapper that creates a flexbox context, there are also responsive prefix flex wrappers: <code>xs:flex</code>, <code>sm:flex</code>, <code>md:flex</code> and <code>lg:flex</code>. The flexbox effect for these responsive wrappers will take effect at extra-small, small, medium or large viewport widths. See <a href="#responsive-flex-modifier-tiers">responsive flex modifier tiers</a> for more information.
     <div class="overflow-x my-1">
     <table class="table mb-0">
       <thead>
@@ -168,13 +168,11 @@ Codebase 6 Layouts: Flexbox | Codebase 6  </title>
       </tbody>
     </table>
     </div>
-    Below these breakpoints the child block element layout will be displayed the default way: all stacked in a single column with 100% width.</li>
+    Below these breakpoints (listed above), the child block element layout will be displayed the default way: all stacked in a single column with 100% width.</li>
   <li>The flexbox modifier classes documented below (<code>gap-3</code>, <code>flex-wrap</code>, etc.) will all just work as expected with these responsive prefixed flex wrappers – they will only take effect above the specified (lowest) breakpoint.</li>
   <li>All flexbox system wrappers affect their <em>immediate child elements</em> (i.e. flex-items).</li>
-  <li><code>flex</code> is not used for a pseudo grid system. Instead, Codebase has a <a href="/codebase-6/layouts-grid/">layout grid</a> system</em>.</li>
+  <li>If you want to set up a grid, it’s not <code>flex</code> you need. Instead, use the Codebase <a href="/codebase-6/layouts-grid/">layout grid</a> system</em>.</li>
   <li>By default, flex sytems do not <em>wrap</em> their content onto a new row if there is not enough space available. So, if you require wrapping, use <code>flex flex-wrap</code>.</li>
-  <li>If required in your design, you can override a flexbox at a wider breakpoint the element so that it is back to being a full-width block, using a responsive <code>block</code> utility.</li>
-  <li>In addition to the <code>flex</code> setup class, you can also override eah of the flex modifier classes at the <code>xs</code>, <code>sm</code>, <code>md</code>, and <code>lg</code> breakpoint widths — see <a href="#responsive-flex-modifier-tiers">responsive flex modifier tiers</a>.</li>
 </ol>
 
 <h2>Setting up a <code>flex</code></h2>
@@ -426,6 +424,37 @@ Codebase 6 Layouts: Flexbox | Codebase 6  </title>
 </div>
 
 <p>Alternatively, use <code>place-center</code> — see <a href="/codebase-6/layouts/#positions">layout positioning</a>.
+
+<h2>Responsive flex modifier tiers</h2>
+
+<p>In addition to the <code>flex</code> setup class, you can also override each of the flex modifier classes at the <code>xs</code>, <code>sm</code>, <code>md</code>, and <code>lg</code> breakpoint widths:</p>
+
+<ul>
+  <li><code>flex-start</code> / <code>flex-center</code> / <code>flex-end</code></li>
+  <li><code>flex-top</code> / <code>flex-middle</code> / <code>flex-bottom</code></li>
+  <li><code>flex-column</code> / <code>flex-column-reverse</code></li>
+  <li><code>flex-row</code> / <code>flex-row-reverse</code></li>
+  <li><code>flex-space-around</code> / <code>flex-space-between</code> / <code>flex-space-evenly</code></li>
+  <li><code>flex-grow-auto</code> / <code>flex-grow-equal</code></li>
+  <li><code>flex-wrap</code></li>
+</ul>
+
+<p>All this enables you to create layout components that use flexbox positioning, orienting, ordering, spacing, growing (stretching), and wrapping differently for different devices.</p>
+
+<p>A simple example: in this menubar, the links are centered for small viewports and right-aligned for medium viewports up:</p>
+
+<nav class="my-4 p-cell flex flex-center md:flex-end gap-2 bg-gray bg-100">
+  <a href="#/">About</a>
+  <a href="#/">Blog</a>
+  <a href="#/">Contact</a>
+</nav>
+
+<pre><code>&lt;nav class="p-cell flex flex-center md:flex-end gap-2 bg-gray bg-100"&gt;
+  &lt;a href=""&gt;About&lt;/a&gt;
+  &lt;a href=""&gt;Blog&lt;/a&gt;
+  &lt;a href=""&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+
           </main>
         </div>
       </div>

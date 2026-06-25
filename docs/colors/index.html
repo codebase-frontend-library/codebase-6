@@ -88,10 +88,10 @@ Codebase 6 Colors | Codebase 6  </title>
       <span class="t-gray">version 6.0.0</span>
     </div>
     <div class="grow flex flex-end flex-wrap gap-2">
-      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-bold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
     </div>
 </nav>
   <div class="page-container">
@@ -128,9 +128,9 @@ Codebase 6 Colors | Codebase 6  </title>
           
           <main id="main-content">
             
-<p>Codebase 6’s color utility class system is based on using the modern CSS <code>oklch()</code> function and a series of interpolated lightness level variables that enable the lightness level utility classes to work. The lightnsses for color each class are not pre-created, unlike with other CSS frameworks.</p>
+<p>Codebase 6’s color utility class system is based on using the modern CSS <code>oklch()</code> function and a series of interpolated lightness variables that enable the lightness level utility classes to work.</p>
 
-<p>So in the HTML, you first choose the color utility class, then you choose the lightness level class separately. Handled this way, the stylesheet doesn’t need to be loaded with lighness classes for every color — most of which you’d never use.</p>
+<p>The lightnsses for color each class are not pre-created, unlike with other CSS frameworks. E.g. if you want a light green background color, there's no <code>bg-green-100</code>. Instead you choose the color and lightness level separately, as <code>bg-green bg-100</code>. Handled this way, the stylesheet doesn’t need to be loaded with lighness classes for every color — most of which you’d never use.</p>
 
 <p>The <code>oklch()</code> function has been <a href="https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility">baseline: widely available</a> since March 2023. All “evergreen” browsers (Chrome, Edge, Firefox, Safari) have capability to use it (see <a href="https://caniuse.com/?search=color-mix()">Can I use</a>).</p>
 
@@ -297,11 +297,11 @@ Codebase 6 Colors | Codebase 6  </title>
 
 <p>Example usage:</p>
 
-<div aria-label="Note" class="popout my-3 bl-heavy b-blue b-400 p-2 bg-blue bg-200">
+<div aria-label="Note" class="popout my-3 bl-heavy b-blue b-400 p-2 bg-blue bg-100">
   ☆ Note (information) panel.
 </div>
 
-<pre><code>&lt;div aria-label="Note" class="popout my-3 bl-heavy b-blue b-400 p-2 bg-blue bg-200"&gt;
+<pre><code>&lt;div aria-label="Note" class="popout my-3 bl-heavy b-blue b-400 p-2 bg-blue bg-100"&gt;
   &amp;star; Note (information) panel.
 &lt;/div&gt;
 </code></pre>
@@ -313,9 +313,10 @@ Codebase 6 Colors | Codebase 6  </title>
 <p>In any color model, color combinations must be chosen with care so that there is sufficient contrast between text and background colors for purposes of assessibility.</p>
 
 <p>In your text and background color combinations, be careful to ensure that the text is readable — there needs to be an adequate contrast. Most organizations should to aim for <a href="https://www.w3.org/WAI/WCAG2AA-Conformance">WCAG level AA</a> for accessibility requirements.</p>
+
 <p>For WCAG level AA conformance, most user interface colors need to be <em>mid-level</em> (i.e. use <code>*-500</code> up) if the text color is white, or <em>lighter than the mid-level</em> (i.e. use <code>*-400</code> down) if the text color is black.</p>
 
-<div aria-label="Note" class="popout my-3 bl-heavy b-blue b-400 p-3 bg-blue bg-200">
+<div aria-label="Note" class="popout my-3 bl-heavy b-blue b-400 p-3 bg-blue bg-100">
 <p class="h5 mb-0">For your convenience, Codebase has a set of <a href="/codebase-6/components/#user-interface-colors">user interface color component</a> name classes that can be used on buttons, badges, labels, form element borders, panels, etc.
 </div>
 
@@ -344,28 +345,27 @@ Codebase 6 Colors | Codebase 6  </title>
     <p>The 7 baselayer colors are first declared as CSS variables:</p>
     <pre><code>:root {
   /* Codebase 6 theme base colors */
-  --blue: #6290fc;
-  --green: #86b522;
+  --blue: #0247fe;
+  --green: #66b032;
   --amber: #ffd105;
-  --red: #ff614c;
+  --red: #fe2712;
   --purple: #9400d3;
-  --teal: #0080a2;
+  --teal: #00a36c;
   --gray: #9a9fb1;
 }</code></pre>
   </li>
     <li>
-    <p>The utility class lightness level suffixes go up in hundreds, from <code>-100</code> to <code>-1000</code>. (The <code>-1000</code> is only used once in Codebase, for setting the dark theme <code>&lt;body&gt;</code> background. Levels <code>-100</code> to <code>-900</code> are used in the lightness utility classes.)</p>
+    <p>The utility class lightness level suffixes go up in hundreds, from <code>-100</code> to <code>-900</code>. The lower the number, the lighter the color, although the higher % lightness.</p>
     <pre><code>:root {
-  --l100: 98%;
-  --l200: 86%;
-  --l300: 74%;
-  --l400: 62%;
-  --l500: 50%;
-  --l600: 42%;
-  --l700: 34%;
-  --l800: 26%;
-  --l900: 18%;
-  --l1000: 10%;
+  --l100: 96%;
+  --l200: 88%;
+  --l300: 80%;
+  --l400: 72%;
+  --l500: 64%;
+  --l600: 56%;
+  --l700: 48%;
+  --l800: 40%;
+  --l900: 36%;
 }</code></pre>
   </li>
   <li>
