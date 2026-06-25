@@ -37,6 +37,7 @@ Codebase 6 Decoration | Codebase 6  </title>
       }
       .left-sidebar {
         grid-column: 1;
+        grid-row: 1;
         border-right: var(--b-thin);
         width: var(--w-sidebar);
         & > div {
@@ -47,6 +48,7 @@ Codebase 6 Decoration | Codebase 6  </title>
       }
       .main-frame {
         grid-column: 2;
+        grid-row: 1;
       }
 
     @media (min-width: 1280px) {
@@ -77,8 +79,8 @@ Codebase 6 Decoration | Codebase 6  </title>
   <div class="body-wrap">
 
 <nav class="header-nav bb-thin" role="navigation" aria-label="Site navigation">
-  <div class="container-xxl flex flex-wrap flex-middle">
-    <div class="flex flex-middle flex-wrap gap-2">
+  <div class="container-xxl flex flex-column sm:flex-row sm:flex-middle gap-4">
+    <div class="sm:flex flex-middle flex-wrap gap-2">
       <a id="site-title"  class="py-1 h3 t-bold flex flex-middle gap-tiny t-underline-hover-only" href="/codebase-6/">
         <svg viewBox="0 0 340 180" height="28" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-miterlimit="2">
             <path d="M195.956 115.956c14.059-14.059 36.853-14.059 50.912 0 14.058 14.059 14.058 36.853 0 50.912L323.235 90.5l-76.367-76.368c14.058 14.059 14.058 36.853 0 50.912-14.059 14.059-36.853 14.059-50.912 0-14.059-14.059-36.853-14.059-50.912 0-14.059 14.059-14.059 36.853 0 50.912 14.059 14.059 36.853 14.059 50.912 0M17.765 90.5l76.367-76.368c-42.176 42.177-42.176 110.559 0 152.736L17.765 90.5z" fill-rule="nonzero" fill="currentColor" stroke="currentColor" stroke-width="10"></path>
@@ -87,11 +89,11 @@ Codebase 6 Decoration | Codebase 6  </title>
       </a>
       <span class="t-gray">version 6.0.0</span>
     </div>
-    <div class="grow flex flex-end flex-wrap gap-2">
-      <a href="https://github.com/codebase-frontend-library/codebase-6" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="inline-block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
+    <div class="grow sm:flex flex-end flex-wrap gap-2">
+      <a href="https://github.com/codebase-frontend-library/codebase-6" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
     </div>
 </nav>
   <div class="page-container">
