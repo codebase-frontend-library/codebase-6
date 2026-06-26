@@ -78,21 +78,21 @@
   --primary: var(--purple);
   --secondary: var(--teal);
   --tertiary: var(--gray);
-  --l100: 96%;
-  --l200: 88%;
-  --l300: 80%;
-  --l400: 72%;
-  --l500: 64%;
-  --l600: 56%;
-  --l700: 48%;
-  --l800: 40%;
-  --l900: 36%;
+  --l100: 97%; /* in gray, this gives ~ #f5f5f5 */
+  --l200: 86.1%;
+  --l300: 77.75%;
+  --l400: 67.35%;
+  --l500: 57.5%;
+  --l600: 47.65%;
+  --l700: 37.75%;
+  --l800: 27.85%;
+  --l900: 21%; /* in gray, this gives ~ #f181818 */
 
   /* Theme */
   --bgc-body: #fff;
   --tc-base: oklch(from var(--gray) var(--l900) c h);
-  --tc-link: oklch(from var(--blue) var(--l600) c h);
-  --tc-link-hover: oklch(from var(--blue) var(--l800) c h);
+  --tc-link: oklch(from var(--blue) var(--l500) c h);
+  --tc-link-hover: oklch(from var(--blue) var(--l700) c h);
   --bgc-ui: var(--gray);
   --tc-form: var(--tc-base);
   --bgc-form: var(--bgc-body);
