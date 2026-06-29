@@ -327,12 +327,6 @@ small {
   text-transform: uppercase;
 }
 
-.t-highlight,
-mark {
-  background: var(--bgc-highlight);
-  color: currentColor;
-}
-
 .t-long-read {
   font-size: var(--t-long-read);
 }

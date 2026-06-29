@@ -417,13 +417,58 @@ layout: "_includes/layout.njk"
 
 <p>The base font size is 100% (16px default). Additionally:</p>
 
+<h3>Font size multipliers</h3>
+
 <ol>
   <li>There’s a <code>t-lg</code> class that can be used to make text 1.325em — good for a lead paragraph, large button, or important messaging.</li>
   <li>Classes <code>.h1</code> through <code>.h6</code> will resize text the same amount as for their respective heading tag sizes — use these when you want to make text bigger (or large text smaller) without adversely affecting accessibility/ SEO heading hierarchy.</li>
-  <li>The <code>t-long-read</code> wrapping class uses a <code>clamp()</code> to ramp text from starting size 1em up to 1.25em (20px default) depending on container size. E.g. used for responsively increasing text size in <em>article prose components</em>. <code>&lt;h1&gt;</code> inside a <code>t-long-read</code> will have maximum font size 61px.</li>
-  <li>The <code>t-comfort</code> wrapping class uses a <code>clamp()</code> to raise text from starting size 1em up to 1.625em (26px default) depending on container size. E.g. used for responsively increasing text size in <em>comfortable reading components</em>. <code>&lt;h1&gt;</code> inside a <code>t-display</code> will have maximum font size 79px.</li>
-  <li>The <code>t-display</code> wrapping class uses a <code>clamp()</code> to raise text from starting size 1em up to 2em (32px default) depending on container size. E.g. used for responsively increasing text size in <em>hero components</em>. <code>&lt;h1&gt;</code> inside a <code>t-display</code> will have maximum font size 97px.</li>
 </ol>
+
+<h3>Responsive font size multipliers</h3>
+
+<p>In small container (or viewport) widths, these three utilities below do nothing. But with wider stace available, they use a CSS <code>clamp()</code> to ramp up the size to a maximum.</p>
+
+<ol>
+  <li>The <code>t-long-read</code> wrapping class ramps text up from 1× to 1.25× depending on container size.</li>
+  <li>The <code>t-comfort</code> wrapping class ramps text up from 1× to 1.625× depending on container size.</li>
+  <li>The <code>t-display</code> wrapping class ramps text up from 1× to 2× depending on container size.</li>
+</ol>
+
+<p>The calculated max pixel sizes are as follows:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Type size</th>
+      <th class="t-balance t-center">Paragraph max font size (px)</th>
+      <th class="t-balance t-center">H1 max font size (px)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Base</td>
+      <td class="t-center">16px</td>
+      <td class="t-center">40px</td>
+    </tr>
+    <tr>
+      <td><code class="t-nowrap">t-long-read</code></td>
+      <td class="t-center"><mark>20px</mark></td>
+      <td class="t-center">50px</td>
+    </tr>
+    <tr>
+      <td><code>t-comfort</code></td>
+      <td class="t-center">26px</td>
+      <td class="t-center">65px</td>
+    </tr>
+    <tr>
+      <td><code>t-display</code></td>
+      <td class="t-center">32px</td>
+      <td class="t-center">80px</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Demo:</p>
 
 <table class="table overflow-x">
   <thead>
@@ -434,30 +479,30 @@ layout: "_includes/layout.njk"
   </thead><tbody>
     <tr>
       <td class="t-long-read">
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
+        <p class="h1">Heading 1</p>
+        <p class="h2">Heading 2</p>
+        <p class="h3">Heading 3</p>
+        <p class="h4">Heading 4</p>
+        <p class="h5">Heading 5</p>
+        <p class="h6">Heading 6</p>
         <p>Paragraph. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rem animi quaerat accusantium illum architecto, nemo, ex harum voluptatum adipisci eum blanditiis dolorum. Natus debitis quisquam, expedita accusantium quos cumque?</p>
       </td>
       <td class="t-comfort">
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
+        <p class="h1">Heading 1</p>
+        <p class="h2">Heading 2</p>
+        <p class="h3">Heading 3</p>
+        <p class="h4">Heading 4</p>
+        <p class="h5">Heading 5</p>
+        <p class="h6">Heading 6</p>
         <p>Paragraph. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rem animi quaerat accusantium illum architecto, nemo, ex harum voluptatum adipisci eum blanditiis dolorum. Natus debitis quisquam, expedita accusantium quos cumque?</p>
       </td>
       <td class="t-display">
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
-        <h4>Heading 4</h4>
-        <h5>Heading 5</h5>
-        <h6>Heading 6</h6>
+        <p class="h1">Heading 1</p>
+        <p class="h2">Heading 2</p>
+        <p class="h3">Heading 3</p>
+        <p class="h4">Heading 4</p>
+        <p class="h5">Heading 5</p>
+        <p class="h6">Heading 6</p>
         <p>Paragraph. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rem animi quaerat accusantium illum architecto, nemo, ex harum voluptatum adipisci eum blanditiis dolorum. Natus debitis quisquam, expedita accusantium quos cumque?</p>
       </td>
     </tr>
@@ -474,7 +519,6 @@ layout: "_includes/layout.njk"
 <ul>
 <li><code>t-lg</code> — increase font size by 1.5em. Use it directly on a <code>&lt;p&gt;</code> to enlarge the font (e.g. for a lead paragraph).</li>
 <li><code>t-sm</code> (or use the <code>&lt;small&gt;</code> HTML tag) — decrease font-size to 0.8em</li>
-<li><code>t-highlight</code> (or use the <code>&lt;mark&gt;</code> HTML tag) — text highlighter</li>
 <li><code>t-thin</code>, <code>t-normal</code>, <code>t-semibold</code>, <code>t-bold</code>, <code>t-heavy</code> — font weights</li>
 <li><code>t-italic</code> — font style italic</li>
 <li><code>t-balance</code> — balances word-wrap, so that e.g. long headings don't have orphans</li>
