@@ -80,7 +80,6 @@ button,
   position: relative;
   -webkit-appearance: none;
   appearance: none;
-  min-width: fit-content;
   min-height: var(--y-form);
   display: inline-flex;
   justify-content: center;
@@ -118,5 +117,4 @@ button,
 button.icon {
   aspect-ratio: 1/1;
   line-height: inherit;
-  padding: 0;
 }
