@@ -7,7 +7,7 @@ fieldset {
 
 label,
 legend {
-  font-family: var(--t-base);
+  font-family: var(--t-base-ff);
 }
 
 ::placeholder {
@@ -69,38 +69,6 @@ textarea:not([rows]) {
   min-height: 6em;
 }
 
-/* .btn,
-[type="button"],
-[type="reset"],
-[type="submit"],
-button {
-  --tc: var(--tc-btn);
-  align-items: center;
-  -webkit-appearance: none;
-  appearance: none;
-  background: oklch(from var(--bgc, var(--bgc-ui)) var(--bgl, var(--l200)) c h);
-  border: var(--b-btn);
-  color: var(--tc);
-  display: inline-flex;
-  font-family: var(--t-base);
-  font-weight: var(--t-btn);
-  justify-content: center;
-  margin: 0;
-  min-height: var(--y-form);
-  min-width: fit-content;
-  padding: 0 calc(var(--y-form) / 3);
-  position: relative;
-  text-decoration: none;
-  transition: all 0.15s ease;
-  &:hover {
-    background: oklch(
-      from var(--bgc, var(--bgc-ui)) var(--bgl, var(--l300)) c h
-    );
-    cursor: pointer;
-    text-decoration: none !important;
-  }
-} */
-
 button,
 [type="button"],
 [type="submit"],
@@ -120,7 +88,7 @@ button,
   border: var(--b-thin);
   border-radius: var(--s-tiny);
   padding: 0 calc(var(--y-form) / 3);
-  font-family: var(--t-base-fs);
+  font-family: var(--t-base-ff);
   font-weight: var(--t-btn);
   text-decoration: none;
   color: var(--tc);
