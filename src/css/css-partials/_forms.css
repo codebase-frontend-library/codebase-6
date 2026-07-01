@@ -88,7 +88,7 @@ button,
   border: var(--b-thin);
   border-radius: var(--s-tiny);
   padding: 0 calc(var(--y-form) / 3);
-  font-family: var(--t-base-ff);
+  font-family: var(--t-form-ff);
   font-weight: var(--t-btn);
   text-decoration: none;
   color: var(--tc);
