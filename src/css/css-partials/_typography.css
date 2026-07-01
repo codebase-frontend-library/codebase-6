@@ -340,7 +340,7 @@ small {
 }
 
 .t-base {
-  font-family: var(--t-base-fs);
+  font-family: var(--t-base-ff);
 }
 
 .t-prose {
