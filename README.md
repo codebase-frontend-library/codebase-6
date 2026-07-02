@@ -1,8 +1,8 @@
 # codebase-6
 
-Version 6.0.0
+Version 6.0.1
 
-Filesize: 28 kb
+Filesize: 29kb
 
 Download CSS: https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css
 

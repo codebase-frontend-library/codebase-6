@@ -250,8 +250,8 @@ layout: "_includes/layout.njk"
 <ul>
 <li><code>t-right</code>, <code>t-center</code>, and <code>t-left</code></li>
 </ul>
-<p>In addition to the three simple text alignment classes above, Codebase also has several container-query responsive variants, for <code>xs:</code>, <code>sm:</code>, <code>md:</code> and <code>lg:</code> container breakpoints widths.</p>
-<p>Example: The hearing in the card below is left aligned by default, but becomes center aligned when its <em>container</em> is <code>xs</code> (320px) wide and above, using <code>xs:t-center</code>:</p>
+<p>In addition to the three simple text alignment classes above, Codebase also has several container-query responsive variants, for <code>xs:</code>, <code>sm:</code>, <code>md:</code> and <code>lg:</code> viewport breakpoints widths.</p>
+<p>Example: The hearing in the card below is left aligned by default, but becomes center aligned when its wrapper is <code>xs</code> (320px) wide and above, using <code>xs:t-center</code>:</p>
 <div class="mb-2 p-2 bg-amber bg-100">
 <p class="h3 t-semibold xs:t-center">A title</p>
 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni rem animi quaerat accusantium illum architecto, nemo, ex harum voluptatum adipisci eum blanditiis dolorum. Natus debitis quisquam, expedita accusantium quos cumque?</p>
@@ -413,25 +413,87 @@ layout: "_includes/layout.njk"
 &lt;/div&gt;
 </code></pre>
 
-<h2>Making text bigger</h2>
+<h2>Controlling text size</h2>
 
 <p>The base font size is 100% (16px default). Additionally:</p>
 
 <h3>Font size multipliers</h3>
 
-<ol>
-  <li>There’s a <code>t-lg</code> class that can be used to make text 1.325em — good for a lead paragraph, large button, or important messaging.</li>
-  <li>Classes <code>.h1</code> through <code>.h6</code> will resize text the same amount as for their respective heading tag sizes — use these when you want to make text bigger (or large text smaller) without adversely affecting accessibility/ SEO heading hierarchy.</li>
-</ol>
+<p><code>t-xs</code>, <code>t-sm</code>, <code>t-md</code>, <code>t-lg</code>, <code>t-xl</code></p>
+
+<p>Starting from your base font size, these multipliers will either increase or decrease the font size.</p>
+
+<p><strong>Notes:</strong></p>
+
+<ul>
+  <li>The <code>t-md</code> class is the same as the base font size, and is set in REM. Use it to override other styles to return to the base font size.</li>
+  <li>All other font size multipliers are set in EM, so that they will scale up or down depending on the parent element’s font size.</li>
+  <li>Font size multipliers can be used on any element, but they are generally used on inline elements, e.g. <code>&lt;span&gt;</code>.
+</ul>
+
+<p>Example uses: smaller for footnotes or “small print”; larger for lead (intro) paragraphs.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th class="t-center">Font size multiplier</th>
+      <th class="t-center">Pixel size (px) if base size is 16px</th>
+      <th class="t-center">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>t-xs</code></td>
+      <td class="t-center">0.625em</td>
+      <td class="t-center">10px</td>
+      <td><span class="t-xs">Extra-small text</span></td>
+    </tr>
+    <tr>
+      <td><code>t-sm</code></td>
+      <td class="t-center">0.8125em</td>
+      <td class="t-center">13px</td>
+      <td><span class="t-sm">Small text</span></td>
+    </tr>
+    <tr>
+      <td>(Base) or <code>t-md</code></td>
+      <td class="t-center">1rem</td>
+      <td class="t-center">16px</td>
+      <td><span class="t-md">Base text</span></td>
+    </tr>
+    <tr>
+      <td><code>t-lg</code></td>
+      <td class="t-center">1.1875em</td>
+      <td class="t-center">19px</td>
+      <td><span class="t-lg">Large text</span></td>
+    </tr>
+    <tr>
+      <td><code>t-xl</code></td>
+      <td class="t-center">1.375em</td>
+      <td class="t-center">22px</td>
+      <td><span class="t-xl">Extra-large text</span></td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Heading font-size utilities</h3>
+
+<p><code>.h1</code>, <code>.h2</code>, <code>.h3</code>, <code>.h4</code>, <code>.h5</code>, <code>.h6</code></p>
+
+<p>These are generally used on <em>block</em> (wrapper) elements, and they will resize text the same amount as for their respective heading tag sizes.</p>
+
+<p>Example use: when you want to make text bigger (or large text smaller) without adversely affecting accessibility/ SEO heading hierarchy.</p>
 
 <h3>Responsive font size multipliers</h3>
 
-<p>In small container (or viewport) widths, these three utilities below do nothing. But with wider stace available, they use a CSS <code>clamp()</code> to ramp up the size to a maximum.</p>
+<p><code>t-long-read</code>, <code>t-comfort</code>, <code>t-display</code></p>
+
+<p>These responsive font size multipliers can be used to make text even larger, but in a way that is not initially too large for phones and small tablet devices. These classes are applied to a wrapping element, and they will affect all text within that element. The font size will ramp up from 1× to a maximum value depending on the viewport width.</p>
 
 <ol>
-  <li>The <code>t-long-read</code> wrapping class ramps text up from 1× to 1.25× depending on container size.</li>
-  <li>The <code>t-comfort</code> wrapping class ramps text up from 1× to 1.625× depending on container size.</li>
-  <li>The <code>t-display</code> wrapping class ramps text up from 1× to 2× depending on container size.</li>
+  <li>The <code>t-long-read</code> wrapping class ramps text up from 1× to 1.25× depending on viewport size.</li>
+  <li>The <code>t-comfort</code> wrapping class ramps text up from 1× to 1.625× depending on viewport size.</li>
+  <li>The <code>t-display</code> wrapping class ramps text up from 1× to 2× depending on viewport size.</li>
 </ol>
 
 <p>The calculated max pixel sizes are as follows:</p>
@@ -452,7 +514,7 @@ layout: "_includes/layout.njk"
     </tr>
     <tr>
       <td><code class="t-nowrap">t-long-read</code></td>
-      <td class="t-center"><mark>20px</mark></td>
+      <td class="t-center">20px</td>
       <td class="t-center">50px</td>
     </tr>
     <tr>

@@ -7,9 +7,11 @@
   --t-mb: 1rem;
   --t-lh: 1.5;
   --t-base-fs: 100%;
-  --t-sm: 0.875em;
+  --t-xs: 0.625em;
+  --t-sm: 0.8125em;
   --t-md: var(--t-base-fs);
-  --t-lg: 1.375em;
+  --t-lg: 1.1875em;
+  --t-xl: 1.375em;
   --t-long-read: clamp(1em, 0.75em + 0.7813vw, 1.25em);
   --t-comfort: clamp(1em, 0.5833rem + 1.3021vw, 1.625em);
   --t-display: clamp(1em, 0.3333em + 2.0833vw, 2em);
