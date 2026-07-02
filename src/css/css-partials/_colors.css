@@ -347,18 +347,9 @@
 
 .bg-glass,
 .bg-filter {
-  --l100: 8%;
-  --l200: 16%;
-  --l300: 24%;
-  --l400: 32%;
-  --l500: 40%;
-  --l600: 48%;
-  --l700: 56%;
-  --l800: 64%;
-  --l900: 72%;
   background: color-mix(
     in srgb,
-    var(--bgc, transparent) var(--bgl, 40%),
+    var(--bgc, transparent) calc(100% - var(--bgl, 50%)),
     transparent
   ) !important;
 }
