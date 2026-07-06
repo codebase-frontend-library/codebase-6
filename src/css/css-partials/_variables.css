@@ -66,10 +66,10 @@
   --square-featured: clamp(4.25rem, 1.25rem + 9.375vw, 7.25rem);
 
   /* Colors */
-  --blue: #0074d9;
-  --green: #2ecc40;
-  --amber: #ffdc00;
-  --red: #ff4136;
+  --blue: #2563eb;
+  --green: #16a34a;
+  --amber: #ca8a04;
+  --red: #dc2626;
   --purple: #b10dc9;
   --teal: #39cccc;
   --gray: #767676;
