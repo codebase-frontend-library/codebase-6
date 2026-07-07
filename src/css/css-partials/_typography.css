@@ -14,10 +14,6 @@ caption {
   margin-block: var(--s-2);
 }
 
-p {
-  text-wrap: pretty;
-}
-
 .h1,
 h1 {
   font-size: var(--h1);
