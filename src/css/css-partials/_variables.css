@@ -59,11 +59,9 @@
   --b-thin: 1px solid var(--bc-detail);
   --b-thick: 4px solid var(--bc-detail);
   --b-heavy: 8px solid var(--bc-detail);
-  --icon: 1.25rem;
-  --square-sm: 2rem;
-  --square: 3rem;
-  --square-lg: 4.25rem;
-  --square-featured: clamp(4.25rem, 1.25rem + 9.375vw, 7.25rem);
+  --square-1: 1.25em;
+  --square-2: 2.5em;
+  --square-3: 3.75em;
 
   /* Colors */
   --blue: #2563eb;
@@ -94,11 +92,10 @@
   --bgc-body: #fff;
   --tc-base: oklch(from var(--gray) var(--l900) c h);
   --tc-link: oklch(from var(--blue) var(--l500) c h);
-  --tc-link-hover: oklch(from var(--blue) var(--l700) c h);
   --bgc-ui: var(--gray);
   --tc-form: var(--tc-base);
   --bgc-form: var(--bgc-body);
   --bgc-code: oklch(from var(--gray) var(--l100) c h);
-  --bc-detail: oklch(from var(--gray) l c h / 0.35);
+  --bc-detail: oklch(from var(--gray) var(--l500) c h / 0.5);
   --bg-glass-blur: blur(4px);
 }

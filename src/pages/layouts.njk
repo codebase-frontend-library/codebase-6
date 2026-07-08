@@ -58,6 +58,59 @@ layout: "_includes/layout.njk"
 
 <p>Codebase uses <code>100dvh</code> (percentage <a href="https://www.bram.us/2021/07/08/the-large-small-and-dynamic-viewports/">dynamic viewport height</a>) that gives a different viewport height for some devices — it compensates for the retracting interface toolbars on iOS Safari.</p>
 
+<h3>Squares</h3>
+
+<p>Squares are set in em², so that they scale with the font size of their parent element. This is useful for making square buttons and icons, featured images, author circles, etc.
+
+<ul>
+  <li><code>square-1</code> / <code>square-icon</code> — 1.25em² (20px² on normal sized text, 1rem / 16px)<br>
+  — good for icons in buttons, or arrow-links
+  </li>
+  <li><code>square-2</code> — 2.5em² (40px² on normal sized text)<br>
+  — good for author or avatar circles, or small featured images in a feed
+  </li>
+  <li><code>square-3</code> — 3.75em² (60px² on normal sized text)<br>
+  — good for original post featured images, or larger author or avatar circles
+  </li>
+</ul>
+
+<p>Icon example from <a href="https://phosphoricons.com">Phorphor Icons</a>.</p>
+
+<p class="flex flex-middle gap-tiny"><span class="square-1 bg-green bg-200"></span> <span class="square-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm45.66-93.66a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32-11.32L148.69,136H88a8,8,0,0,1,0-16h60.69l-18.35-18.34a8,8,0,0,1,11.32-11.32Z"></path></svg>
+  </span> <code>square-1</code> / <code>square-icon</code>
+</p>
+
+<p class="flex flex-middle gap-tiny"><span class="square-2 bg-green bg-200"></span> <span class="square-2">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm45.66-93.66a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32-11.32L148.69,136H88a8,8,0,0,1,0-16h60.69l-18.35-18.34a8,8,0,0,1,11.32-11.32Z"></path></svg>
+  </span> <code>square-2</code>
+</p>
+
+<p class="flex flex-middle gap-tiny"><span class="square-3 bg-green bg-200"></span> <span class="square-3">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm45.66-93.66a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32-11.32L148.69,136H88a8,8,0,0,1,0-16h60.69l-18.35-18.34a8,8,0,0,1,11.32-11.32Z"></path></svg>
+  </span> <code>square-3</code>
+</p>
+
+<h4>Squares and text size</h4>
+
+<p>Since squares are set in <code>em</code> units, they scale with the text size. See <a href="{{baseUrl}}typography/#controlling-text-size">controlling text size</a>.</p>
+
+<p><code>square-3</code> on <code>h1</code> sized text (150px²):</p>
+
+<p class="flex flex-middle gap-tiny h1"><span class="square-3 bg-green bg-200"></span> <span class="square-3">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm45.66-93.66a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32-11.32L148.69,136H88a8,8,0,0,1,0-16h60.69l-18.35-18.34a8,8,0,0,1,11.32-11.32Z"></path></svg>
+  </span>
+</p>
+
+<p><code>square-3</code> on <code>h1</code> sized text inside a <code>t-display</code> wrapper (max 300px²):</p>
+
+<div class="t-display">
+  <p class="flex flex-middle gap-tiny h1"><span class="square-3 bg-green bg-200"></span> <span class="square-3">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm45.66-93.66a8,8,0,0,1,0,11.32l-32,32a8,8,0,0,1-11.32-11.32L148.69,136H88a8,8,0,0,1,0-16h60.69l-18.35-18.34a8,8,0,0,1,11.32-11.32Z"></path></svg>
+  </span>
+</p>
+</div>
+
 <h3>Box</h3>
 
 <ul>
@@ -136,7 +189,7 @@ layout: "_includes/layout.njk"
   <li><code>block</code>, <code>inline-block</code> — block wrapper utilities</li>
   <li><code>flex</code>, <code>inline-flex</code>, and all <code>flex-</code> modifiers — <a href="{{ baseUrl }}layouts-flex/">flexbox utilities</a></li>
   <li><code>grid</code>, and all <code>col-</code> and <code>row-</code> modifiers — <a href="{{ baseUrl }}layouts-grid/">grid system</a> utilities (using CSS Grid)</li>
-  <li><code>hidden</code> — invisibility utilities</li>
+  <li><code>hidden</code> — <a href="#invisibility-hiding-things">invisibility</a> utilities</li>
 </ol>
 
 <p>Both flexbox and grid share the same optional gap classes. <code>gap-3</code> and <code>gap-4</code> have a responsive size increase for larger viewports, using a <code>clamp()</code> ramp. See <a href="{{baseUrl}}decoration/#spacing">decoration: spacing</a> for more information.</p>
@@ -146,3 +199,114 @@ layout: "_includes/layout.njk"
 <p><code>block</code> and <code>inline-block</code> have (base), <code>xs:</code>, <code>sm:</code>, <code>md:</code> and <code>lg:</code> variants.</p>
 
 <p>Use one of the container-responsive breakpoint width variants as an <em>override</em> when you only need some element to behave as a <code>flex</code> or a <code>grid</code> within a smaller width but not at or above a larger width.</p>
+
+<h2>Invisibility (hiding things)</h2>
+
+<p>There may be situation where you require some element(s) to be displayed on smaller or larger container widths, but hidden otherwise.</p>
+
+<div class="overflow-x">
+<table class="table mb-0">
+<caption><strong>Invisibility:</strong> ✓ = displayed; ✗ = hidden</caption>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Example</th>
+      <th>≤512px</th>
+      <th>512px–767px</th>
+      <th>768px–1023px</th>
+      <th>1024px–1279px</th>
+      <th>≥1280px</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="bt-thick">
+      <td><code class="t-nowrap">xs:hidden-below</code></td>
+      <td>
+        <div class="xs:hidden-below p-cell bg-green bg-200">Example</div>
+      </td>
+      <td>✗</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><code class="t-nowrap">sm:hidden-below</code></td>
+      <td>
+        <div class="sm:hidden-below p-cell bg-green bg-200">Example</div>
+      </td>
+      <td>✗</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><code class="t-nowrap">md:hidden-below</code></td>
+      <td>
+        <div class="md:hidden-below p-cell bg-green bg-200">Example</div>
+      </td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr>
+      <td><code>lg:hidden-below</code></td>
+      <td>
+        <div class="lg:hidden-below p-cell bg-green bg-200">Example</div>
+      </td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+    <tr class="bt-thick">
+      <td><code>xs:hidden</code></td>
+      <td>
+        <div class="xs:hidden p-cell bg-green bg-200">Example</div>
+      </td>
+      <td>✓</td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td><code>sm:hidden</code></td>
+      <td>
+        <div class="sm:hidden p-cell bg-green bg-200">Example</div>
+      </td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✗</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td><code>md:hidden</code></td>
+      <td>
+        <div class="md:hidden p-cell bg-green bg-200">Example</div>
+      </td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✗</td>
+      <td>✗</td>
+    </tr>
+    <tr>
+      <td><code>lg:hidden</code></td>
+      <td>
+        <div class="lg:hidden p-cell bg-green bg-200">Example</div>
+      </td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+      <td>✓</td>
+    </tr>
+  </tbody>
+</table>
+</div>

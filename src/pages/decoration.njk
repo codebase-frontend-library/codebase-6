@@ -115,7 +115,7 @@ layout: "_includes/layout.njk"
   <div class="b-heavy p-1"><code>b-heavy</code> (8px)</div>
 </div>
 
-<p>The default border color is a partially transparent black, that appears as a pale gray over the white background, and as a slightly darkened version of the background color of any component (e.g. button) or panel. Border colors can also be set using Codebase <a href="{{ baseUrl }}colors/">color</a> utility classes.</p>
+<p>The default border color is a partially transparent gray, that appears as a pale gray over the white background, and as a slightly darkened version of the background color of any component (e.g. button) or panel. Border colors can also be set using Codebase <a href="{{ baseUrl }}colors/">color</a> utility classes.</p>
 
 <p>Borders on different sides can be set as follows:</p>
 
@@ -139,17 +139,15 @@ layout: "_includes/layout.njk"
 <p>Box shadows can take your design to a new level!</p>
 
 <ul>
-  <li><code>bs-1</code> / <code>bs-2</code> / <code>bs-3</code> / <code>bs-4</code> / <code>bs-5</code></li>
+  <li><code>bs-1</code> / <code>bs-2</code> / <code>bs-3</code></li>
 </ul>
 
-<p>The <code>bs</code> suffix units <code>-1</code> through <code>-5</code> are meant to represent layer “lifts” along the z-axis. The higher a layer is lifted from the page, the less sharpness and more spread the box shadow has. This also means that the higher the suffix, the fainter the shadow becomes as it is spread over a wider area.</p>
+<p>Codebase box shadows are intended to represent layer “lifts” along the z-axis. The higher a layer is lifted from the page, the less sharpness and more spread the box shadow has. This also means that the higher the suffix, the fainter the shadow becomes as it is spread over a wider area.</p>
 
 <div class="my-3 flex flex-wrap gap-3">
   <div class="bs-1 mb-2 p-2">bs-1</div>
   <div class="bs-2 mb-2 p-2">bs-2</div>
   <div class="bs-3 mb-2 p-2">bs-3</div>
-  <div class="bs-4 mb-2 p-2">bs-4</div>
-  <div class="bs-5 mb-2 p-2">bs-5</div>
 </div>
 
 <p>Lighting is simulated as from the front top center, so more of the shadow is cast at the bottom the element.</p>
@@ -159,22 +157,14 @@ layout: "_includes/layout.njk"
   
 &lt;div class="bs-2"&gt;...&lt;/div&gt;
 
-&lt;div class="bs-3"&gt;...&lt;/div&gt;
+&lt;div class="bs-3"&gt;...&lt;/div&gt;</code></pre>
 
-&lt;div class="bs-4"&gt;...&lt;/div&gt;
-
-&lt;div class="bs-5"&gt;...&lt;/div&gt;</code></pre>
-
-<h3>Box shadows on hover</h3>
-
-<p>Codebase also has hover states for each of the 5 levels of box shadows. Hover over the panels below to see them in action.</p>
+<p>Codebase also has hover states for each of the box shadows. Hover over the panels below to see them in action.</p>
 
 <div class="my-3 flex flex-wrap gap-3">
   <div class="hover:bs-1 b-thin p-2">hover:bs-1</div>
   <div class="hover:bs-2 b-thin p-2">hover:bs-2</div>
   <div class="hover:bs-3 b-thin p-2">hover:bs-3</div>
-  <div class="hover:bs-4 b-thin p-2">hover:bs-4</div>
-  <div class="hover:bs-5 b-thin p-2">hover:bs-5</div>
 </div>
 
 <h2>Rounded corners</h2>

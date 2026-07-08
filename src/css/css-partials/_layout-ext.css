@@ -147,7 +147,6 @@
   max-height: 100dvh;
 }
 
-[class*="icon"],
 [class*="square"] {
   aspect-ratio: 1/1;
   height: min(var(--square), var(--square));
@@ -155,31 +154,26 @@
   width: min(var(--square), var(--square));
 }
 
-.icon,
-.square-xs {
-  --square: var(--icon);
-}
-
-.icon > svg {
-  inset: 0;
-  position: absolute;
+[class*="square"]:has(svg) {
+  display: inline-flex;
   place-self: center;
+  svg {
+    height: var(--square);
+    width: var(--square);
+  }
 }
 
-.square-sm {
-  --square: var(--square-sm);
+.square-icon,
+.square-1 {
+  --square: var(--square-1);
 }
 
-.square-lg {
-  --square: var(--square-lg);
+.square-2 {
+  --square: var(--square-2);
 }
 
-.square-xl {
-  --square: var(--square-xl);
-}
-
-.square-featured {
-  --square: var(--square-featured);
+.square-3 {
+  --square: var(--square-3);
 }
 
 .box {
@@ -231,7 +225,7 @@
 }
 
 @media (max-width: 511px) {
-  .sm\:hidden-below {
+  .xs\:hidden-below {
     display: none !important;
   }
 }
@@ -255,7 +249,7 @@
 }
 
 @media (min-width: 512px) {
-  .sm\:hidden {
+  .xs\:hidden {
     display: none !important;
   }
 }

@@ -93,11 +93,11 @@ button,
   color: var(--tc);
   background: oklch(from var(--bgc) var(--bgl) c h);
   transition: all 0.15s ease;
+  cursor: pointer;
 
   &:hover {
-    --bgl: var(--l300);
+    background: oklch(from var(--bgc) calc(var(--bgl) - 9.5%) c h);
     text-decoration: none;
-    cursor: pointer;
   }
 }
 
@@ -113,8 +113,7 @@ button,
   padding: 0 calc(var(--y-form-lg) / 2);
 }
 
-.btn.icon,
-button.icon {
-  aspect-ratio: 1/1;
-  line-height: inherit;
+.btn.square-icon,
+button.square-icon {
+  padding: calc(var(--square-xs) / 2);
 }

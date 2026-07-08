@@ -136,48 +136,39 @@
   border-color: oklch(from var(--bc) var(--bl) c h);
 }
 
-.b-100,
-.hover\:b-100:hover {
+.b-100 {
   --bl: var(--l100);
 }
 
-.b-200,
-.hover\:b-200:hover {
+.b-200 {
   --bl: var(--l200);
 }
 
-.b-300,
-.hover\:b-300:hover {
+.b-300 {
   --bl: var(--l300);
 }
 
-.b-400,
-.hover\:b-400:hover {
+.b-400 {
   --bl: var(--l400);
 }
 
-.b-500,
-.hover\:b-500:hover {
+.b-500 {
   --bl: var(--l500);
 }
 
-.b-600,
-.hover\:b-600:hover {
+.b-600 {
   --bl: var(--l600);
 }
 
-.b-700,
-.hover\:b-700:hover {
+.b-700 {
   --bl: var(--l700);
 }
 
-.b-800,
-.hover\:b-800:hover {
+.b-800 {
   --bl: var(--l800);
 }
 
-.b-900,
-.hover\:b-900:hover {
+.b-900 {
   --bl: var(--l900);
 }
 
@@ -193,47 +184,38 @@
   color: oklch(from var(--tc) var(--tl) c h);
 }
 
-.hover\:t-100:hover,
 .t-100 {
   --tl: var(--l100);
 }
 
-.hover\:t-200:hover,
 .t-200 {
   --tl: var(--l200);
 }
 
-.hover\:t-300:hover,
 .t-300 {
   --tl: var(--l300);
 }
 
-.hover\:t-400:hover,
 .t-400 {
   --tl: var(--l400);
 }
 
-.hover\:t-500:hover,
 .t-500 {
   --tl: var(--l500);
 }
 
-.hover\:t-600:hover,
 .t-600 {
   --tl: var(--l600);
 }
 
-.hover\:t-700:hover,
 .t-700 {
   --tl: var(--l700);
 }
 
-.hover\:t-800:hover,
 .t-800 {
   --tl: var(--l800);
 }
 
-.hover\:t-900:hover,
 .t-900 {
   --tl: var(--l900);
 }
@@ -250,48 +232,39 @@
   background: oklch(from var(--bgc) var(--bgl) c h);
 }
 
-.bg-100,
-.hover\:bg-100:hover {
+.bg-100 {
   --bgl: var(--l100);
 }
 
-.bg-200,
-.hover\:bg-200:hover {
+.bg-200 {
   --bgl: var(--l200);
 }
 
-.bg-300,
-.hover\:bg-300:hover {
+.bg-300 {
   --bgl: var(--l300);
 }
 
-.bg-400,
-.hover\:bg-400:hover {
+.bg-400 {
   --bgl: var(--l400);
 }
 
-.bg-500,
-.hover\:bg-500:hover {
+.bg-500 {
   --bgl: var(--l500);
 }
 
-.bg-600,
-.hover\:bg-600:hover {
+.bg-600 {
   --bgl: var(--l600);
 }
 
-.bg-700,
-.hover\:bg-700:hover {
+.bg-700 {
   --bgl: var(--l700);
 }
 
-.bg-800,
-.hover\:bg-800:hover {
+.bg-800 {
   --bgl: var(--l800);
 }
 
-.bg-900,
-.hover\:bg-900:hover {
+.bg-900 {
   --bgl: var(--l900);
 }
 

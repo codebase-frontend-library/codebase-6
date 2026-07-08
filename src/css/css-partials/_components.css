@@ -92,14 +92,14 @@ textarea[class*="success"] {
 }
 
 [class*="warning"] {
-  background: oklch(from var(--warning) var(--l200) c h);
-  color: #000;
+  background: oklch(from var(--warning) var(--l500) c h);
+  color: #fff;
 }
 
 a[class*="warning"]:hover,
 button[class*="warning"]:hover {
-  background: oklch(from var(--warning) var(--l300) c h);
-  color: #000;
+  background: oklch(from var(--warning) var(--l600) c h);
+  color: #fff;
 }
 
 input[class*="warning"],
@@ -107,7 +107,7 @@ select[class*="warning"],
 textarea[class*="warning"] {
   background: oklch(from var(--warning) var(--l100) c h);
   border-color: oklch(from var(--warning) var(--l600) c h);
-  color: #000;
+  color: #fff;
 }
 
 [class*="danger"] {

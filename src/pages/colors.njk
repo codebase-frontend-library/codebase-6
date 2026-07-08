@@ -128,29 +128,18 @@ layout: "_includes/layout.njk"
 <table class="table">
 <thead>
 <tr>
-<th rowspan="2"></th>
-<th colspan="2" class="t-center bg-gray bg-100 dark:bg-900">Border Color</th>
-<th colspan="2" class="t-center">Text Color</th>
-<th colspan="2" class="t-center bg-gray bg-100 dark:bg-900">Background Color</th>
-</tr>
-<tr>
-<th class="bg-gray bg-100 dark:bg-900">Default state</th>
-<th class="bg-gray bg-100 dark:bg-900">Hover state</th>
-<th>Default state</th>
-<th>Hover state</th>
-<th class="bg-gray bg-100 dark:bg-900">Default state</th>
-<th class="bg-gray bg-100 dark:bg-900">Hover state</th>
+<th></th>
+<th class="t-center bg-gray bg-100 dark:bg-900">Border Color</th>
+<th class="t-center">Text Color</th>
+<th class="t-center bg-gray bg-100 dark:bg-900">Background Color</th>
 </tr>
 </thead>
 <tbody>
 <tr class="bb-thin">
 <td>Lightness modifier</td>
 <td class="bg-gray bg-100 dark:bg-900"><code>b-100</code><br>...<br><code>b-900</code></td>
-<td class="bg-gray bg-100 dark:bg-900"><code>hover:b-100</code><br>...<br><code>hover:b-900</code></td>
 <td><code>t-100</code><br>...<br><code>t-900</code></td>
-<td><code>hover:t-100</code><br>...<br><code>hover:t-900</code></td>
 <td class="bg-gray bg-100 dark:bg-900"><code>bg-100</code><br>...<br><code>bg-900</code></td>
-<td class="bg-gray bg-100 dark:bg-900"><code>hover:bg-100</code><br>...<br><code>hover:bg-900</code></td>
 </tr>
 </tbody>
 </table>
@@ -220,10 +209,10 @@ layout: "_includes/layout.njk"
     <p>The 7 baselayer colors are first declared as CSS variables:</p>
     <pre><code>:root {
   /* Codebase 6 theme base colors */
-  --blue: #0074d9;
-  --green: #2ecc40;
-  --amber: #ffdc00;
-  --red: #ff4136;
+  --blue: #2563eb;
+  --green: #16a34a;
+  --amber: #d97706;
+  --red: #dc2626;
   --purple: #b10dc9;
   --teal: #39cccc;
   --gray: #767676;
@@ -232,15 +221,15 @@ layout: "_includes/layout.njk"
     <li>
     <p>The utility class lightness level suffixes go up in hundreds, from <code>-100</code> to <code>-900</code>. The lower the number, the lighter the color, although the higher % lightness.</p>
     <pre><code>:root {
-  --l100: 97%; /* in gray, this gives ~ #f5f5f5 */
-  --l200: 86.1%;
-  --l300: 77.75%;
-  --l400: 67.35%;
-  --l500: 57.5%;
-  --l600: 47.65%;
-  --l700: 37.75%;
-  --l800: 27.85%;
-  --l900: 21%; /* in gray, this gives ~ #f181818 */
+  --l100: 97%; /* in gray ~ #f5f5f5 */
+  --l200: 87.5%;
+  --l300: 78%;
+  --l400: 68.5%;
+  --l500: 59%;
+  --l600: 49.5%;
+  --l700: 40%;
+  --l800: 30.5%;
+  --l900: 21%; /* in gray ~ #181818 */
 }</code></pre>
   </li>
   <li>
@@ -263,7 +252,7 @@ layout: "_includes/layout.njk"
 
 <ol>
   <li>You need to declare your colors first as CSS variables (preferably in the <code>:root{}</code>), so that they are available for the lightness utility classes.</li>
-  <li>You need to insert your colors <em>before</em> the Codebase colors CSS so that  your colors can make use of the Codebase color shades. There are different ways you can do that; one of which is to use CSS <code>@layer</code>>s.</li>
+  <li>You need to insert your colors <em>before</em> the Codebase colors CSS so that  your colors can make use of the Codebase color shades. There are different ways you can do that; one of which is to use CSS <code>@layer</code>s.</li>
 </ol>
 
 <h2>Other Codebase color utilities</h2>
@@ -304,7 +293,13 @@ layout: "_includes/layout.njk"
 
 <p>Example usage: transparent (“ghost”) buttons.</p>
 
-<p><button class="b-thin b-green bg-transparent t-green t-600 hover:t-white hover:bg-green hover:bg-600" type="button" name="button">Button</button></p>
+<p><button class="b-thin b-green bg-transparent t-green t-600 hover:t-white hover:bg-green bg-500" type="button" name="button">Button</button></p>
+
+<pre><code>&lt;button class="b-thin b-green bg-transparent t-green t-600 hover:t-white hover:bg-green bg-500" type="button" name="button"&gt;Button&lt;/button&gt;</code></pre>
+
+<h3>Hover states</h3>
+
+<p>Links and buttons have built-in hover states: link text-color darkens on hover, and button background-color darkens on hover.</p>
 
 <h3>Glass blurs and filters</h3>
 
