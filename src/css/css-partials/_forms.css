@@ -31,7 +31,7 @@ textarea {
 }
 
 [type="color"],
-select:not([multiple]) {
+select:not([multiple], .elem-sm, .elem-lg) {
   height: var(--y-form);
 }
 
