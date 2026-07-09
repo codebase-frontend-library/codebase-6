@@ -146,26 +146,59 @@ Codebase 6 Components | Codebase 6  </title>
 
 <p><a href="#" class="btn btn-sm">Small Button</a>
 <a href="#" class="btn">Medium Button</a>
-<a href="#" class="btn btn-lg">Large Button</a>
+<a href="#" class="btn btn-lg">Large Button</a></p>
 
 <p>If you want the text to be bigger too, there are corresponding text size utilities.</p>
 
 <p><a href="#" class="btn btn-sm t-sm">Small Button</a>
 <a href="#" class="btn">Medium Button</a>
-<a href="#" class="btn btn-lg t-lg">Large Button</a>
+<a href="#" class="btn btn-lg t-lg">Large Button</a></p>
 
 <pre><code>&lt;a href="#" class="btn btn-sm t-sm"&gt;Small Button&lt;/a&gt;
 &lt;a href="#" class="btn"&gt;Medium Button&lt;/a&gt;
 &lt;a href="#" class="btn btn-lg t-lg"&gt;Large Button&lt;/a&gt;</code></pre>
 
+<p> Buttons have the same padding on all four sides. If you want wider buttons, add <code>px-*</code>.</p>
+
+<p><a href="#" class="btn btn-sm px-2">Small Button</a>
+<a href="#" class="btn px-3">Medium Button</a>
+<a href="#" class="btn btn-lg px-4">Large Button</a></p>
+
+<pre><code>&lt;a href="#" class="btn btn-sm px-2"&gt;Small Button&lt;/a&gt;
+&lt;a href="#" class="btn px-3"&gt;Medium Button&lt;/a&gt;
+&lt;a href="#" class="btn btn-lg px-4"&gt;Large Button&lt;/a&gt;</code></pre>
+
 <h3>Buttons with Icons</h3>
 
-<p>
-  Buttons can also include icons <a href="#" class="btn gap-tiny"><span class="square-icon">★</span> Button with Icon</a>. You can add the <code>square-icon</code> class to make the button square and if only an icon is needed in the button <a href="#" class="btn square-icon">★</a>.
-</p>
+<p>Buttons can also include icons <a href="#" class="btn gap-tiny"><span>★</span> Button</a> with icon and text. Button with (ASCII character) icon only: <a href="#" class="btn"><span>★</span></a></p>
+
+<p>Since button padding is the same on all four sides, a square icon makes a square button. 
+  <a class="btn" href=""><span class="square-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+      <rect width="256" height="256" fill="none"></rect>
+      <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="16"></circle>
+      <polyline points="134.1 161.9 168 128 134.1 94.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+      <line x1="88" y1="128" x2="168" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+    </svg>
+  </span>
+</a></p>
+
+<p>Buttons in groups:
+
+<div class="mb-2 inline-flex gap-tiny">
+  <a href="#" class="btn gap-tiny"><span>★</span> Button</a> <a class="btn" href=""><svg class="square-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+      <rect width="256" height="256" fill="none"></rect>
+      <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="16"></circle>
+      <polyline points="134.1 161.9 168 128 134.1 94.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+      <line x1="88" y1="128" x2="168" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+    </svg>
+  </span>
+</a> 
+</div>
 
 <p>
   For alignment within button groups, use Codebase layout <code>flex</code> and optional <code>gap-1</code> classes.
+</p>
 
 <h2>User Interface Colors</h2>
 

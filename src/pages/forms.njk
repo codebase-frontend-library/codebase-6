@@ -20,6 +20,7 @@ layout: "_includes/layout.njk"
   <li>
     Form inputs, textareas, buttons, and the <code>btn</code> class, have <code>font-size: inherit</code>. This means their font sizes can be modified by any font-size class.</li>
   <li>The font-family of form elements, buttons, and <code>btn</code> is controlled by <code>var(--t-base-fs)</code> (default is sans-serif).</li>
+  <li>Forms and buttons have the same padding on all four sides. If you want more side padding for sing e buttons, add e.g. <code>px-2</code>.
 </ol>
 
 <h2>Textual form input fields</h2>
@@ -247,3 +248,25 @@ layout: "_includes/layout.njk"
   The <code>btn</code> class is used to style links as buttons. See 
   <a href="{{ baseUrl }}components/#buttons">components: buttons</a> for more information.
 </p>
+
+<h2>Form Sizes</h2>
+
+<p>For smaller, use <code>elem-sm</code> on form elements and <code>btn-sm</code> on buttons. 
+
+<p>For larger, use <code>elem-lg</code> on form elements and <code>btn-lg</code> on buttons. 
+
+
+<div class="mb-2 flex gap-tiny">
+  <input class="w-100% elem-sm" type="email" id="example-input-email" placeholder="Enter email">
+  <input class="btn-sm" type="submit" name="submit" value="Subscribe">
+</div>
+
+<div class="mb-2 flex gap-tiny">
+  <input class="w-100%" type="email" id="example-input-email" placeholder="Enter email">
+  <input type="submit" name="submit" value="Subscribe">
+</div>
+
+<div class="flex gap-tiny">
+  <input class="w-100% elem-lg" type="email" id="example-input-email" placeholder="Enter email">
+  <input class="btn-lg" type="submit" name="submit" value="Subscribe">
+</div>

@@ -37,9 +37,7 @@
 
   /* Forms */
   --t-form-ff: inherit;
-  --y-form-sm: 1.75rem;
-  --y-form: 2.5rem;
-  --y-form-lg: 3.25rem;
+  /* --y-form: 2.5em; */
 
   /* Dimensions and spacing */
   --w-xxs: 256px;
@@ -56,12 +54,13 @@
   --s-3: clamp(1.5rem, 0.5rem + 1.25vw, 2rem);
   --s-4: clamp(2rem, 1rem + 2.5vw, 3rem);
   --p-cell: 0.5rem 1rem;
+  --p-form: 0.5em 1em;
   --b-thin: 1px solid var(--bc-detail);
   --b-thick: 4px solid var(--bc-detail);
   --b-heavy: 8px solid var(--bc-detail);
-  --square-1: 1.25em;
-  --square-2: 2.5em;
-  --square-3: 3.75em;
+  --square-1: 1.5em;
+  --square-2: 3em;
+  --square-3: 4.5em;
 
   /* Colors */
   --blue: #2563eb;

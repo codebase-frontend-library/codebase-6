@@ -25,14 +25,9 @@ textarea {
   font-family: var(--t-form-ff);
   font-size: inherit;
   max-width: 100%;
-  min-height: var(--y-form);
   padding: var(--s-1);
-  text-align: start;
-}
 
-[type="color"],
-select:not([multiple], .elem-sm, .elem-lg) {
-  height: var(--y-form);
+  text-align: start;
 }
 
 [type="color"] {
@@ -86,7 +81,7 @@ button,
   align-items: center;
   border: var(--b-thin);
   border-radius: var(--s-tiny);
-  padding: 0 calc(var(--y-form) / 3);
+  padding: var(--s-1);
   font-family: var(--t-form-ff);
   font-weight: var(--t-btn);
   text-decoration: none;
@@ -103,17 +98,10 @@ button,
 
 .btn-sm,
 .elem-sm {
-  min-height: var(--y-form-sm);
-  padding: 0 calc(var(--y-form-sm) / 2);
+  padding: var(--s-tiny);
 }
 
 .btn-lg,
 .elem-lg {
-  min-height: var(--y-form-lg);
-  padding: 0 calc(var(--y-form-lg) / 2);
-}
-
-.btn.square-icon,
-button.square-icon {
-  padding: calc(var(--square-xs) / 2);
+  padding: var(--s-2);
 }
