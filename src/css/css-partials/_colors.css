@@ -268,15 +268,6 @@
   --bgl: var(--l900);
 }
 
-.b-currentcolor {
-  border-color: currentColor;
-}
-
-.b-transparent {
-  --bc: transparent;
-  border-color: var(--bc);
-}
-
 .b-white,
 .hover\:b-white:hover {
   --bc: #fff;
@@ -311,6 +302,22 @@
 .hover\:bg-black:hover {
   --bgc: #000;
   background: var(--bgc);
+}
+
+.b-currentcolor,
+.b-currentColor {
+  border-color: currentColor;
+}
+
+.bg-currentColor,
+.bg-currentcolor {
+  --bgc: currentColor;
+  background-color: var(--bgc);
+}
+
+.b-transparent {
+  --bc: transparent;
+  border-color: var(--bc);
 }
 
 .bg-transparent {
