@@ -22,7 +22,7 @@
   --t-heavy: 900;
   --t-loose: 0.05ch;
   --t-tight: -0.05ch;
-  --t-btn: 400;
+  --t-btn-fw: 400;
   --t-column-width: 17.5rem;
   --h1: 2.5em;
   --h2: 1.875em;
@@ -91,10 +91,10 @@
   --bgc-body: #fff;
   --tc-base: oklch(from var(--gray) var(--l900) c h);
   --tc-link: oklch(from var(--blue) var(--l500) c h);
+  --tc-ui: #000;
   --bgc-ui: var(--gray);
   --tc-form: var(--tc-base);
   --bgc-form: var(--bgc-body);
-  --tc-btn: var(--tc-base);
   --bgc-code: oklch(from var(--gray) var(--l100) c h);
   --bc-detail: oklch(from var(--gray) var(--l500) c h / 0.25);
   --bg-glass-blur: blur(4px);
