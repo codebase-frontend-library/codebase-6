@@ -69,7 +69,7 @@ button,
 [type="submit"],
 [type="reset"],
 .btn {
-  --tc: var(--tc-btn);
+  --tc: var(--tc-ui);
   --bgc: var(--bgc-ui);
   --bgl: var(--l200);
   position: relative;
@@ -83,7 +83,7 @@ button,
   border-radius: var(--s-tiny);
   padding: var(--s-1);
   font-family: var(--t-form-ff);
-  font-weight: var(--t-btn);
+  font-weight: var(--t-btn-fw);
   text-decoration: none;
   color: var(--tc);
   background: oklch(from var(--bgc) var(--bgl) c h);
