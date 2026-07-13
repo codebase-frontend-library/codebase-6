@@ -17,6 +17,7 @@
 .badge,
 .label {
   background: oklch(from var(--bgc, var(--bgc-ui)) var(--bgl, var(--l200)) c h);
+  color: var(--tc-ui);
   white-space: nowrap;
 }
 
