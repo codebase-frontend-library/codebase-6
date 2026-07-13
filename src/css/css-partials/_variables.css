@@ -94,6 +94,7 @@
   --bgc-ui: var(--gray);
   --tc-form: var(--tc-base);
   --bgc-form: var(--bgc-body);
+  --tc-btn: var(--tc-base);
   --bgc-code: oklch(from var(--gray) var(--l100) c h);
   --bc-detail: oklch(from var(--gray) var(--l500) c h / 0.25);
   --bg-glass-blur: blur(4px);
