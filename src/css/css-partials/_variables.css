@@ -77,7 +77,7 @@
   --primary: var(--purple);
   --secondary: var(--teal);
   --tertiary: var(--gray);
-  --l100: 97%; /* in gray ~ #f5f5f5 */
+  --l100: 97%; /* if gray, this gives #f5f5f5 */
   --l200: 87.5%;
   --l300: 78%;
   --l400: 68.5%;
@@ -85,7 +85,7 @@
   --l600: 49.5%;
   --l700: 40%;
   --l800: 30.5%;
-  --l900: 21%; /* in gray ~ #181818 */
+  --l900: 21%; /* if gray, this gives #181818 */
 
   /* Theme */
   --bgc-body: #fff;

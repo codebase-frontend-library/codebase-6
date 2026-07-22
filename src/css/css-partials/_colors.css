@@ -274,15 +274,17 @@
   border-color: var(--bc);
 }
 
-.hover\:t-white:hover,
-.t-white {
+.t-white,
+.hover\:t-white:hover {
   --tc: #fff;
+  --tl: unset;
   color: var(--tc);
 }
 
 .bg-white,
 .hover\:bg-white:hover {
   --bgc: #fff;
+  --bgl: 200%;
   background: var(--bgc);
 }
 
@@ -292,15 +294,17 @@
   border-color: var(--bc);
 }
 
-.hover\:t-black:hover,
-.t-black {
+.t-black,
+.hover\:t-black:hover {
   --tc: #000;
+  --tl: unset;
   color: var(--tc);
 }
 
 .bg-black,
 .hover\:bg-black:hover {
   --bgc: #000;
+  --bgl: 0%;
   background: var(--bgc);
 }
 

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v.6.0.3 -- 22 Jul 2026
+
+* Fix for black and white color utility hover states.
+
 ## v.6.0.2 -- 8 Jul 2026
 
 * Improved box shadow utilities, reduced to 3 variants.

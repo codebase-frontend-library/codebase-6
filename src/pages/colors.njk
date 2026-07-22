@@ -221,7 +221,7 @@ layout: "_includes/layout.njk"
     <li>
     <p>The utility class lightness level suffixes go up in hundreds, from <code>-100</code> to <code>-900</code>. The lower the number, the lighter the color, although the higher % lightness.</p>
     <pre><code>:root {
-  --l100: 97%; /* in gray ~ #f5f5f5 */
+  --l100: 97%; /* if gray, this gives #f5f5f5 */
   --l200: 87.5%;
   --l300: 78%;
   --l400: 68.5%;
@@ -229,7 +229,7 @@ layout: "_includes/layout.njk"
   --l600: 49.5%;
   --l700: 40%;
   --l800: 30.5%;
-  --l900: 21%; /* in gray ~ #181818 */
+  --l900: 21%; /* if gray, this gives #181818 */
 }</code></pre>
   </li>
   <li>
@@ -254,6 +254,74 @@ layout: "_includes/layout.njk"
   <li>You need to declare your colors first as CSS variables (preferably in the <code>:root{}</code>), so that they are available for the lightness utility classes.</li>
   <li>You need to insert your colors <em>before</em> the Codebase colors CSS so that  your colors can make use of the Codebase color shades. There are different ways you can do that; one of which is to use CSS <code>@layer</code>s.</li>
 </ol>
+
+<h2>Hover states and color changes</h2>
+
+<p>Links and buttons have built-in hover states: link text-color (usually) darkens on hover, and button background-color darkens on hover. The exceptions are blacks and whites (see below: <a href="#black-and-white">other Codebase color utilities: black and white</a>):</p>
+
+<ul>
+  <li>Links colored white will stay white on hover. There is also a hover-state <code>hover:t-white</code> that turns a link white on hover.</li>
+  <li>Links colored black will stay white on hover. There is also a hover-state <code>hover:t-black</code> that turns a link black on hover.</li>
+  <li>Buttons that have a white background that stays white on hover. There is also a hover-state <code>hover:bg-white</code> that turns a background white on hover.</li>
+  <li>Buttons that have a white background that stays black on hover. There is also a hover-state <code>hover:bg-black</code> that turns a background black on hover.</li>
+</ul>
+
+<p>(Buttons includes pseudo <em>link buttons</em> i.e. links styled with the <code>btn</code> utility.)</p>
+
+<p>Link text-color examples:</p>
+
+<p>➡ This is an ordinary <a href="">link</a>.
+
+<pre><code>&lt;a href=""&gt;link&lt;/a&gt;</code></pre>
+
+<p>➡This is a <a class="t-green" href="">link</a> that’s colored green.
+
+<div class="mb-2 p-2 t-white bg-blue">
+  <p>➡ This is a <a class="t-white" href="">link</a> that’s colored white.
+  <p class="mb-0">➡ This is a <a class="t-blue t-200 hover:t-white" href="">link</a> that’s colored light blue, turning to white on hover.
+</div>
+
+<p>➡ This is a <a class="t-black" href="">link</a> that’s colored black.
+<p>➡ This is a <a class="t-gray hover:t-black" href="">link</a> that’s colored gray, turning to black on hover.
+
+<pre><code>&lt;a class="t-green" href=""&gt;link&lt;/a&gt;
+
+&lt;a class="t-white" href=""&gt;link&lt;/a&gt;
+
+&lt;a class="t-blue t-200 hover:t-white" href=""&gt;link&lt;/a&gt;
+
+&lt;a class="t-black" href=""&gt;link&lt;/a&gt;
+
+&lt;a class="t-gray hover:t-black" href=""&gt;link&lt;/a&gt;</code></pre>
+
+<p>Button (and pseudo <em>link button</em>) examples:
+
+<p>➡ This is a <button type="button">button</button> with default coloring.</p>
+
+<pre><code>&lt;button type="button"&gt;button&lt;/button&gt;</code></pre>
+
+<p>➡ This is a <button class="bg-green bg-200" type="button">button</button> with light green coloring.</p>
+
+<p>➡ This is a <button class="success" type="button">button</button>. See <a href="{{base_url}}/components/#user-interface-colors">user interface colors</a>.</p>
+
+<div class="mb-2 p-2 t-white bg-blue">
+<p>➡ This is a <button class="bg-white" type="button">button</button> with white background.</p>
+<p>➡ This is a <button class="bg-blue bg-200 hover:bg-white" type="button">button</button> with light blue background turning to white on hover.</p>
+<p>➡ This is a <button class="t-white bg-black" type="button">button</button> with black background (and white text).</p>
+<p class="mb-0">➡ This is a <button class="t-white bg-blue bg-700 hover:bg-black" type="button">button</button> with dark blue background turning to black on hover (and white text).</p>
+</div>
+
+<pre><code>&lt;button class="bg-green bg-200 type="button"&gt;button&lt;/button&gt;
+
+&lt;button class="success" type="button"&gt;button&lt;/button&gt;
+
+&lt;button class="bg-white" type="button"&gt;button&lt;/button&gt;
+
+&lt;button class="bg-blue bg-200 hover:bg-white" type="button"&gt;button&lt;/button&gt;
+
+&lt;button class="t-white bg-black" type="button"&gt;button&lt;/button&gt;
+
+&lt;button class="t-white bg-blue bg-700 hover:bg-black" type="button"&gt;button&lt;/button&gt;</code></pre>
 
 <h2>Other Codebase color utilities</h2>
 
@@ -297,11 +365,7 @@ layout: "_includes/layout.njk"
 
 <pre><code>&lt;button class="b-thin b-green bg-transparent t-green t-600 hover:t-white hover:bg-green bg-500" type="button" name="button"&gt;Button&lt;/button&gt;</code></pre>
 
-<h3>Hover states</h3>
-
-<p>Links and buttons have built-in hover states: link text-color darkens on hover, and button background-color darkens on hover.</p>
-
-<h3>Glass blurs and filters</h3>
+<h2>Glass blurs and filters</h2>
 
 <ul>
   <li><code>bg-glass</code> (alias <code>bg-blur</code>) — mid opacity, blurred backround (no color)
