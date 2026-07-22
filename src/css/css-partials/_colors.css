@@ -1,3 +1,5 @@
+/* Base colors */
+
 .b-blue,
 .hover\:b-blue:hover {
   --bc: var(--blue);
@@ -123,6 +125,89 @@
   --bgc: var(--gray);
   background: oklch(from var(--bgc) var(--bgl, 50%) c h);
 }
+
+/* Other */
+
+.b-white,
+.hover\:b-white:hover {
+  --bc: #fff;
+  border-color: var(--bc);
+}
+
+.t-white,
+.hover\:t-white:hover {
+  --tc: #fff;
+  --tl: unset;
+  color: var(--tc);
+}
+
+.bg-white,
+.hover\:bg-white:hover {
+  --bgc: #fff;
+  --bgl: 200%;
+  background: var(--bgc);
+}
+
+.b-black,
+.hover\:b-black:hover {
+  --bc: #000;
+  border-color: var(--bc);
+}
+
+.t-black,
+.hover\:t-black:hover {
+  --tc: #000;
+  --tl: unset;
+  color: var(--tc);
+}
+
+.bg-black,
+.hover\:bg-black:hover {
+  --bgc: #000;
+  --bgl: 0%;
+  background: var(--bgc);
+}
+
+.b-currentcolor,
+.b-currentColor {
+  border-color: currentColor;
+}
+
+.bg-currentColor,
+.bg-currentcolor {
+  --bgc: currentColor;
+  background-color: var(--bgc);
+}
+
+.b-transparent {
+  --bc: transparent;
+  border-color: var(--bc);
+}
+
+.bg-transparent {
+  --bgc: transparent;
+  background: var(--bgc);
+}
+
+.bg-glass,
+.bg-filter {
+  background: color-mix(
+    in srgb,
+    var(--bgc, transparent) calc(100% - var(--bgl, 50%)),
+    transparent
+  ) !important;
+}
+
+.bg-glass {
+  backdrop-filter: var(--bg-glass-blur);
+}
+
+.hover\:bg-opaque:hover {
+  backdrop-filter: unset;
+  background: var(--bgc) !important;
+}
+
+/* Lightness */
 
 [class*="b-100"],
 [class*="b-200"],
@@ -266,83 +351,4 @@
 
 .bg-900 {
   --bgl: var(--l900);
-}
-
-.b-white,
-.hover\:b-white:hover {
-  --bc: #fff;
-  border-color: var(--bc);
-}
-
-.t-white,
-.hover\:t-white:hover {
-  --tc: #fff;
-  --tl: unset;
-  color: var(--tc);
-}
-
-.bg-white,
-.hover\:bg-white:hover {
-  --bgc: #fff;
-  --bgl: 200%;
-  background: var(--bgc);
-}
-
-.b-black,
-.hover\:b-black:hover {
-  --bc: #000;
-  border-color: var(--bc);
-}
-
-.t-black,
-.hover\:t-black:hover {
-  --tc: #000;
-  --tl: unset;
-  color: var(--tc);
-}
-
-.bg-black,
-.hover\:bg-black:hover {
-  --bgc: #000;
-  --bgl: 0%;
-  background: var(--bgc);
-}
-
-.b-currentcolor,
-.b-currentColor {
-  border-color: currentColor;
-}
-
-.bg-currentColor,
-.bg-currentcolor {
-  --bgc: currentColor;
-  background-color: var(--bgc);
-}
-
-.b-transparent {
-  --bc: transparent;
-  border-color: var(--bc);
-}
-
-.bg-transparent {
-  --bgc: transparent;
-  background: var(--bgc);
-}
-
-.bg-glass,
-.bg-filter {
-  background: color-mix(
-    in srgb,
-    var(--bgc, transparent) calc(100% - var(--bgl, 50%)),
-    transparent
-  ) !important;
-}
-
-.bg-glass {
-  backdrop-filter: var(--bg-glass-blur);
-}
-
-.hover\:bg-opaque:hover {
-  backdrop-filter: unset;
-  background: var(--bgc) !important;
 }
