@@ -78,7 +78,7 @@ a {
   --tl: var(--l500);
   color: oklch(from var(--tc) calc(var(--tl) - 9.5%) c h);
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration-line: underline;
   text-decoration-skip-ink: auto;
   transition: all 0.15s ease;
   &:hover:not(.btn) {
@@ -93,7 +93,7 @@ a.t-underline-hover-only:not(:hover) {
 }
 
 .panel-link .panel-link-title {
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .links-underline-hover-only a:not(:hover),
