@@ -151,43 +151,57 @@ layout: "_includes/layout.njk"
 <li><a href="">This is a link to nowhere</a></li>
 </ul>
 <h3>Link utilities</h3>
+
 <p>Then there are the following two classes that apply to links, that may be handy in some situations:</p>
+
 <ul>
 <li><a class="t-underline-none" href="">This link has no underline</a> — <code>t-underline-none</code></li>
 <li><a class="t-underline-hover-only" href="">This link has no underline unless hovered</a> — <code>t-underline-hover-only</code></li>
 </ul>
+
 <p>The browser default, and the best practice for accessability, is to have links indicated by an underline (and the browser default color of links is blue). But in the context of menus it is permissible to deviate from the best practice, provided there are other visual and non-visual indicators. This is the reason why we should use <a href="https://www.codecademy.com/resources/blog/semantic-html/">semantic HTML</a> tags on menus, and and why we should place navigation menus in their expected locations (in sitewide menu-bars, sidebars, and footers).</p>
+
 <h3>Panel links</h3>
+
 <p>There may be situations where you have a link that contains some accompanying text that you don’t want to receive the <code>&lt;a href=""&gt;</code> (link) underline. Examples where this may be used: media object, card or hero component, where you want the whole thing to behave like a “big button”. for these, you need the <code>panel-link</code> and <code>panel-link-title</code> combo classes.</p>
 <p>You will also want to style the outer <code>&lt;a href=""&gt;</code> e.g. with the <code>block</code> utility (for <code>display:block</code>), and add more styles to this inner element text, so that it is not the same color as the link label.</p>
-<p>Y0u will also want to style the other element(s) text that’s not the <code>panel-link-title</code> with a different color, e.g. <code>t-gray t-900</code>.</p>
+<p>You will also want to style the other element(s) text that’s not the <code>panel-link-title</code> with a different color, e.g. <code>t-gray t-900</code>.</p>
+
 <a class="block my-3 p-3 bg-gray bg-100 panel-link" href="#/">
     <p class="panel-link-title">Link label (title)</p>
     <p class="mb-0 t-gray t-900">Lorem ipsum dolor sit amet ...</p>
 </a>
+
 <pre><code>&lt;a class="panel-link" href=""&gt;
     &lt;p class="panel-link-title"&gt;Link label (title)&lt;/p&gt;
     &lt;p class="mb-0 t-gray t-900"&gt;Lorem ipsum dolor sit amet ...&lt;/p&gt;
 &lt;/a&gt;
 </code></pre>
+
 <p>Another example: here <code>t-underline-hover-only</code> has also been added to the <code>&lt;a href=""&gt;</code>:</p>
+
 <a class="block my-3 p-3 panel-link t-underline-hover-only bg-gray bg-100" href="#/">
     <p class="panel-link-title">Link label (title)</p>
     <p class="mb-0 t-gray t-900">Lorem ipsum dolor sit amet ...</p>
 </a>
+
 <pre><code>&lt;a class="panel-link t-underline-hover-only" href=""&gt;
     &lt;p class="panel-link-title"&gt;Link label (title)&lt;/p&gt;
     &lt;p class="mb-0 t-gray t-900"&gt;Lorem ipsum dolor sit amet ...&lt;/p&gt;
 &lt;/a&gt;
 </code></pre>
+
 <h3>Semantic menu tags</h3>
+
 <ul>
 <li><code>nav</code> / <code>&lt;menu&gt;</code> / <code>&lt;menuitem&gt;</code></li>
 </ul>
+
 <p>The semantic <code>&lt;nav&gt;</code> tag has no styling of its own, other than its being a block element (similar to a <code>div</code>). Use it to organize your major navigation blocks of links (whether to other pages in your website, or “on this page”).</p>
 <p>Semantic <code>&lt;menu&gt;</code> tags are treated by the browser as no different to an <code>&lt;ul&gt;</code>, but they are <em>announced</em> as a menu by <a href="https://web.dev/articles/semantics-and-screen-readers">screen readers</a>. Codebase gives <code>&lt;menu&gt;</code>, <code>&lt;ul&gt;</code>, and <code>&lt;ol&gt;</code> the same styling: some left padding and bottom margin (and you can remove these you don't require them, using spacing utility classes: margins and/or paddings).</p>
 <p>Using an <code>&lt;li&gt;</code> within a <code>&lt;menu&gt;</code> will give you bulletpoint block items. This will be OK for sidebars and dropdown menus, for example, but there’s also the semantic <code>&lt;menuitem&gt;</code> tag. This is an inline tag (like a <code>&lt;span&gt;</code>), and it doesn’t come with a bulletpoint.</p>
 <p>This is what you get if you add no styling, other than the Codebase defaults (but of course you will want to add more styling):</p>
+
 <nav class="my-3">
   <menu>
     <menuitem><a href="">Menu item 1</a></menuitem>
@@ -195,6 +209,7 @@ layout: "_includes/layout.njk"
     <menuitem><a href="">Menu item 3</a></menuitem>
   </menu>
 </nav>
+
 <pre><code>&lt;nav&gt;
   &lt;menu&gt;
     &lt;menuitem&gt;&lt;a href=""&gt;Menu item 1&lt;/a&gt;&lt;/menuitem&gt;
@@ -203,18 +218,24 @@ layout: "_includes/layout.njk"
   &lt;/menu&gt;
 &lt;/nav&gt;
 </code></pre>
+
 <p>Notes:</p>
+
 <ol>
 <li>Use <code>&lt;nav&gt;</code> to encapsulate your main navigation and “on this page” navigation. Navs can contain more than one menu, e.g. in dropdowns. The website or brand logo (with a link to the homepage) can be situated within the top <code>&lt;nav&gt;</code> but outside of the menu.</li>
 <li>The <code>&lt;menu&gt;</code> tag can be used in other contexts, e.g. for a list of related links to other websites, or for a set of user interface controls in a web application.</li>
 <li>Inside a <code>&lt;menuitem&gt;</code> can be a link, a button, or other interactive element.</li>
 </ol>
+
 <p>If you want a group of links (in a menu) to not have underlines, or to have underlines only when hovered, the following wrapper classes are available in Codebase:</p>
+
 <ul>
 <li><code>links-underline-none</code></li>
 <li><code>links-underline-hover-only</code></li>
 </ul>
+
 <p>And now, with a few other Codebase utilities, you have a menubar:</p>
+
 <nav class="my-3">
   <menu class="p-cell flex flex-wrap gap-3 bg-gray bg-100 links-underline-hover-only">
     <menuitem><a class="t-semibold t-gray t-700" href="">Menu item 1</a></menuitem>
@@ -374,7 +395,7 @@ layout: "_includes/layout.njk"
 <p>If you have a lot of content in your table, it will probably break your page layout on small viewports (e.g. phones). The simplest way to make a table “responsive” is to wrap your table in a DIV with the <code>overflow-x</code> class to make it horizontally scrollable.</p>
 
 <div class="my-4 overflow-x">
-  <table class="table table-grid">
+  <table class="table">
     <thead>
       <tr>
         <th>Column title</th>
@@ -402,7 +423,6 @@ layout: "_includes/layout.njk"
         <td>Tabel cell content</td>
         <td>Tabel cell content</td>
       </tr>
-    </tbody><tbody>
   </tbody></table>
 </div>
 

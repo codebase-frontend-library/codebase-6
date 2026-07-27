@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v.6.0.4 -- 27 Jul 2026
+
+* Link utilities improvement.
+* `pre code` improvement.
+
 ## v.6.0.3 -- 22 Jul 2026
 
 * Fix for black and white color utility hover states.

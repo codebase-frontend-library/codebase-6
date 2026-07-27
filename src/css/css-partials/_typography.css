@@ -87,20 +87,18 @@ a {
 }
 
 .panel-link,
-.panel-link.t-underline-hover-only:not(:hover) .panel-link-title,
-a.t-underline-hover-only:not(:hover) {
-  text-decoration: none;
-}
-
-.panel-link .panel-link-title {
-  text-decoration-line: underline;
-}
-
-.links-underline-hover-only a:not(:hover),
+.t-underline-none,
+.t-underline-none .panel-link-title,
+.t-underline-hover-only:not(:hover),
+.t-underline-hover-only:not(:hover) .panel-link-title,
 .links-underline-none a,
 .links-underline-none a:hover,
-a.t-underline-none {
-  text-decoration: none;
+.links-underline-hover-only a {
+  text-decoration-line: none;
+}
+
+.panel-link-title {
+  text-decoration-line: underline;
 }
 
 menu,
@@ -174,17 +172,16 @@ code {
 
 pre {
   font-style: normal;
-  font-weight: 400;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-  &:not(:has(code)) {
+  font-weight: normal;
+  :not(:has code) {
     overflow-x: auto;
   }
 
   code {
     display: block;
+    padding: 1em;
+    background-color: var(--bgc-code);
     overflow-x: auto;
-    padding: var(--s-2);
   }
 }
 
