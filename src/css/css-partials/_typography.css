@@ -92,8 +92,7 @@ a {
 .t-underline-hover-only:not(:hover),
 .t-underline-hover-only:not(:hover) .panel-link-title,
 .links-underline-none a,
-.links-underline-none a:hover,
-.links-underline-hover-only a {
+.links-underline-hover-only a:not(:hover) {
   text-decoration-line: none;
 }
 
