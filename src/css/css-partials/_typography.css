@@ -163,6 +163,8 @@ code {
 pre {
   font-style: normal;
   font-weight: normal;
+  max-width: 100%;
+  white-space: pre-wrap;
   :not(:has code) {
     overflow-x: auto;
   }
