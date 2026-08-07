@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v.6.0.5 -- 7 Aug 2026
+
+* Removed font weight from buttons (and `.btn`) so that font weight utilities can be used.
+* Added `btn-ghost`.
+* Removed `t-xs` and `t-xl`.
+
 ## v.6.0.4 -- 27 Jul 2026
 
 * Link utilities improvement.

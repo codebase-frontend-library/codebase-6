@@ -83,7 +83,6 @@ button,
   border-radius: var(--s-tiny);
   padding: var(--s-1);
   font-family: var(--t-form-ff);
-  font-weight: var(--t-btn-fw);
   text-decoration: none;
   color: var(--tc);
   background: oklch(from var(--bgc) var(--bgl) c h);
@@ -104,4 +103,9 @@ button,
 .btn-lg,
 .elem-lg {
   padding: var(--s-2);
+}
+
+.ghost:not(:hover) {
+  color: currentColor;
+  background: transparent;
 }

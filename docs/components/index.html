@@ -6,7 +6,7 @@
   <title>
 Codebase 6 Components | Codebase 6  </title>
   <meta name="description" content="">
-  <link rel="stylesheet" href="/codebase-6/css/codebase-6.min.css?v=6.0.4">
+  <link rel="stylesheet" href="/codebase-6/css/codebase-6.min.css?v=6.0.5">
   <style>
     :root {
       --w-page: var(--w-xxl);
@@ -87,12 +87,11 @@ Codebase 6 Components | Codebase 6  </title>
           </svg>
         Codebase 6
       </a>
-      <span class="t-gray">version 6.0.4</span>
+      <span class="t-gray">version 6.0.5</span>
     </div>
     <div class="grow sm:flex flex-end flex-wrap gap-2">
-      <a href="https://github.com/codebase-frontend-library/codebase-6" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
     </div>
 </nav>
@@ -115,7 +114,7 @@ Codebase 6 Components | Codebase 6  </title>
           <main id="main-content">
             
 <p>
-  There are only a few things in Codebase that can be categoriased as components. Most other things can be styles using Codebase utility classes. 
+  There are only a few things in Codebase that can be categorized as components. Most other things can be styles using Codebase utility classes. 
 </p>
 
 <h2>Badges</h2>
@@ -124,13 +123,19 @@ Codebase 6 Components | Codebase 6  </title>
   Badges in Codebase are circular indicators that can be used to display a number or status. They are often used in conjunction with buttons or links to indicate notifications or counts.
 </p>
 
-<p>Use the <code>badge</code> class on a SPAN <span class="badge">1</span> or a SUPERSCRIPT<sup class="badge">2</sup></p>
+<p>Use the <code>badge</code> class on a SPAN <span class="badge">1</span> or a SUPERSCRIPT.<sup class="badge">2</sup></p>
+
+<pre><code>Example.&lt;sup class="badge"&gt;2&lt;/sup&gt;</code></pre>
 
 <h2>Labels</h2>
 
 <p>Labels in Codebase are used to highlight or categorize content. They can be used to indicate status, categories, or other important information.</p>
 
-<p>Use the <code>label</code> class on a SPAN or LABEL <span class="label">Label</span></p>
+<p>Use the <code>label</code> class on a SPAN or a LABEL.</p>
+
+<p><span class="label">Label</span></p>
+
+<pre><code>&lt;span class="label"&gt;Label&lt;/span&gt;</code></pre>
 
 <h2>Buttons</h2>
 
@@ -200,6 +205,22 @@ Codebase 6 Components | Codebase 6  </title>
   For alignment within button groups, use Codebase layout <code>flex</code> and optional <code>gap-1</code> classes.
 </p>
 
+<h3>Ghost Buttons</h3>
+
+<p>Ghost buttons are buttons with a transparent background and a border. They can be used to create a more subtle button style.</p> 
+
+<p>You can simply add the <code>ghost</code> class to a button to apply this style: this sets a transparent background and <code>currentColor</code> for the text in the default state only. The hover state will be as normal buttons, or a <a href="#user-interface-colors">user interface color</a> or other color if you have set that. In codebase, buttons normally have borders, so <code>ghost</code> desn’t itself include a border.</p>
+
+<p>
+  <button>Default button</button> — default button with no <code>ghost</code> class added
+</p>
+<p>
+  <button class="ghost">Default ghost button</button> — default button with <code>ghost</code> class added
+</p>
+<p>
+  <button class="primary ghost">Primary ghost button</button> — button with <code>primary</code> and <code>ghost</code> classes added
+</p>
+
 <h2>User Interface Colors</h2>
 
 <p>The following colors are used in Codebase for user interface elements. They are designed to provide a consistent look and feel across the application. You can use these colors for buttons, badges, labels, and other UI components. The colors are defined in the CSS variables and can be customized as needed. These UI color names affect the background color of elements, and the text color will automatically adjust to ensure readability.</p>
@@ -218,6 +239,7 @@ Codebase 6 Components | Codebase 6  </title>
 
 <p>
   <button>Default button</button> — with no UI color class added
+</p>
 <p>
   <button class="primary">Primary button</button>
   <button class="secondary">Secondary button</button>
@@ -268,12 +290,12 @@ Codebase 6 Components | Codebase 6  </title>
       document.write(currentYear);
     </script> 
     by <a href="https://github.com/SimonPadbury">Simon Padbury</a>. All rights reserved.<br>
-    <small>Codebase 6 and these docs are built on the <a href="https://github.com/SimonPadbury/minjucks" target="_blank">Minjucks</a> static site generator.</small>
+    <small>Codebase 6 and these docs are built using the <a href="https://github.com/SimonPadbury/minjucks" target="_blank">Minjucks</a> static site generator.</small>
   </div>
 </footer>
   </div>
 
-  <script src="/codebase-6/js/scripts.js?v=6.0.4" defer></script>
+  <script src="/codebase-6/js/scripts.js?v=6.0.5" defer></script>
 
 </body>
 </html>

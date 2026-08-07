@@ -1,6 +1,6 @@
 # codebase-6
 
-Version 6.0.4
+Version 6.0.5
 
 Filesize: 28kb
 

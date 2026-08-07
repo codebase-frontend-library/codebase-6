@@ -6,7 +6,7 @@
   <title>
 Codebase 6 Typography | Codebase 6  </title>
   <meta name="description" content="">
-  <link rel="stylesheet" href="/codebase-6/css/codebase-6.min.css?v=6.0.4">
+  <link rel="stylesheet" href="/codebase-6/css/codebase-6.min.css?v=6.0.5">
   <style>
     :root {
       --w-page: var(--w-xxl);
@@ -87,12 +87,11 @@ Codebase 6 Typography | Codebase 6  </title>
           </svg>
         Codebase 6
       </a>
-      <span class="t-gray">version 6.0.4</span>
+      <span class="t-gray">version 6.0.5</span>
     </div>
     <div class="grow sm:flex flex-end flex-wrap gap-2">
-      <a href="https://github.com/codebase-frontend-library/codebase-6" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://raw.githubusercontent.com/codebase-frontend-library/codebase-6/refs/heads/main/docs/css/codebase-6.min.css" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Download CSS</a>
-      <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/README.md" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Readme</a>
+      <a href="https://github.com/codebase-frontend-library/codebase-6" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://github.com/codebase-frontend-library/codebase-6/blob/main/CHANGELOG.md" class="block py-1 t-semibold t-underline-hover-only" target="_blank" rel="noopener noreferrer">Changelog</a>
     </div>
 </nav>
@@ -550,14 +549,12 @@ Codebase 6 Typography | Codebase 6  </title>
 
 <h3>Font size multipliers</h3>
 
-<p><code>t-xs</code>, <code>t-sm</code>, <code>t-md</code>, <code>t-lg</code>, <code>t-xl</code></p>
-
-<p>Starting from your base font size, these multipliers will either increase or decrease the font size.</p>
+<p><code>t-sm</code>, <code>t-md</code>, <code>t-lg</code></p>
 
 <p><strong>Notes:</strong></p>
 
 <ul>
-  <li>The <code>t-md</code> class is the same as the base font size, and is set in REM. Use it to override other styles to return to the base font size.</li>
+  <li>The <code>t-md</code> class is the same as the base font size, and is set in <code>rem</code>. Use it to reset the font size.</li>
   <li>All other font size multipliers are set in EM, so that they will scale up or down depending on the parent element’s font size.</li>
   <li>Font size multipliers can be used on any element, but they are generally used on inline elements, e.g. <code>&lt;span&gt;</code>.
 </ul>
@@ -575,15 +572,9 @@ Codebase 6 Typography | Codebase 6  </title>
   </thead>
   <tbody>
     <tr>
-      <td><code>t-xs</code></td>
-      <td class="t-center">0.625em</td>
-      <td class="t-center">10px</td>
-      <td><span class="t-xs">Extra-small text</span></td>
-    </tr>
-    <tr>
       <td><code>t-sm</code></td>
-      <td class="t-center">0.8125em</td>
-      <td class="t-center">13px</td>
+      <td class="t-center">0.8em</td>
+      <td class="t-center">12.8px</td>
       <td><span class="t-sm">Small text</span></td>
     </tr>
     <tr>
@@ -594,15 +585,9 @@ Codebase 6 Typography | Codebase 6  </title>
     </tr>
     <tr>
       <td><code>t-lg</code></td>
-      <td class="t-center">1.1875em</td>
-      <td class="t-center">19px</td>
+      <td class="t-center">1.25em</td>
+      <td class="t-center">20px</td>
       <td><span class="t-lg">Large text</span></td>
-    </tr>
-    <tr>
-      <td><code>t-xl</code></td>
-      <td class="t-center">1.375em</td>
-      <td class="t-center">22px</td>
-      <td><span class="t-xl">Extra-large text</span></td>
     </tr>
     </tbody>
 </table>
@@ -759,12 +744,12 @@ Codebase 6 Typography | Codebase 6  </title>
       document.write(currentYear);
     </script> 
     by <a href="https://github.com/SimonPadbury">Simon Padbury</a>. All rights reserved.<br>
-    <small>Codebase 6 and these docs are built on the <a href="https://github.com/SimonPadbury/minjucks" target="_blank">Minjucks</a> static site generator.</small>
+    <small>Codebase 6 and these docs are built using the <a href="https://github.com/SimonPadbury/minjucks" target="_blank">Minjucks</a> static site generator.</small>
   </div>
 </footer>
   </div>
 
-  <script src="/codebase-6/js/scripts.js?v=6.0.4" defer></script>
+  <script src="/codebase-6/js/scripts.js?v=6.0.5" defer></script>
 
 </body>
 </html>

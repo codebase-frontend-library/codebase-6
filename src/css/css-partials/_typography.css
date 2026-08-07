@@ -187,10 +187,6 @@ sup {
   white-space: nowrap;
 }
 
-.t-xs {
-  font-size: var(--t-xs);
-}
-
 .t-sm,
 small {
   font-size: var(--t-sm);
@@ -202,10 +198,6 @@ small {
 
 .t-lg {
   font-size: var(--t-lg);
-}
-
-.t-xl {
-  font-size: var(--t-xl);
 }
 
 .t-thin {
