@@ -90,6 +90,14 @@
   grid-template-columns: repeat(4, minmax(1rem, 1fr));
 }
 
+.equal-5-cols {
+  grid-template-columns: repeat(5, minmax(1rem, 1fr));
+}
+
+.equal-6-cols {
+  grid-template-columns: repeat(6, minmax(1rem, 1fr));
+}
+
 .col-1 {
   grid-column: 1;
 }
@@ -106,6 +114,14 @@
   grid-column: 1 / span 4;
 }
 
+.cols-1-5 {
+  grid-column: 1 / span 5;
+}
+
+.cols-1-6 {
+  grid-column: 1 / span 6;
+}
+
 .col-2 {
   grid-column: 2;
 }
@@ -118,6 +134,14 @@
   grid-column: 2 / span 3;
 }
 
+.cols-2-5 {
+  grid-column: 2 / span 4;
+}
+
+.cols-2-6 {
+  grid-column: 2 / span 5;
+}
+
 .col-3 {
   grid-column: 3;
 }
@@ -126,46 +150,34 @@
   grid-column: 3 / span 2;
 }
 
+.cols-3-5 {
+  grid-column: 3 / span 3;
+}
+
+.cols-3-6 {
+  grid-column: 3 / span 4;
+}
+
 .col-4 {
   grid-column: 4;
 }
 
-.row-1 {
-  grid-row: 1;
+.cols-4-5 {
+  grid-column: 4 / span 2;
 }
 
-.rows-1-2 {
-  grid-row: 1 / span 2;
+.cols-4-6 {
+  grid-column: 4 / span 3;
 }
 
-.rows-1-3 {
-  grid-row: 1 / span 3;
+.col-5 {
+  grid-column: 5;
 }
 
-.rows-1-4 {
-  grid-row: 1 / span 4;
+.cols-5-6 {
+  grid-column: 5 / span 2;
 }
 
-.row-2 {
-  grid-row: 2;
-}
-
-.rows-2-3 {
-  grid-row: 2 / span 2;
-}
-
-.rows-2-4 {
-  grid-row: 2 / span 3;
-}
-
-.row-3 {
-  grid-row: 3;
-}
-
-.rows-3-4 {
-  grid-row: 3 / span 2;
-}
-
-.row-4 {
-  grid-row: 4;
+.col-6 {
+  grid-column: 6;
 }

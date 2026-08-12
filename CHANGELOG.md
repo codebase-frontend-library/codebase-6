@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## v.6.1.0 -- 12 Aug 2026
+
+* Improved color lightness scale and added `*50` increments.
+* Added `bg-50` for even lighter backgrounds.
+* Removed CSS grid `row-*` utilities as these were adding a lot of weight but were seldom used.
+* Added `col-5` and `col-6` utilities.
+
 ## v.6.0.5 -- 7 Aug 2026
 
 * Removed font weight from buttons (and `.btn`) so that font weight utilities can be used.

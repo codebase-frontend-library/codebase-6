@@ -74,15 +74,26 @@
   --primary: var(--purple);
   --secondary: var(--teal);
   --tertiary: var(--gray);
-  --l100: 97%; /* if gray, this gives #f5f5f5 */
-  --l200: 87.5%;
-  --l300: 78%;
-  --l400: 68.5%;
-  --l500: 59%;
-  --l600: 49.5%;
-  --l700: 40%;
-  --l800: 30.5%;
-  --l900: 21%; /* if gray, this gives #181818 */
+  --l50: 97%; /* if gray, this gives #f5f5f5, whitesmoke */
+  --l100: 92.6%; /* if gray, this gives #e6e6e6 */
+  --l150: 88.2%;
+  --l200: 83.8%;
+  --l250: 79.4%;
+  --l300: 75%;
+  --l350: %;
+  --l400: 66.2%;
+  --l450: 61.8%;
+  --l500: 57.4%;
+  --l550: 53%;
+  --l600: 48.7%;
+  --l650: 44.3%;
+  --l700: 39.9%;
+  --l750: 35.5%;
+  --l800: 31.1%;
+  --l850: 26.7%;
+  --l900: 22.3%; /* if gray, this gives #1b1b1b */
+  --l950: 17.9%; /* if gray, this gives #111111 */
+  --l1000: 13.5%; /* if gray, this gives #080808 */
 
   /* Theme */
   --bgc-body: #fff;

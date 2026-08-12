@@ -305,6 +305,7 @@
   --tl: var(--l900);
 }
 
+[class*="bg-50"],
 [class*="bg-100"],
 [class*="bg-200"],
 [class*="bg-300"],
@@ -315,6 +316,10 @@
 [class*="bg-800"],
 [class*="bg-900"] {
   background: oklch(from var(--bgc) var(--bgl) c h);
+}
+
+.bg-50 {
+  --bgl: var(--l50);
 }
 
 .bg-100 {
