@@ -3,85 +3,85 @@
 .b-blue,
 .hover\:b-blue:hover {
   --bc: var(--blue);
-  border-color: oklch(from var(--bc) var(--bl, 50%) c h);
+  border-color: oklch(from var(--bc) var(--bl, var(--l500)) c h);
 }
 
 .b-green,
 .hover\:b-green:hover {
   --bc: var(--green);
-  border-color: oklch(from var(--bc) var(--bl, 50%) c h);
+  border-color: oklch(from var(--bc) var(--bl, var(--l500)) c h);
 }
 
 .b-amber,
 .hover\:b-amber:hover {
   --bc: var(--amber);
-  border-color: oklch(from var(--bc) var(--bl, 50%) c h);
+  border-color: oklch(from var(--bc) var(--bl, var(--l500)) c h);
 }
 
 .b-red,
 .hover\:b-red:hover {
   --bc: var(--red);
-  border-color: oklch(from var(--bc) var(--bl, 50%) c h);
+  border-color: oklch(from var(--bc) var(--bl, var(--l500)) c h);
 }
 
 .b-purple,
 .hover\:b-purple:hover {
   --bc: var(--purple);
-  border-color: oklch(from var(--bc) var(--bl, 50%) c h);
+  border-color: oklch(from var(--bc) var(--bl, var(--l500)) c h);
 }
 
 .b-teal,
 .hover\:b-teal:hover {
   --bc: var(--teal);
-  border-color: oklch(from var(--bc) var(--bl, 50%) c h);
+  border-color: oklch(from var(--bc) var(--bl, var(--l500)) c h);
 }
 
 .b-gray,
 .hover\:b-gray:hover {
   --bc: var(--gray);
-  border-color: oklch(from var(--bc) var(--bl, 50%) c h);
+  border-color: oklch(from var(--bc) var(--bl, var(--l500)) c h);
 }
 
 .hover\:t-blue:hover,
 .t-blue {
   --tc: var(--blue);
-  color: oklch(from var(--tc) var(--tl, 50%) c h);
+  color: oklch(from var(--tc) var(--tl, var(--l500)) c h);
 }
 
 .hover\:t-green:hover,
 .t-green {
   --tc: var(--green);
-  color: oklch(from var(--tc) var(--tl, 50%) c h);
+  color: oklch(from var(--tc) var(--tl, var(--l500)) c h);
 }
 
 .hover\:t-amber:hover,
 .t-amber {
   --tc: var(--amber);
-  color: oklch(from var(--tc) var(--tl, 50%) c h);
+  color: oklch(from var(--tc) var(--tl, var(--l500)) c h);
 }
 
 .hover\:t-red:hover,
 .t-red {
   --tc: var(--red);
-  color: oklch(from var(--tc) var(--tl, 50%) c h);
+  color: oklch(from var(--tc) var(--tl, var(--l500)) c h);
 }
 
 .hover\:t-purple:hover,
 .t-purple {
   --tc: var(--purple);
-  color: oklch(from var(--tc) var(--tl, 50%) c h);
+  color: oklch(from var(--tc) var(--tl, var(--l500)) c h);
 }
 
 .hover\:t-teal:hover,
 .t-teal {
   --tc: var(--teal);
-  color: oklch(from var(--tc) var(--tl, 50%) c h);
+  color: oklch(from var(--tc) var(--tl, var(--l500)) c h);
 }
 
 .hover\:t-gray:hover,
 .t-gray {
   --tc: var(--gray);
-  color: oklch(from var(--tc) var(--tl, 50%) c h);
+  color: oklch(from var(--tc) var(--tl, var(--l500)) c h);
 }
 
 .bg-blue,
@@ -93,37 +93,37 @@
 .bg-green,
 .hover\:bg-green:hover {
   --bgc: var(--green);
-  background: oklch(from var(--bgc) var(--bgl, 50%) c h);
+  background: oklch(from var(--bgc) var(--bgl, var(--l500)) c h);
 }
 
 .bg-amber,
 .hover\:bg-amber:hover {
   --bgc: var(--amber);
-  background: oklch(from var(--bgc) var(--bgl, 50%) c h);
+  background: oklch(from var(--bgc) var(--bgl, var(--l500)) c h);
 }
 
 .bg-red,
 .hover\:bg-red:hover {
   --bgc: var(--red);
-  background: oklch(from var(--bgc) var(--bgl, 50%) c h);
+  background: oklch(from var(--bgc) var(--bgl, var(--l500)) c h);
 }
 
 .bg-purple,
 .hover\:bg-purple:hover {
   --bgc: var(--purple);
-  background: oklch(from var(--bgc) var(--bgl, 50%) c h);
+  background: oklch(from var(--bgc) var(--bgl, var(--l500)) c h);
 }
 
 .bg-teal,
 .hover\:bg-teal:hover {
   --bgc: var(--teal);
-  background: oklch(from var(--bgc) var(--bgl, 50%) c h);
+  background: oklch(from var(--bgc) var(--bgl, var(--l500)) c h);
 }
 
 .bg-gray,
 .hover\:bg-gray:hover {
   --bgc: var(--gray);
-  background: oklch(from var(--bgc) var(--bgl, 50%) c h);
+  background: oklch(from var(--bgc) var(--bgl, var(--l500)) c h);
 }
 
 /* Other */
@@ -193,7 +193,7 @@
 .bg-filter {
   background: color-mix(
     in srgb,
-    var(--bgc, transparent) calc(100% - var(--bgl, 50%)),
+    var(--bgc, transparent) calc(100% - var(--bgl, var(--l500))),
     transparent
   ) !important;
 }
@@ -305,17 +305,8 @@
   --tl: var(--l900);
 }
 
-[class*="bg-50"],
-[class*="bg-100"],
-[class*="bg-200"],
-[class*="bg-300"],
-[class*="bg-400"],
-[class*="bg-500"],
-[class*="bg-600"],
-[class*="bg-700"],
-[class*="bg-800"],
-[class*="bg-900"] {
-  background: oklch(from var(--bgc) var(--bgl) c h);
+[class*="bg-"] {
+  background: oklch(from var(--bgc) var(--bgl, var(--l500)) c h);
 }
 
 .bg-50 {
@@ -326,34 +317,74 @@
   --bgl: var(--l100);
 }
 
+.bg-150 {
+  --bgl: var(--l150);
+}
+
 .bg-200 {
   --bgl: var(--l200);
+}
+
+.bg-250 {
+  --bgl: var(--l250);
 }
 
 .bg-300 {
   --bgl: var(--l300);
 }
 
+.bg-350 {
+  --bgl: var(--l350);
+}
+
 .bg-400 {
   --bgl: var(--l400);
+}
+
+.bg-450 {
+  --bgl: var(--l450);
 }
 
 .bg-500 {
   --bgl: var(--l500);
 }
 
+.bg-550 {
+  --bgl: var(--l550);
+}
+
 .bg-600 {
   --bgl: var(--l600);
+}
+
+.bg-650 {
+  --bgl: var(--l650);
 }
 
 .bg-700 {
   --bgl: var(--l700);
 }
 
+.bg-750 {
+  --bgl: var(--l750);
+}
+
 .bg-800 {
   --bgl: var(--l800);
 }
 
+.bg-850 {
+  --bgl: var(--l850);
+}
+
 .bg-900 {
   --bgl: var(--l900);
+}
+
+.bg-950 {
+  --bgl: var(--l950);
+}
+
+.bg-1000 {
+  --bgl: var(--l1000);
 }

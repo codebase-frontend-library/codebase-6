@@ -78,6 +78,15 @@
   grid-auto-flow: dense;
 }
 
+.auto-cols {
+  grid-auto-flow: column;
+}
+
+.equal-cols {
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(1rem, 1fr);
+}
+
 .equal-2-cols {
   grid-template-columns: repeat(2, minmax(1rem, 1fr));
 }

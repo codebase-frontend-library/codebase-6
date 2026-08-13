@@ -79,6 +79,15 @@
     grid-auto-flow: dense;
   }
 
+  .lg\:auto-cols {
+    grid-auto-flow: column;
+  }
+
+  .lg\:equal-cols {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(1rem, 1fr);
+  }
+
   .lg\:equal-2-cols {
     grid-template-columns: repeat(2, minmax(1rem, 1fr));
   }

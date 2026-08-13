@@ -115,17 +115,23 @@ Codebase 6 Colors | Codebase 6  </title>
             
 <p>Codebase 6’s color utility class system is based on using the modern CSS <code>oklch()</code> function and a series of interpolated lightness variables that enable the lightness level utility classes to work.</p>
 
-<p>The lightnsses for color each class are not pre-created, unlike with other CSS frameworks. E.g. if you want a light green background color, there's no <code>bg-green-100</code>. Instead you choose the color and lightness level separately, as <code>bg-green bg-100</code>. Handled this way, the stylesheet doesn’t need to be loaded with lighness classes for every color — most of which you’d never use.</p>
+<p>The lightnsses for color each class are not pre-created, unlike with other CSS frameworks. E.g. if you want a light green background color, there’s no <code>bg-green-100</code>. Instead, you choose the color and lightness level separately, as <code>bg-green bg-100</code>. Handled this way, the stylesheet doesn’t need to be pre-loaded with lighness classes for every color — most of which you’d never use.</p>
 
 <p>The <code>oklch()</code> function has been <a href="https://developer.mozilla.org/en-US/docs/Glossary/Baseline/Compatibility">baseline: widely available</a> since March 2023. All “evergreen” browsers (Chrome, Edge, Firefox, Safari) have capability to use it (see <a href="https://caniuse.com/?search=color-mix()">Can I use</a>).</p>
 
-<p>In setting up the lightness utility classes, Codebase’s <code>oklch()</code> formulas take the hue (h) and chroma (c) values out of the base color variables, and adjusts the lightness level (l) to 50% (matching Codebase’s built-in middle lightness, i.e. <code>--l500</code>). This enables a <em>perceptually uniform</em> system of lightness levels.</p>
+<p>In setting up the lightness utility classes, Codebase’s <code>oklch()</code> formulas take the hue (h) and chroma (c) values out of the base color variables, and adjusts the lightness level (l) to Codebase’s built-in middle lightness, <code>--l500</code>. This enables a <em>perceptually uniform</em> system of lightness levels.</p>
 
 <p>The seven Codebase built-in theme colors are set using Hex <code>#</code> codes). But if/when you add your own in all other color system, the <code>oklch() </code> formulas can handle it.</p>
 
-<p>The lightness levels for border, text color and background color are set the same way: <code>*-100</code> through <code>*-900</code>. As a bonus, there is also <code>bg-50</code> for an even lighter background.</p>
+<p>The lightness levels for border, text color and background color are set the same way:</p>
 
-<p>In the CSS variables file, lightness level variables are set at infrements of fifty, from <code>--l50</code> to <code>--l1000</code>. The lower the number, the lighter the color, although the higher % lightness. The fifties are available for your use, even though the utility class lightnesses only use the hundreds (except for <code>bg-50</code>).</p>
+<ul>
+  <li>Border color: <code>b-100</code> through <code>b-900</code> (increments of 100)</li>
+  <li>Text color: <code>t-100</code> through <code>t-900</code> (increments of 100)</li>
+  <li>Background color: <code>bg-50</code> through <code>bg-1000</code> (increments of 50)</li>
+</ul>
+
+<p>In the CSS variables file, lightness level variables are set at infrements of fifty, from <code>--l50</code> to <code>--l1000</code>. The lower the number, the lighter the color, although the higher % lightness.</p>
 
 <pre><code>:root {
   --l50: 97%; /* if gray, this gives #f5f5f5, whitesmoke */
@@ -152,9 +158,9 @@ Codebase 6 Colors | Codebase 6  </title>
 
 <p>Example using background <code>bg-*</code> utility classes (the background lightness is declared separately):</p>
 
-<div class="my-3 b-thin rounded p-2">
-    <div class="overflow-x">
-      <div class="mb-1 t-center"><code>bg-{lightness} </code></div>
+<!--<div class="my-3 b-thin rounded p-2">
+  <div class="overflow-x">
+    <div class="mb-1 t-center"><code>bg-{lightness} </code></div>
       <div class="flex flex-grow-equal t-center">
         <div><code>bg-50</code></div>
         <div><code>bg-100</code></div>
@@ -167,96 +173,194 @@ Codebase 6 Colors | Codebase 6  </title>
         <div><code>bg-800</code></div>
         <div><code>bg-900</code></div>
       </div>
+    </div>
+  </div>
+</div>-->
+
+<div class="my-3 b-thin rounded p-2">
+  <div class="overflow-x">
+    <div class="mb-2 t-center"><code>bg-{lightness} </code></div>
+      <div class="flex flex-grow-equal t-center" style="height: 4em">
+        <div><code style="rotate: -90deg; transform-origin: bottom">50</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">100</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">150</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">200</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">250</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">300</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">350</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">400</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">450</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">500</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">550</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">600</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">650</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">700</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">750</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">800</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">900</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">950</code></div>
+        <div><code style="rotate: -90deg; transform-origin: bottom">1000</code></div>
+      </div>
       <p class="my-1"><code>bg-blue</code></p>
       <div class="flex flex-grow-equal gap-1">
         <div class="rounded bg-blue bg-50 aspect-ratio-1x1"></div>
         <div class="rounded bg-blue bg-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-150 aspect-ratio-1x1"></div>
         <div class="rounded bg-blue bg-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-250 aspect-ratio-1x1"></div>
         <div class="rounded bg-blue bg-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-350 aspect-ratio-1x1"></div>
         <div class="rounded bg-blue bg-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-450 aspect-ratio-1x1"></div>
         <div class="rounded bg-blue bg-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-550 aspect-ratio-1x1"></div>
         <div class="rounded bg-blue bg-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-650 aspect-ratio-1x1"></div>
         <div class="rounded bg-blue bg-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-750 aspect-ratio-1x1"></div>
         <div class="rounded bg-blue bg-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-850 aspect-ratio-1x1"></div>
         <div class="rounded bg-blue bg-900 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-950 aspect-ratio-1x1"></div>
+        <div class="rounded bg-blue bg-1000 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-green</code></p>
       <div class="flex flex-grow-equal gap-1">
         <div class="rounded bg-green bg-50 aspect-ratio-1x1"></div>
         <div class="rounded bg-green bg-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-150 aspect-ratio-1x1"></div>
         <div class="rounded bg-green bg-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-250 aspect-ratio-1x1"></div>
         <div class="rounded bg-green bg-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-350 aspect-ratio-1x1"></div>
         <div class="rounded bg-green bg-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-450 aspect-ratio-1x1"></div>
         <div class="rounded bg-green bg-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-550 aspect-ratio-1x1"></div>
         <div class="rounded bg-green bg-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-650 aspect-ratio-1x1"></div>
         <div class="rounded bg-green bg-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-750 aspect-ratio-1x1"></div>
         <div class="rounded bg-green bg-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-850 aspect-ratio-1x1"></div>
         <div class="rounded bg-green bg-900 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-950 aspect-ratio-1x1"></div>
+        <div class="rounded bg-green bg-1000 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-amber</code></p>
       <div class="flex flex-grow-equal gap-1">
         <div class="rounded bg-amber bg-50 aspect-ratio-1x1"></div>
         <div class="rounded bg-amber bg-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-150 aspect-ratio-1x1"></div>
         <div class="rounded bg-amber bg-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-250 aspect-ratio-1x1"></div>
         <div class="rounded bg-amber bg-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-350 aspect-ratio-1x1"></div>
         <div class="rounded bg-amber bg-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-450 aspect-ratio-1x1"></div>
         <div class="rounded bg-amber bg-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-550 aspect-ratio-1x1"></div>
         <div class="rounded bg-amber bg-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-650 aspect-ratio-1x1"></div>
         <div class="rounded bg-amber bg-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-750 aspect-ratio-1x1"></div>
         <div class="rounded bg-amber bg-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-850 aspect-ratio-1x1"></div>
         <div class="rounded bg-amber bg-900 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-950 aspect-ratio-1x1"></div>
+        <div class="rounded bg-amber bg-1000 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-red</code></p>
       <div class="flex flex-grow-equal gap-1">
         <div class="rounded bg-red bg-50 aspect-ratio-1x1"></div>
         <div class="rounded bg-red bg-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-150 aspect-ratio-1x1"></div>
         <div class="rounded bg-red bg-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-250 aspect-ratio-1x1"></div>
         <div class="rounded bg-red bg-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-350 aspect-ratio-1x1"></div>
         <div class="rounded bg-red bg-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-450 aspect-ratio-1x1"></div>
         <div class="rounded bg-red bg-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-550 aspect-ratio-1x1"></div>
         <div class="rounded bg-red bg-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-650 aspect-ratio-1x1"></div>
         <div class="rounded bg-red bg-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-750 aspect-ratio-1x1"></div>
         <div class="rounded bg-red bg-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-850 aspect-ratio-1x1"></div>
         <div class="rounded bg-red bg-900 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-950 aspect-ratio-1x1"></div>
+        <div class="rounded bg-red bg-1000 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-purple</code></p>
       <div class="flex flex-grow-equal gap-1">
         <div class="rounded bg-purple bg-50 aspect-ratio-1x1"></div>
         <div class="rounded bg-purple bg-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-150 aspect-ratio-1x1"></div>
         <div class="rounded bg-purple bg-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-250 aspect-ratio-1x1"></div>
         <div class="rounded bg-purple bg-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-350 aspect-ratio-1x1"></div>
         <div class="rounded bg-purple bg-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-450 aspect-ratio-1x1"></div>
         <div class="rounded bg-purple bg-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-550 aspect-ratio-1x1"></div>
         <div class="rounded bg-purple bg-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-650 aspect-ratio-1x1"></div>
         <div class="rounded bg-purple bg-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-750 aspect-ratio-1x1"></div>
         <div class="rounded bg-purple bg-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-850 aspect-ratio-1x1"></div>
         <div class="rounded bg-purple bg-900 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-950 aspect-ratio-1x1"></div>
+        <div class="rounded bg-purple bg-1000 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-teal</code></p>
       <div class="flex flex-grow-equal gap-1">
         <div class="rounded bg-teal bg-50 aspect-ratio-1x1"></div>
         <div class="rounded bg-teal bg-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-150 aspect-ratio-1x1"></div>
         <div class="rounded bg-teal bg-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-250 aspect-ratio-1x1"></div>
         <div class="rounded bg-teal bg-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-350 aspect-ratio-1x1"></div>
         <div class="rounded bg-teal bg-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-450 aspect-ratio-1x1"></div>
         <div class="rounded bg-teal bg-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-550 aspect-ratio-1x1"></div>
         <div class="rounded bg-teal bg-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-650 aspect-ratio-1x1"></div>
         <div class="rounded bg-teal bg-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-750 aspect-ratio-1x1"></div>
         <div class="rounded bg-teal bg-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-850 aspect-ratio-1x1"></div>
         <div class="rounded bg-teal bg-900 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-950 aspect-ratio-1x1"></div>
+        <div class="rounded bg-teal bg-1000 aspect-ratio-1x1"></div>
       </div>
       <p class="my-1"><code>bg-gray</code></p>
       <div class="flex flex-grow-equal gap-1">
         <div class="rounded bg-gray bg-50 aspect-ratio-1x1"></div>
         <div class="rounded bg-gray bg-100 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-150 aspect-ratio-1x1"></div>
         <div class="rounded bg-gray bg-200 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-250 aspect-ratio-1x1"></div>
         <div class="rounded bg-gray bg-300 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-350 aspect-ratio-1x1"></div>
         <div class="rounded bg-gray bg-400 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-450 aspect-ratio-1x1"></div>
         <div class="rounded bg-gray bg-500 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-550 aspect-ratio-1x1"></div>
         <div class="rounded bg-gray bg-600 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-650 aspect-ratio-1x1"></div>
         <div class="rounded bg-gray bg-700 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-750 aspect-ratio-1x1"></div>
         <div class="rounded bg-gray bg-800 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-850 aspect-ratio-1x1"></div>
         <div class="rounded bg-gray bg-900 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-950 aspect-ratio-1x1"></div>
+        <div class="rounded bg-gray bg-1000 aspect-ratio-1x1"></div>
       </div>
     </div>
   </div>
@@ -447,7 +551,7 @@ Codebase 6 Colors | Codebase 6  </title>
 
 <p>➡ This is a <button class="bg-green bg-200" type="button">button</button> with light green coloring.</p>
 
-<p>➡ This is a <button class="success" type="button">button</button>. See <a href="/components/#user-interface-colors">user interface colors</a>.</p>
+<p>➡ This is a success<button class="success" type="button">button</button>. See <a href="/components/#user-interface-colors">user interface colors</a>.</p>
 
 <div class="mb-2 p-2 t-white bg-blue">
 <p>➡ This is a <button class="bg-white" type="button">button</button> with white background.</p>

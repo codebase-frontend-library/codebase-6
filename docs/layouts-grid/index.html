@@ -152,6 +152,13 @@ Codebase 6 Layouts: Grid | Codebase 6  </title>
       <li>The Codebase grid system has <em>five tiers</em> of media query breakpoints, for creating <a href="#grid-layouts-at-different-media-query-breakpoints">different grid layouts for different sized devices</a>: (all), <code>xs:</code>, <code>sm:</code>, <code>md:</code>, and <code>lg:</code> prefixes.</li>
     </ul>
   </li>
+  <li><strong>Extras</strong>:
+    <ul>
+      <li>Simple auto-width columns: <code>auto-cols</code></li>
+      <li>Simple equal-width columns: <code>equal-cols</code></li>
+      <li>Dense packing: <code>grid-dense</code></li>
+    </ul>
+  </li>
 </ul>
 
 <p><strong>Note:</strong> the <em>singular named</em> <code>col-</code> classes are used to instruct the grid which grid cell you want your grid item to be placed on (up to 6 columns). The <em>plural named</em> <code>cols-</code> classes can be used to make grid items to span (2, 3, 4, 5, or 6 columns).</p>
@@ -208,6 +215,40 @@ Codebase 6 Layouts: Grid | Codebase 6  </title>
     </tbody>
   </table>
 </div>
+
+<h3>Non-wrapping grid columns</h3>
+
+<h4>Auto-columns</h4>
+
+<p>There are situations where you simply want to display a grid of items in a single row, and you don’t want them to wrap onto a new row. You can do this by using the <code>auto-cols</code> class on the grid wrapper. Then thenumber of columns depends on the number of grid-items you have:</p>
+
+<div class="my-3 grid auto-cols">
+  <div class="b-thin p-1 bg-green bg-200">Column widths will adjust automatically</div>
+  <div class="b-thin p-1 bg-green bg-200">in accordance</div>
+  <div class="b-thin p-1 bg-green bg-200">with the content that you place inside of each of the columns</div>
+</div>
+
+<pre><code>&lt;div class="grid auto-cols"&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h4>Equal-width columns</h4>
+
+<p>Alternatively, you can use the <code>equal-cols</code> class to create a grid with equal-width columns:</p>
+
+<div class="my-3 grid equal-cols">
+  <div class="b-thin p-1 bg-green bg-200">Notice that no matter how much content you put in each column, they will all be the same width.</div>
+  <div class="b-thin p-1 bg-green bg-200">It’s a simple way to create a responsive grid layout. This is what most people want.</div>
+  <div class="b-thin p-1 bg-green bg-200">Told you.</div>
+</div>
+
+<pre><code>&lt;div class="grid equal-cols"&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
 <h3>Grid item wrapping</h3>
 

@@ -1,11 +1,12 @@
 # CHANGELOG
 
-## v.6.1.0 -- 12 Aug 2026
+## v.6.1.0 -- 13 Aug 2026
 
 * Improved color lightness scale and added `*50` increments.
-* Added `bg-50` for even lighter backgrounds.
+* Added background increments of 50, from `bg-50` though `bg-1000`.
 * Removed CSS grid `row-*` utilities as these were adding a lot of weight but were seldom used.
 * Added `col-5` and `col-6` utilities.
+* Added `auto-cols` and `equal-cols` utilities.
 
 ## v.6.0.5 -- 7 Aug 2026
 
