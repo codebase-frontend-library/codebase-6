@@ -21,51 +21,9 @@ layout: "_includes/layout.njk"
   <li>Background color: <code>bg-50</code> through <code>bg-1000</code> (increments of 50)</li>
 </ul>
 
-<p>In the CSS variables file, lightness level variables are set at infrements of fifty, from <code>--l50</code> to <code>--l1000</code>. The lower the number, the lighter the color, although the higher % lightness.</p>
-
-<pre><code>:root {
-  --l50: 97%; /* if gray, this gives #f5f5f5, whitesmoke */
-  --l100: 92.6%; /* if gray, this gives #e6e6e6 */
-  --l150: 88.2%;
-  --l200: 83.8%;
-  --l250: 79.4%;
-  --l300: 75%;
-  --l350: 69.4%;
-  --l400: 66.2%;
-  --l450: 61.8%;
-  --l500: 57.4%;
-  --l550: 53%;
-  --l600: 48.7%;
-  --l650: 44.3%;
-  --l700: 39.9%;
-  --l750: 35.5%;
-  --l800: 31.1%;
-  --l850: 26.7%;
-  --l900: 22.3%; /* if gray, this gives #1b1b1b */
-  --l950: 17.9%; /* if gray, this gives #111111 */
-  --l1000: 13.5%; /* if gray, this gives #080808 */
-}</code></pre>
+<p>In the CSS variables file, lightness level variables are set at increments of fifty, from <code>--l50</code> to <code>--l1000</code>. The lower the number, the lighter the color, although the higher % lightness.</p>
 
 <p>Example using background <code>bg-*</code> utility classes (the background lightness is declared separately):</p>
-
-<!--<div class="my-3 b-thin rounded p-2">
-  <div class="overflow-x">
-    <div class="mb-1 t-center"><code>bg-{lightness} </code></div>
-      <div class="flex flex-grow-equal t-center">
-        <div><code>bg-50</code></div>
-        <div><code>bg-100</code></div>
-        <div><code>bg-200</code></div>
-        <div><code>bg-300</code></div>
-        <div><code>bg-400</code></div>
-        <div><code>bg-500</code></div>
-        <div><code>bg-600</code></div>
-        <div><code>bg-700</code></div>
-        <div><code>bg-800</code></div>
-        <div><code>bg-900</code></div>
-      </div>
-    </div>
-  </div>
-</div>-->
 
 <div class="my-3 b-thin rounded p-2">
   <div class="overflow-x">
@@ -358,18 +316,30 @@ layout: "_includes/layout.njk"
 }</code></pre>
   </li>
     <li>
-    <p>The utility class lightness level suffixes go up in hundreds, from <code>-100</code> to <code>-900</code>. The lower the number, the lighter the color, although the higher % lightness.</p>
+    <p>The utility class lightness level suffixes go up in hundreds, from <code>-50</code> to <code>-1000</code>. The lower the number, the lighter the color, although the higher % lightness.</p>
     <pre><code>:root {
-  --l100: 97%; /* if gray, this gives #f5f5f5 */
-  --l200: 87.5%;
-  --l300: 78%;
-  --l400: 68.5%;
-  --l500: 59%;
-  --l600: 49.5%;
-  --l700: 40%;
-  --l800: 30.5%;
-  --l900: 21%; /* if gray, this gives #181818 */
+  --l50: 97%; /* if gray, this gives #f5f5f5, whitesmoke */
+  --l100: 92.6%; /* if gray, this gives #e6e6e6 */
+  --l150: 88.2%;
+  --l200: 83.8%;
+  --l250: 79.4%;
+  --l300: 75%;
+  --l350: 69.4%;
+  --l400: 66.2%;
+  --l450: 61.8%;
+  --l500: 57.4%;
+  --l550: 53%;
+  --l600: 48.7%;
+  --l650: 44.3%;
+  --l700: 39.9%;
+  --l750: 35.5%;
+  --l800: 31.1%;
+  --l850: 26.7%;
+  --l900: 22.3%; /* if gray, this gives #1b1b1b */
+  --l950: 17.9%; /* if gray, this gives #111111 */
+  --l1000: 13.5%; /* if gray, this gives #080808 */
 }</code></pre>
+  (The border color and text color lighness utilities use only the hundreds, from --l100 to --l900.)
   </li>
   <li>
     <p>In the variables file, Codebase colors are set up using the formula. For example, in the base text color:</p>
