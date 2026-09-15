@@ -19,3 +19,4 @@ Codebase 6 is a _non-backwards compatible_ update for the Codebase project.
   * `yarn dev` for development with Browser-Sync.
   * `yarn clean` empties the `docs/` folder.
   * `yarn build` just builds.
+  * `yarn build:gh` build before as GitHub sync.
