@@ -7,9 +7,9 @@
   --t-mb: 1rem;
   --t-lh: 1.5;
   --t-base-fs: 100%;
-  --t-sm: 0.8em;
+  --t-sm: 0.875em;
   --t-md: var(--t-base-fs);
-  --t-lg: 1.25em;
+  --t-lg: 1.125em;
   --t-long-read: clamp(1em, 0.75em + 0.7813vw, 1.25em);
   --t-comfort: clamp(1em, 0.5833rem + 1.3021vw, 1.625em);
   --t-display: clamp(1em, 0.3333em + 2.0833vw, 2em);
@@ -62,7 +62,7 @@
   /* Colors */
   --blue: #2563eb;
   --green: #16a34a;
-  --amber: #d97706;
+  --amber: #f59e0b;
   --red: #dc2626;
   --purple: #b10dc9;
   --teal: #39cccc;

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v.6.1.1 -- 23 Sep 2026
+
+* Improvements to UI colors.
+* `t-sm` is now 14px. `t-lg` ia now 18px (same as `h5`).
+
 ## v.6.1.0 -- 13 Aug 2026
 
 * Improved color lightness scale and added `*50` increments.

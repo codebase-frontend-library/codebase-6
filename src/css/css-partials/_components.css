@@ -68,7 +68,7 @@ button[class*="info"]:hover {
 input[class*="info"],
 select[class*="info"],
 textarea[class*="info"] {
-  background: oklch(from var(--info) var(--l100) c h);
+  background: oklch(from var(--info) var(--l50) c h);
   border-color: oklch(from var(--info) var(--l600) c h);
   color: #000;
 }
@@ -87,27 +87,27 @@ button[class*="success"]:hover {
 input[class*="success"],
 select[class*="success"],
 textarea[class*="success"] {
-  background: oklch(from var(--success) var(--l100) c h);
+  background: oklch(from var(--success) var(--l50) c h);
   border-color: oklch(from var(--success) var(--l600) c h);
   color: #000;
 }
 
 [class*="warning"] {
-  background: oklch(from var(--warning) var(--l500) c h);
+  background: oklch(from var(--warning) var(--l450) c h);
   color: #fff;
 }
 
 a[class*="warning"]:hover,
 button[class*="warning"]:hover {
-  background: oklch(from var(--warning) var(--l600) c h);
+  background: oklch(from var(--warning) var(--l550) c h);
   color: #fff;
 }
 
 input[class*="warning"],
 select[class*="warning"],
 textarea[class*="warning"] {
-  background: oklch(from var(--warning) var(--l100) c h);
-  border-color: oklch(from var(--warning) var(--l600) c h);
+  background: oklch(from var(--warning) var(--l50) c h);
+  border-color: oklch(from var(--warning) var(--l550) c h);
   color: #fff;
 }
 
